@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SnowSki:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SnowSki-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SnowSki:war exploded" />
+    </root>
+  </artifact>
+</component>
