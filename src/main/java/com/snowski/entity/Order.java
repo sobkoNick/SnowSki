@@ -19,34 +19,30 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	//private int id_user;
-	private int id_product;
+	// private int id_user;
+	private String name;
 	private int numberOfProducts;
 	private int orderPrice;
 	private String deliveryMethod;
 	private String payMethod;
 	private String orderStatus;
 	private String comment;
-	
+
 	@ManyToOne
 	private User user;
-	
+
 	@ManyToMany
-	@JoinTable(name="orders_product",
-	joinColumns=@JoinColumn(name="orders_id"),
-	inverseJoinColumns=@JoinColumn(name="product_id"))
+	@JoinTable(name = "orders_product", joinColumns = @JoinColumn(name = "orders_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
 	private List<Product> products = new ArrayList<Product>();
-	
+
 	public Order() {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public Order(int id_product, int numberOfProducts, int orderPrice, String deliveryMethod, String payMethod,
+	public Order(String name, int numberOfProducts, int orderPrice, String deliveryMethod, String payMethod,
 			String orderStatus, String comment, User user, List<Product> products) {
 		super();
-		this.id_product = id_product;
+		this.name = name;
 		this.numberOfProducts = numberOfProducts;
 		this.orderPrice = orderPrice;
 		this.deliveryMethod = deliveryMethod;
@@ -57,14 +53,8 @@ public class Order {
 		this.products = products;
 	}
 
-
-
 	public int getId() {
 		return id;
-	}
-
-	public int getId_product() {
-		return id_product;
 	}
 
 	public int getNumberOfProducts() {
@@ -95,11 +85,6 @@ public class Order {
 		this.id = id;
 	}
 
-
-	public void setId_product(int id_product) {
-		this.id_product = id_product;
-	}
-
 	public void setNumberOfProducts(int numberOfProducts) {
 		this.numberOfProducts = numberOfProducts;
 	}
@@ -123,6 +108,29 @@ public class Order {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	
-	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
 }

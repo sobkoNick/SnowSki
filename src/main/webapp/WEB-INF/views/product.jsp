@@ -8,7 +8,7 @@
 <title>Products</title>
 </head>
 <body>
-<div>
+	<div>
 		<form action="/product" method="post">
 		<input name="name" type="text" placeholder="name"><br>
 		<input name="description" type="text" placeholder="description"><br>
@@ -25,15 +25,28 @@
 			<option value="${producer.id }">${producer.name }</option>
 			</c:forEach>
 		</select>
+		<br>
+		<select multiple="multiple" name="ordersIds">
+		<option>choose</option>
+			<c:forEach var="order" items="${orders}">
+				<option value="${order.id }">${order.name}</option>
+			</c:forEach>
+		</select>
 		
-		<button>save category</button>
+		<button>save product</button>
 		</form>
 	</div>
 	<div>
 	<ol>
 		<c:forEach var="product" items="${products}">
-		<li>${product.name}
-		<a href="/deleteProduct/${product.id}">delete</a> <br></li>
+		<li>${product.name} ${product.producer.name }
+		| In orders: 
+		<c:forEach var="order" items="${product.orders }">
+			${order.name}
+		</c:forEach>
+		<a href="/deleteProduct/${product.id}">delete</a> 
+		<a href="/updateProduct/${product.id}">update</a> 
+		<br></li>
 		</c:forEach>
 	</ol>
 	</div>

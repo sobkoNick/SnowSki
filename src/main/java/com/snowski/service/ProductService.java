@@ -5,7 +5,7 @@ import java.util.List;
 import com.snowski.entity.Product;
 
 public interface ProductService {
-	void save(Product product, int producerId);
+	void save(Product product, int producerId, List<Integer> ordersIds);
 
 	List<Product> findAll();
 
@@ -14,4 +14,6 @@ public interface ProductService {
 	void delete(int id);
 
 	void update(Product product);
+	
+	List<Product> productWithOrders();
 }
