@@ -40,7 +40,7 @@ public class Order {
 	}
 
 	public Order(String name, int numberOfProducts, int orderPrice, String deliveryMethod, String payMethod,
-			String orderStatus, String comment, User user, List<Product> products) {
+			String orderStatus, String comment) {
 		super();
 		this.name = name;
 		this.numberOfProducts = numberOfProducts;
@@ -49,8 +49,6 @@ public class Order {
 		this.payMethod = payMethod;
 		this.orderStatus = orderStatus;
 		this.comment = comment;
-		this.user = user;
-		this.products = products;
 	}
 
 	public int getId() {

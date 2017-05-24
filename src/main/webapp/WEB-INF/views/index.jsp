@@ -13,7 +13,9 @@
 	<a href="/category">category</a><br>
 	<a href="/producer">producer</a><br>
 	<a href="/product">product</a><br>
-	<a href="/registration">registration</a>
+	<a href="/registration">registration</a><br>
+	<a href="/order">order</a>
+	
 
 </div>
 
