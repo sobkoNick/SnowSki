@@ -34,8 +34,12 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
+	public User(String login) {
+		this.login = login;
+	}
+
 	public User(String login, String email, String password, String firstName, String lastName, String userGroup,
-			String telephone, String status, int discount, String language) {
+				String telephone, String status, int discount, String language) {
 		super();
 		this.login = login;
 		this.email = email;
