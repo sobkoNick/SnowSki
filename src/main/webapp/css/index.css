@@ -24,7 +24,7 @@
 
 }
 .ski-header-img{
-    background-image: url("<%=request.getContextPath()%>/img/Skiing-PNG-Picture.png");
+    background-image: url("https://kinglearjet.files.wordpress.com/2015/07/skiclipart.png");
     width: 100%;
     height: 110px;
     background-clip: padding-box;
@@ -40,7 +40,7 @@
 }
 
 .element-container-left{
-    background-image: url(/img/why-bogner-luxe-mens-womens-ski-jackets-with-style.jpg);
+    background-image: url("https://scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/18765998_1587331254611687_5920180274873144525_n.jpg?oh=c3182642f51237426573f9d9c9ae01d2&oe=59A460B8");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     /*    background-repeat: no-repeat;*/
@@ -50,7 +50,7 @@
 }
 
 .element-container-right{
-    background-image: url(/img/MensSkiClothing.jpg);
+    background-image: url("https://scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/18670915_1587330794611733_1879849195480139217_n.jpg?oh=dc8b07ba79891e317524003ef234cd93&oe=59AD07AF");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     /*    background-repeat: no-repeat;*/
@@ -62,7 +62,7 @@
     height: 290px;
     margin-top: 20px;
     /*    background-color: forestgreen;*/
-    background-image: url(/img/Columbia_ski_clothing_guide_5.jpg);
+    background-image: url("https://scontent-fra3-1.xx.fbcdn.net/v/t1.0-9/18671256_1587330777945068_108771001378599697_n.jpg?oh=715a9e1bb5d1b8d2adef23a643c80bb0&oe=59AD4B67");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     background-size: cover;
@@ -138,7 +138,7 @@
 .left-menu{
     /*    background-color: firebrick; */
     height: 100%;
-    background-image: url(/img/snowboard_PNG7997.png);
+    background-image: url("http://www.canadianvisareview.com/wp-content/uploads/2015/09/snowboarding.png");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     background-size: cover;
@@ -157,7 +157,7 @@
 .center-menu{
     /*    background-color: teal; */
     height: 100%;
-    background-image: url(/img/ba7a8591edca7efc02259ea1acac8d7f.jpg);
+    background-image: url("https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/18739674_1587330661278413_2852516530509841744_n.jpg?oh=ccd85a0628ff01dd9bad24b291cd4571&oe=59E70CA9");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     background-size: cover;
@@ -173,7 +173,7 @@
 }
 .right-menu{
     height: 100%;
-    background-image: url(/img/640x480_paire-ski-1685-2101.png);
+    background-image: url("https://www.risoul.com/medias/images/info_menu/multitailles/640x480_paire-ski-1685-2101.png");
     background-clip: padding-box;
     background-origin: border-box; /*звідки буде відштовхуватися позиціонування*/
     background-size: cover;

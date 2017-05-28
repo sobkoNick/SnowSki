@@ -31,9 +31,9 @@
 					<div class="row">
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 lang">
 							<div class="row">
-								<a href="#"><img src="ukr.png"></a>
-								<a href="#"><img src="Russian-flag.png"></a>
-								<a href="#"><img src="eng.png"></a>
+								<a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/ukr.png?raw=true"></a>
+								<a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/eng.png?raw=true"></a>
+								<a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/Russian-flag.png?raw=true"></a>
 							</div>
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-2 lang">
@@ -150,25 +150,25 @@
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
 								<a href="#">
-									<img src="googlesNORM.png" alt="Flower">
+									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18738626_1587330867945059_2948198496497785979_o.jpg?oh=3e616d7d14466e0a55b0484e3221b99b&oe=59B61767" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="USST-NFC-marquee-3.jpeg" alt="Flower">
+									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18699742_1587331424611670_9069118261643631987_o.jpg?oh=74f52a129fe907807ac336919f571998&oe=59E6E2E5" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="rossi.png" alt="Flower">
+									<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/18738467_1587331364611676_4401101162099344350_o.jpg?oh=de08e3488656a1da148d12dfcac5eebb&oe=59A2FD5D" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="school.png" alt="Flower"> <!-- 1095 px --->
+									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18814483_1587331474611665_3514274231234335529_o.jpg?oh=27f0c0de121c86b744deb3385ad326fa&oe=59AC25ED" alt="Flower">
 								</a>
 							</div>
 						</div>
