@@ -181,18 +181,50 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="175" column="118" lean-forward="false" selection-start-line="175" selection-start-column="118" selection-end-line="175" selection-end-column="118" />
+            <state relative-caret-position="204">
+              <caret line="303" column="1" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="303" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/views/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+              <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registration.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="40" />
+              <folding>
+                <element signature="n#style#0;n#svg#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/registration.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="499" column="20" lean-forward="true" selection-start-line="499" selection-start-column="20" selection-end-line="499" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/registration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -204,8 +236,22 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>container-fluid</find>
+      <find>small-header</find>
+      <find>lang</find>
+      <find>text-header</find>
+      <find>big-header</find>
+      <find>ski-header-img</find>
+      <find>dropdown</find>
+      <find>form-control-feedback</find>
+      <find>btn-signin</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -226,6 +272,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/registration.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/registration.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/registration.css" />
       </list>
     </option>
   </component>
@@ -340,6 +389,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowSki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowSki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1021,16 +1096,15 @@
       <workItem from="1495640533334" duration="632000" />
       <workItem from="1495809192031" duration="4568000" />
       <workItem from="1495897737991" duration="4575000" />
-      <workItem from="1495972763933" duration="3235000" />
+      <workItem from="1495972763933" duration="6208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17355000" />
+    <option name="totallyTimeSpent" value="20328000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1052,7 +1126,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39443535" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39443535" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1084,112 +1158,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2397">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1015#1016#0" expanded="false" />
-            <element signature="e#1040#1041#0" expanded="false" />
-            <element signature="e#1529#1530#0" expanded="false" />
-            <element signature="e#1545#1546#0" expanded="false" />
-            <element signature="e#1574#1575#0" expanded="false" />
-            <element signature="e#1593#1594#0" expanded="false" />
-            <element signature="e#1622#1623#0" expanded="false" />
-            <element signature="e#1641#1642#0" expanded="false" />
-            <element signature="e#1673#1674#0" expanded="false" />
-            <element signature="e#1695#1696#0" expanded="false" />
-            <element signature="e#1729#1730#0" expanded="false" />
-            <element signature="e#1752#1753#0" expanded="false" />
-            <element signature="e#1782#1783#0" expanded="false" />
-            <element signature="e#1802#1803#0" expanded="false" />
-            <element signature="e#1831#1832#0" expanded="false" />
-            <element signature="e#1853#1854#0" expanded="false" />
-            <element signature="e#1885#1886#0" expanded="false" />
-            <element signature="e#1907#1908#0" expanded="false" />
-            <element signature="e#1937#1938#0" expanded="false" />
-            <element signature="e#1956#1957#0" expanded="false" />
-            <element signature="e#1995#1996#0" expanded="false" />
-            <element signature="e#2020#2021#0" expanded="false" />
-            <element signature="e#2059#2060#0" expanded="false" />
-            <element signature="e#2084#2085#0" expanded="false" />
-            <element signature="e#2129#2130#0" expanded="false" />
-            <element signature="e#2160#2161#0" expanded="false" />
-            <element signature="e#2208#2209#0" expanded="false" />
-            <element signature="e#2241#2242#0" expanded="false" />
-            <element signature="e#2282#2283#0" expanded="false" />
-            <element signature="e#2309#2310#0" expanded="false" />
-            <element signature="e#2351#2352#0" expanded="false" />
-            <element signature="e#2382#2383#0" expanded="false" />
-            <element signature="e#2427#2428#0" expanded="false" />
-            <element signature="e#2458#2459#0" expanded="false" />
-            <element signature="e#2493#2494#0" expanded="false" />
-            <element signature="e#2516#2517#0" expanded="false" />
-            <element signature="e#2550#2551#0" expanded="false" />
-            <element signature="e#2572#2573#0" expanded="false" />
-            <element signature="e#2607#2608#0" expanded="false" />
-            <element signature="e#2630#2631#0" expanded="false" />
-            <element signature="e#2679#2680#0" expanded="false" />
-            <element signature="e#2712#2713#0" expanded="false" />
-            <element signature="e#2759#2760#0" expanded="false" />
-            <element signature="e#2790#2791#0" expanded="false" />
-            <element signature="e#2839#2840#0" expanded="false" />
-            <element signature="e#2872#2873#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1503#1504#0" expanded="false" />
-            <element signature="e#1519#1520#0" expanded="false" />
-            <element signature="e#1556#1557#0" expanded="false" />
-            <element signature="e#1586#1587#0" expanded="false" />
-            <element signature="e#1617#1618#0" expanded="false" />
-            <element signature="e#1641#1642#0" expanded="false" />
-            <element signature="e#1679#1680#0" expanded="false" />
-            <element signature="e#1707#1708#0" expanded="false" />
-            <element signature="e#1740#1741#0" expanded="false" />
-            <element signature="e#1763#1764#0" expanded="false" />
-            <element signature="e#1798#1799#0" expanded="false" />
-            <element signature="e#1823#1824#0" expanded="false" />
-            <element signature="e#1854#1855#0" expanded="false" />
-            <element signature="e#1875#1876#0" expanded="false" />
-            <element signature="e#1905#1906#0" expanded="false" />
-            <element signature="e#1924#1925#0" expanded="false" />
-            <element signature="e#1982#1983#0" expanded="false" />
-            <element signature="e#2029#2030#0" expanded="false" />
-            <element signature="e#2075#2076#0" expanded="false" />
-            <element signature="e#2110#2111#0" expanded="false" />
-            <element signature="e#2167#2168#0" expanded="false" />
-            <element signature="e#2210#2211#0" expanded="false" />
-            <element signature="e#2257#2258#0" expanded="false" />
-            <element signature="e#2290#2291#0" expanded="false" />
-            <element signature="e#2341#2342#0" expanded="false" />
-            <element signature="e#2378#2379#0" expanded="false" />
-            <element signature="e#2421#2422#0" expanded="false" />
-            <element signature="e#2450#2451#0" expanded="false" />
-            <element signature="e#2478#2479#0" expanded="false" />
-            <element signature="e#2496#2497#0" expanded="false" />
-            <element signature="e#2533#2534#0" expanded="false" />
-            <element signature="e#2556#2557#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="false" />
-            <element signature="e#2600#2601#0" expanded="false" />
-            <element signature="e#2639#2640#0" expanded="false" />
-            <element signature="e#2661#2662#0" expanded="false" />
-            <element signature="e#2696#2697#0" expanded="false" />
-            <element signature="e#2719#2720#0" expanded="false" />
-            <element signature="e#2771#2772#0" expanded="false" />
-            <element signature="e#2802#2803#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1744,14 +1712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1847,8 +1807,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="175" column="118" lean-forward="false" selection-start-line="175" selection-start-column="118" selection-end-line="175" selection-end-column="118" />
+        <state relative-caret-position="204">
+          <caret line="303" column="1" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="303" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1856,7 +1816,33 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/registration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="166" column="40" lean-forward="true" selection-start-line="166" selection-start-column="30" selection-end-line="166" selection-end-column="40" />
+          <folding>
+            <element signature="n#style#0;n#svg#0;n#a#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/registration.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="499" column="20" lean-forward="true" selection-start-line="499" selection-start-column="20" selection-end-line="499" selection-end-column="20" />
           <folding />
         </state>
       </provider>

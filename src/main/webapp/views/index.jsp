@@ -43,7 +43,7 @@
 							БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
-							<a href="#">РЕЄСТРАЦІЯ</a>
+							<a href="/registration">РЕЄСТРАЦІЯ</a>
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
 							<a href="#">ВХІД</a>
