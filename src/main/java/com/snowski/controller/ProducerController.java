@@ -19,14 +19,22 @@ public class ProducerController {
 	@GetMapping("/producer")
 	public String producer(Model model){
 		model.addAttribute("producers", producerService.findAll());
+		model.addAttribute("producer", new Producer());
 		return "producer";
 	}
 	
-	@PostMapping("/producer")
-	public String producer(@RequestParam String name, @RequestParam String description,
-			@RequestParam Integer numberOfProducts){
-		producerService.save(new Producer(name, description, numberOfProducts));
-		
+//	@PostMapping("/producer")
+//	public String producer(@RequestParam String name, @RequestParam String description,
+//			@RequestParam Integer numberOfProducts){
+//		producerService.save(new Producer(name, description, numberOfProducts));
+//
+//		return "redirect:/producer";
+//	}
+
+	@PostMapping("/producer") // using spring forms
+	public String producer(Producer producer){
+		producerService.save(producer);
+
 		return "redirect:/producer";
 	}
 	

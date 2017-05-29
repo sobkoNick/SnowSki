@@ -34,6 +34,9 @@ public class OrderServiceImpl implements OrderService {
 		
 		orderDao.save(order);
 	}
+	public void save(Order order) {
+		orderDao.save(order);
+	}
 
 	public List<Order> findAll() {
 		return orderDao.findAll();
@@ -57,4 +60,21 @@ public class OrderServiceImpl implements OrderService {
 		return orderDao.orderWithProducts();
 	}
 
+	@Override
+	public Order orderWithProducts(int id) {
+		return orderDao.orderWithProducts(id);
+	}
+
+	@Override
+	public void updateOrder(int order_id, int product_id) {
+		Order order = orderDao.orderWithProducts(order_id);
+
+		for (Product product: order.getProducts()
+			 ) {
+			if (product.getId() == product_id) {
+				product.setOrders(null);
+			}
+			productDao.save(product);
+		}
+	}
 }
