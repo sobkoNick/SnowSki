@@ -5,7 +5,7 @@ import java.util.List;
 import com.snowski.entity.Producer;
 
 public interface ProducerService {
-	void save(Producer producer);
+	void save(Producer producer) throws Exception;
 
 	List<Producer> findAll();
 

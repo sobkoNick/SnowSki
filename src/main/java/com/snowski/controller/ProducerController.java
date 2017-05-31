@@ -1,12 +1,10 @@
 package com.snowski.controller;
 
+import com.snowski.validator.producerValidator.ProducerValidatorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.snowski.entity.Producer;
 import com.snowski.service.ProducerService;
@@ -32,8 +30,22 @@ public class ProducerController {
 //	}
 
 	@PostMapping("/producer") // using spring forms
-	public String producer(Producer producer){
-		producerService.save(producer);
+	public String producer(@ModelAttribute Producer producer, Model model){
+		try {
+			producerService.save(producer);
+		} catch (Exception e) {
+
+			if (e.getMessage().equals(ProducerValidatorMessages.NAME_FIELD_INCORRECT)) {
+				model.addAttribute("nameException", e.getMessage());
+			} else if (e.getMessage().equals(ProducerValidatorMessages.DESCRIPTION_INCORRECT)) {
+				model.addAttribute("descriptionException", e.getMessage());
+			} else if (e.getMessage().equals(ProducerValidatorMessages.NUMBER_OF_PRODUCTS_INCORRECT)) {
+				model.addAttribute("numberOfProductsException", e.getMessage());
+			}
+
+			return "producer";
+		}
+
 
 		return "redirect:/producer";
 	}

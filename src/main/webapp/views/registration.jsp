@@ -132,15 +132,22 @@
 
 <form:form modelAttribute="user" method="post">
     <form:input path="login" placeholder="login"/>
+    <span style="color: red">${loginException}</span><br>
     <form:input path="email" placeholder="email"/>
+    <span style="color: red">${emailException}</span><br>
     <form:input path="password" placeholder="password"/>
+    <span style="color: red">${passwordException}</span><br>
     <form:input path="firstName" placeholder="firstName"/>
+    <span style="color: red">${emptyFirstNameException}</span><br>
     <form:input path="lastName" placeholder="lastName"/>
-    <form:input path="language" placeholder="language"/>
-    <form:input path="status" placeholder="status"/>
+    <span style="color: red">${emptyLastNameException}</span><br>
+    <%--<form:input path="language" placeholder="language"/>--%>
+    <%--<span style="color: red">${emptyFieldException}</span><br>--%>
+    <%--<form:input path="status" placeholder="status"/><br>--%>
     <form:input path="telephone" placeholder="telephone"/>
-    <form:input path="userGroup" placeholder="userGroup"/>
-        <button>save</button>
+    <span style="color: red">${telephoneException}</span><br>
+    <%--<form:input path="userGroup" placeholder="userGroup"/><br>--%>
+    <button>save</button>
 
 </form:form>
 
@@ -150,7 +157,7 @@
 <div class="container">
     <div class="frame">
         <div class="nav">
-            <ul class"links">
+            <ul class=links">
             <li class="signin-active"><a class="btn">Sign in</a></li>
             <li class="signup-inactive"><a class="btn">Sign up </a></li>
             </ul>

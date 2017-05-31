@@ -55,6 +55,9 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	public void delete(int id) {
+
+
+
 		productDao.delete(id);
 	}
 
