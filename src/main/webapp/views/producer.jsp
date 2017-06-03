@@ -19,11 +19,11 @@
 		<%--</form>--%>
 
 	<form:form modelAttribute="producer" action="/producer" method="post">
-		<form:input path="name"/>
+		<form:input path="name" required="required"/>
 		<span style="color: red">${nameException}</span><br>
-		<form:input path="description"/>
+		<form:input path="description" required="required"/>
 		<span style="color: red">${descriptionException}</span><br>
-		<form:input path="numberOfProducts"/>
+		<form:input path="numberOfProducts" required="required"/>
 		<span style="color: red">${numberOfProductsException}</span><br>
 		<button>Save Producer</button>
 

@@ -7,13 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Log In / Register</title>
     <link rel="stylesheet" href="/css/registration.css" type="text/css">
-    <script src="/js/registration.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <div class="container-fluid">
@@ -130,26 +130,26 @@
 
 
 
-<form:form modelAttribute="user" method="post">
-    <form:input path="login" placeholder="login"/>
-    <span style="color: red">${loginException}</span><br>
-    <form:input path="email" placeholder="email"/>
-    <span style="color: red">${emailException}</span><br>
-    <form:input path="password" placeholder="password"/>
-    <span style="color: red">${passwordException}</span><br>
-    <form:input path="firstName" placeholder="firstName"/>
-    <span style="color: red">${emptyFirstNameException}</span><br>
-    <form:input path="lastName" placeholder="lastName"/>
-    <span style="color: red">${emptyLastNameException}</span><br>
-    <%--<form:input path="language" placeholder="language"/>--%>
-    <%--<span style="color: red">${emptyFieldException}</span><br>--%>
-    <%--<form:input path="status" placeholder="status"/><br>--%>
-    <form:input path="telephone" placeholder="telephone"/>
-    <span style="color: red">${telephoneException}</span><br>
-    <%--<form:input path="userGroup" placeholder="userGroup"/><br>--%>
-    <button>save</button>
+<%--<form:form modelAttribute="user" method="post">--%>
+    <%--<form:input path="login" placeholder="login"/>--%>
+    <%--<span style="color: red">${loginException}</span><br>--%>
+    <%--<form:input path="email" placeholder="email"/>--%>
+    <%--<span style="color: red">${emailException}</span><br>--%>
+    <%--<form:input path="password" placeholder="password"/>--%>
+    <%--<span style="color: red">${passwordException}</span><br>--%>
+    <%--<form:input path="firstName" placeholder="firstName"/>--%>
+    <%--<span style="color: red">${emptyFirstNameException}</span><br>--%>
+    <%--<form:input path="lastName" placeholder="lastName"/>--%>
+    <%--<span style="color: red">${emptyLastNameException}</span><br>--%>
+    <%--&lt;%&ndash;<form:input path="language" placeholder="language"/>&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<span style="color: red">${emptyFieldException}</span><br>&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<form:input path="status" placeholder="status"/><br>&ndash;%&gt;--%>
+    <%--<form:input path="telephone" placeholder="telephone"/>--%>
+    <%--<span style="color: red">${telephoneException}</span><br>--%>
+    <%--&lt;%&ndash;<form:input path="userGroup" placeholder="userGroup"/><br>&ndash;%&gt;--%>
+    <%--<button>save</button>--%>
 
-</form:form>
+<%--</form:form>--%>
 
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -175,17 +175,39 @@
                 </div>
             </form>
 
-            <form class="form-signup" action="" method="post" name="form">
-                <label for="fullname">Full name</label>
-                <input class="form-styling" type="text" name="fullname" placeholder=""/>
-                <label for="email">Email</label>
-                <input class="form-styling" type="text" name="email" placeholder=""/>
-                <label for="password">Password</label>
-                <input class="form-styling" type="text" name="password" placeholder=""/>
-                <label for="confirmpassword">Confirm password</label>
-                <input class="form-styling" type="text" name="confirmpassword" placeholder=""/>
-                <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
-            </form>
+            <%--<form class="form-signup" action="" method="post" name="form">--%>
+            <%--<label for="login">Login</label>--%>
+            <%--<input class="form-styling" type="text" name="fullname" placeholder=""/>--%>
+            <%--<label for="email">Email</label>--%>
+            <%--<input class="form-styling" type="text" name="email" placeholder=""/>--%>
+            <%--<label for="password">Password</label>--%>
+            <%--<input class="form-styling" type="text" name="password" placeholder=""/>--%>
+            <%--<label for="confirmpassword">Confirm password</label>--%>
+            <%--<input class="form-styling" type="text" name="confirmpassword" placeholder=""/>--%>
+            <%--<a ng-click="checked = !checked" class="btn-signup">Sign Up</a>--%>
+            <%--</form>--%>
+
+            <form:form modelAttribute="user" method="post" class="form-signup"  name="form">
+                <form:input class="form-styling" path="login" placeholder="Your login" required="required"/>
+                <span style="color: red">${loginException}</span><br>
+                <form:input class="form-styling" path="email" placeholder="@Email" required="required"/>
+                <span style="color: red">${emailException}</span><br>
+                <form:input class="form-styling" path="password" placeholder="Password" required="required"/>
+                <span style="color: red">${passwordException}</span><br>
+                <form:input class="form-styling" path="firstName" placeholder="FirstName" required="required"/>
+                <span style="color: red">${emptyFirstNameException}</span><br>
+                <form:input class="form-styling" path="lastName" placeholder="LastName" required="required"/>
+                <span style="color: red">${emptyLastNameException}</span><br>
+                <%--<form:input path="language" placeholder="language"/>--%>
+                <%--<span style="color: red">${emptyFieldException}</span><br>--%>
+                <%--<form:input path="status" placeholder="status"/><br>--%>
+                <form:input class="form-styling" path="telephone" placeholder="Telephone number" required="required"/>
+                <span style="color: red">${telephoneException}</span><br>
+                <%--<form:input path="userGroup" placeholder="userGroup"/><br>--%>
+                <%--<input type="button" class="btn-signup" value="Sign Up">--%>
+                <button>Sign Up</button>
+                <%--<a ng-click="checked = !checked" class="btn-signup">Sign Up</a>--%>
+            </form:form>
 
             <div  class="success">
                 <svg width="270" height="270" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -226,6 +248,9 @@
     </a>
 </div>
 
+<script src="/js/registration.js">
 
+
+</script>
 </body>
 </html>

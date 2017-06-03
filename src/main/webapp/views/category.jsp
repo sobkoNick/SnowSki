@@ -13,8 +13,8 @@
 		<input name="name" type="text" placeholder="name"><br>
 		<input name="description" type="text" placeholder="description"><br>
 		<input name="availability" type="text" placeholder="availability"><br>
-		<input name="numberOfProducts" type="text" placeholder="numberOfProducts"><br>
-		<input name="numberInHierarchy" type="text" placeholder="numberInHierarchy"><br>
+		<input name="numberOfProducts" type="text" placeholder="numberOfProducts" required="required"><br>
+		<input name="numberInHierarchy" type="text" placeholder="numberInHierarchy" required="required"><br>
 		
 		<button>save category</button>
 		</form>
