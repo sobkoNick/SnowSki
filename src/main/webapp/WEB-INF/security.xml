@@ -11,7 +11,9 @@
                              authentication-success-forward-url="/"/>
 
         <security:logout logout-url="/logout" logout-success-url="/"/>
-        <!--<security:intercept-url pattern="/country" access="hasRole('ROLE_ADMIN')"/>-->
+        <security:intercept-url pattern="/category" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/product" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/producer" access="hasRole('ROLE_ADMIN')"/>
 
     </security:http>
 
@@ -25,6 +27,8 @@
             <security:password-encoder ref="encoder"/>
         </security:authentication-provider>
     </security:authentication-manager>
+
+
 
     <!--<bean id="userServiceImpl" class="com.snowski.serviceImpl.UserServiceImpl"/>-->
 
