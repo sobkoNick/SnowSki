@@ -20,9 +20,9 @@ public class UserValidator implements Validator {
 
         User user = (User) o;
 
-        if(user.getLogin().isEmpty()) {
+        if(user.getName().isEmpty()) {
             throw new UserException(UserValidatorMessages.EMPTY_USERNAME_FIELD);
-        } else if (userDao.findByLogin(user.getLogin()) != null) {
+        } else if (userDao.findByName(user.getName()) != null) {
             throw new UserException(UserValidatorMessages.USERNAME_ALREADY_EXIST);
         } else if (user.getEmail().contains("@") == false) {
             throw new UserException(UserValidatorMessages.NO_DOG_SYMBOL);

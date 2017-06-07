@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Log In / Register</title>
-    <link rel="stylesheet" href="/css/registration.css" type="text/css">
+    <link rel="stylesheet" href="/css/signUp.css" type="text/css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -34,10 +35,22 @@
                     БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
                 </div>
                 <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
-                    <a href="#">РЕЄСТРАЦІЯ</a>
+                    <sec:authorize access="!isAuthenticated()">
+                        <a href="/signUp">РЕЄСТРАЦІЯ</a>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                        <a href="#">
+                            <sec:authentication property="name"/>
+                        </a>
+                        <form:form action="/logout" method="post">
+                            <button>Log Out</button>
+                        </form:form>
+                    </sec:authorize>
                 </div>
                 <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
-                    <a href="#">ВХІД</a>
+                    <sec:authorize access="!isAuthenticated()">
+                        <a href="#">ВХІД</a>
+                    </sec:authorize>
                 </div>
                 <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">КОРЗИНА</div>
             </div>
@@ -163,17 +176,20 @@
             </ul>
         </div>
         <div ng-app ng-init="checked = false">
-            <form class="form-signin" action="" method="post" name="form">
+            <form:form class="form-signin" action="/login" method="post" name="form">
                 <label for="username">Username</label>
                 <input class="form-styling" type="text" name="username" placeholder=""/>
                 <label for="password">Password</label>
                 <input class="form-styling" type="text" name="password" placeholder=""/>
-                <input type="checkbox" id="checkbox"/>
-                <label for="checkbox" ><span class="ui"></span>Keep me signed in</label>
+                <%--<input type="checkbox" id="checkbox"/>--%>
+                <%--<label for="checkbox" ><span class="ui"></span>Keep me signed in</label>--%>
                 <div class="btn-animate">
-                    <a class="btn-signin">Sign in</a>
+                <input type="submit" class="btn-signin" value="Login" >
                 </div>
-            </form>
+                <%--<div class="btn-animate">--%>
+                    <%--<a class="btn-signin">Sign in</a>--%>
+                <%--</div>--%>
+            </form:form>
 
             <%--<form class="form-signup" action="" method="post" name="form">--%>
             <%--<label for="login">Login</label>--%>
@@ -188,14 +204,19 @@
             <%--</form>--%>
 
             <form:form modelAttribute="user" method="post" class="form-signup"  name="form">
-                <form:input class="form-styling" path="login" placeholder="Your login" required="required"/>
+                <%--<label for="login">Login</label>--%>
+                <form:input class="form-styling" path="name" placeholder="Your login" required="required"/>
                 <span style="color: red">${loginException}</span><br>
+                <%--<label for="email">Email</label>--%>
                 <form:input class="form-styling" path="email" placeholder="@Email" required="required"/>
                 <span style="color: red">${emailException}</span><br>
+                <%--<label for="password">Password</label>--%>
                 <form:input class="form-styling" path="password" placeholder="Password" required="required"/>
                 <span style="color: red">${passwordException}</span><br>
+                <%--<label for="firstName">First name</label>--%>
                 <form:input class="form-styling" path="firstName" placeholder="FirstName" required="required"/>
                 <span style="color: red">${emptyFirstNameException}</span><br>
+                <%--<label for="lastName">Last name</label>--%>
                 <form:input class="form-styling" path="lastName" placeholder="LastName" required="required"/>
                 <span style="color: red">${emptyLastNameException}</span><br>
                 <%--<form:input path="language" placeholder="language"/>--%>
@@ -248,7 +269,7 @@
     </a>
 </div>
 
-<script src="/js/registration.js">
+<script src="/js/signUp.js">
 
 
 </script>

@@ -1,5 +1,7 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,15 +18,18 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<sec:authorize access="hasRole('ROLE_ADMIN')">
 <h1 style="text-align: center;">Main</h1>
 	<div>
-	
-	<a href="/category">category</a><br>
-	<a href="/producer">producer</a><br>
-	<a href="/product">product</a><br>
-	<a href="/registration">registration</a><br>
-	<a href="/order">order</a>
+
+			<a href="/category">category</a><br>
+			<a href="/producer">producer</a><br>
+			<a href="/product">product</a><br>
+			<a href="/signUp">signUp</a><br>
+			<a href="/order">order</a>
+
 	</div>
+</sec:authorize>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 small-header">
@@ -43,10 +48,22 @@
 							БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
-							<a href="/registration">РЕЄСТРАЦІЯ</a>
+							<sec:authorize access="!isAuthenticated()">
+							<a href="/signUp">РЕЄСТРАЦІЯ</a>
+						</sec:authorize>
+							<sec:authorize access="isAuthenticated()">
+									<a href="#">
+										<sec:authentication property="name"/>
+									</a>
+								<form:form action="/logout" method="post">
+									<button>Log Out</button>
+								</form:form>
+							</sec:authorize>
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+							<sec:authorize access="!isAuthenticated()">
 							<a href="#">ВХІД</a>
+							</sec:authorize>
 						</div>
 						<div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">КОРЗИНА</div>
 					</div>
@@ -119,7 +136,6 @@
 						<div class="hidden-xs col-sm-1 col-md-1">
 							<div class="dropdown">
 								<button class="dropbtn">БЛОГ</button>
-
 							</div>
 						</div>
 

@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 	@Autowired
 	private UserService userService;
-	@GetMapping("/registration")
+	@GetMapping("/signUp")
 	public String registration(Model model){
 
 		model.addAttribute("user", new User());
 
-		return "registration";
+		return "signUp";
 	}
 
-	@PostMapping("/registration")
+	@PostMapping("/signUp")
 	public String registration(@ModelAttribute User user, Model model) {
 		try {
 			userService.save(user);
@@ -48,8 +48,8 @@ public class UserController {
 			if(e.getMessage().equals(UserValidatorMessages.TELEPHONE_FIELD_INCORRECT)){
 				model.addAttribute("telephoneException", e.getMessage());
 			}
-			return "registration";
+			return "signUp";
 		}
-		return "redirect:/registration";
+		return "redirect:/signUp";
 	}
 }

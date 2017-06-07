@@ -42,11 +42,9 @@
 		<form:form modelAttribute="product" method="post">
 			<form:input path="name"/>
 			<form:select path="producer" items="${producers}" itemLabel="name" itemValue="id"/>
-
+			<form:input path="price" placeholder="price"/>
 			<button>Save product</button>
-			
 		</form:form>
-
 
 	</div>
 

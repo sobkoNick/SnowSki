@@ -1,22 +1,22 @@
 package com.snowski.entity;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 //import javax.persistence.Table;
 
 @Entity
 //@Table(name = "customer") // if you want other name than user
-public class User {
+public class User implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String login;
+	private String name;
 	private String email;
 	private String password;
 	private String firstName;
@@ -26,6 +26,13 @@ public class User {
 	private String status;
 	private int discount;
 	private String language;
+
+
+
+	@Enumerated
+
+	private  Role role;
+
 	// TODO ADD CASCADETYPE.REMOVE----!!!!!!!!!!!!!!!!!!
 	@OneToMany(mappedBy = "user") // reference to field. ADD CASCADETYPE.REMOVE----!!!!!!!!!!!!!!!!!!
 	private List<Order> orders = new ArrayList<Order>(); 
@@ -34,14 +41,14 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String login) {
-		this.login = login;
+	public User(String name) {
+		this.name = name;
 	}
 
-	public User(String login, String email, String password, String firstName, String lastName, String userGroup,
+	public User(String name, String email, String password, String firstName, String lastName, String userGroup,
 				String telephone, String status, int discount, String language) {
 		super();
-		this.login = login;
+		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
@@ -57,17 +64,18 @@ public class User {
 		return id;
 	}
 
-	public String getLogin() {
-		return login;
+	public String getName() {
+		return name;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public String getPassword() {
-		return password;
+	public Role getRole() {
+		return role;
 	}
+
 
 
 	public String getTelephone() {
@@ -90,13 +98,18 @@ public class User {
 		this.id = id;
 	}
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setName(String login) {
+		this.name = login;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 
 	public void setPassword(String password) {
 		this.password = password;
@@ -154,5 +167,40 @@ public class User {
 	public void setUserGroup(String userGroup) {
 		this.userGroup = userGroup;
 	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public String getUsername() {
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+
 	
 }
