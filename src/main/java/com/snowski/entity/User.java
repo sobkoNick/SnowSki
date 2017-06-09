@@ -27,6 +27,9 @@ public class User implements UserDetails {
 	private int discount;
 	private String language;
 
+	private boolean enable;
+	private String uuid;
+
 
 
 	@Enumerated
@@ -199,8 +202,28 @@ public class User implements UserDetails {
 
 	@Override
 	public boolean isEnabled() {
-		return true;
+		return enable;
 	}
 
-	
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
+
 }

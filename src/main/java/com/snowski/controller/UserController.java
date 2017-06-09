@@ -1,6 +1,7 @@
 package com.snowski.controller;
 
 import com.snowski.entity.User;
+import com.snowski.service.MailSenderService;
 import com.snowski.service.UserService;
 import com.snowski.validator.userValidator.UserValidatorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,22 +9,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.UUID;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private MailSenderService mailSenderService;
 	@GetMapping("/signUp")
 	public String registration(Model model){
 
 		model.addAttribute("user", new User());
-
 		return "signUp";
 	}
 
 	@PostMapping("/signUp")
 	public String registration(@ModelAttribute User user, Model model) {
+
+		String uuid = UUID.randomUUID().toString();
+		user.setUuid(uuid);
+
 		try {
 			userService.save(user);
 		} catch (Exception e) {
@@ -50,6 +59,25 @@ public class UserController {
 			}
 			return "signUp";
 		}
+
+		String theme = "Thank you for registration!";
+		String mailBody = "Snow Ski Store welcomes you. Please follow this lonk to complete your registration: " +
+				"http://localhost:8080/confirm/" + uuid;
+
+		mailSenderService.sendMail(theme, mailBody, user.getEmail());
+
 		return "redirect:/signUp";
 	}
+
+
+	@GetMapping("/confirm/{uuid}")
+	public String confirm(@PathVariable String uuid) {
+		User user = userService.findByUuid(uuid);
+		user.setEnable(true);
+
+		userService.update(user);
+
+		return "redirect:/";
+	}
+
 }

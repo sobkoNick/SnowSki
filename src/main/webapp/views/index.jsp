@@ -72,7 +72,8 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 big-header" >
 					<div class="row">
-						<div class="col-xs-3 col-sm-3 col-md-2 col-md-offset-1 ski-header-img"></div>
+						<div class="col-xs-3 col-sm-3 col-md-2 col-md-offset-1 ski-header-img ">
+						</div>
 						<div class="col-xs-1 col-sm-1 col-md-1">
 							<div class="dropdown">
 								<button class="dropbtn">ЛИЖІ</button>
