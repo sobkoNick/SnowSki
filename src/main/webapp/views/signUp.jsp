@@ -179,8 +179,8 @@
             <form:form class="form-signin" action="/login" method="post" name="form">
                 <label for="username">Username</label>
                 <input class="form-styling" type="text" name="username" placeholder=""/>
-                <label for="password">Password</label>
-                <input class="form-styling" type="text" name="password" placeholder=""/>
+                <label for="password" >Password</label>
+                <input class="form-styling" type="password" name="password" placeholder=""/>
                 <%--<input type="checkbox" id="checkbox"/>--%>
                 <%--<label for="checkbox" ><span class="ui"></span>Keep me signed in</label>--%>
                 <div class="btn-animate">

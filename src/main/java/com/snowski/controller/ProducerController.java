@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.snowski.entity.Producer;
 import com.snowski.service.ProducerService;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class ProducerController {
@@ -30,9 +31,9 @@ public class ProducerController {
 //	}
 
 	@PostMapping("/producer") // using spring forms
-	public String producer(@ModelAttribute Producer producer, Model model){
+	public String producer(@ModelAttribute Producer producer, Model model, @RequestParam MultipartFile image){
 		try {
-			producerService.save(producer);
+			producerService.save(producer, image);
 		} catch (Exception e) {
 
 			if (e.getMessage().equals(ProducerValidatorMessages.NAME_FIELD_INCORRECT)) {

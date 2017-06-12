@@ -21,7 +21,11 @@ public class Producer {
 
 	@OneToMany(mappedBy = "producer")
 	List<Product> products = new ArrayList<Product>();
-	
+
+	private String pathToImage;
+
+
+
 	public Producer() {
 		// TODO Auto-generated constructor stub
 	}
@@ -31,6 +35,14 @@ public class Producer {
 		this.name = name;
 		this.description = description;
 		this.numberOfProducts = numberOfProducts;
+	}
+
+	public String getPathToImage() {
+		return pathToImage;
+	}
+
+	public void setPathToImage(String pathToImage) {
+		this.pathToImage = pathToImage;
 	}
 
 	public int getId() {

@@ -18,22 +18,28 @@
 		<%--<button>save producer</button>--%>
 		<%--</form>--%>
 
-	<form:form modelAttribute="producer" action="/producer" method="post">
+	<form:form modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"
+			   method="post" enctype="multipart/form-data">
 		<form:input path="name" required="required"/>
 		<span style="color: red">${nameException}</span><br>
 		<form:input path="description" required="required"/>
 		<span style="color: red">${descriptionException}</span><br>
 		<form:input path="numberOfProducts" required="required"/>
 		<span style="color: red">${numberOfProductsException}</span><br>
-		<button>Save Producer</button>
 
+		<div class="form-group">
+			<input name="image" type="file" class="form-control">
+		</div>
+
+		<button>Save Producer</button>
 	</form:form>
 
 	</div>
 	<div>
 	<ol>
 		<c:forEach var="producer" items="${producers}">
-		<li>${producer.name} ${producer.description} ${producer.numberOfProducts} 
+		<li>${producer.name} ${producer.description} ${producer.numberOfProducts}
+			<img src="${producer.pathToImage}" alt="" width="200" height="200">
 		<a href="/deleteProducer/${producer.id}">delete</a> <br></li>
 		</c:forEach>
 	</div>

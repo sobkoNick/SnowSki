@@ -1,5 +1,6 @@
 package com.snowski.serviceImpl;
 
+import java.io.File;
 import java.util.List;
 
 import com.snowski.dao.ProductDao;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import com.snowski.dao.ProducerDao;
 import com.snowski.entity.Producer;
 import com.snowski.service.ProducerService;
+import org.springframework.web.multipart.MultipartFile;
 
 
 @Service
@@ -25,9 +27,25 @@ public class ProducerServiceImpl implements ProducerService{
 	@Qualifier("producerValidator")
 	private Validator validator;
 	
-	public void save(Producer producer) throws Exception {
-		// TODO Auto-generated method stub
+	public void save(Producer producer, MultipartFile image) throws Exception {
+
 		validator.validate(producer);
+		producerDao.saveAndFlush(producer);
+
+		String path = System.getProperty("catalina.home") + "/resources/"
+				+ producer.getName() + "/" + image.getOriginalFilename();
+
+		producer.setPathToImage("resources/" + producer.getName() + "/" + image.getOriginalFilename());
+
+		File filePath = new File(path);
+
+		try {
+			filePath.mkdirs();
+			image.transferTo(filePath);
+		} catch (Exception e) {
+			System.out.println("Error with file");
+		}
+
 		producerDao.save(producer);
 	}
 

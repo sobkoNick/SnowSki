@@ -30,7 +30,7 @@ public class User implements UserDetails {
 	private boolean enable;
 	private String uuid;
 
-
+	private String pathToImage;
 
 	@Enumerated
 
@@ -223,6 +223,14 @@ public class User implements UserDetails {
 
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+
+	public String getPathToImage() {
+		return pathToImage;
+	}
+
+	public void setPathToImage(String pathToImage) {
+		this.pathToImage = pathToImage;
 	}
 
 
