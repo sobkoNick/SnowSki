@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.snowski.editors.ProducerEditor;
 import com.snowski.entity.Producer;
+import com.snowski.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,8 @@ public class ProductController {
 
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private CategoryService categoryService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
@@ -34,11 +37,10 @@ public class ProductController {
 
 	@GetMapping("/product")
 	public String product(Model model) {
-
 		model.addAttribute("products", productService.productWithOrders());
 		model.addAttribute("producers", producerService.findAll());
 		model.addAttribute("orders", orderService.findAll());
-
+		model.addAttribute("categories", categoryService.findAll());
 		model.addAttribute("product", new Product());
 		return "views-admin-product";
 	}
@@ -57,16 +59,14 @@ public class ProductController {
 
 	@PostMapping("/product")
 	public String product(@ModelAttribute Product product) {
-
 		productService.save(product);
-
-		return "redirect:/views-admin-product";
+		return "redirect:/product";
 	}
 
 	@GetMapping("/deleteProduct/{id}")
 	public String delete(@PathVariable int id) {
 		productService.delete(id);
-		return "redirect:/views-admin-product";
+		return "redirect:/product";
 	}
 
 }

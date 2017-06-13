@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.security.Principal;
 import java.util.UUID;
 
 @Controller
@@ -78,6 +79,13 @@ public class UserController {
 		userService.update(user);
 
 		return "redirect:/";
+	}
+
+	@GetMapping("/profile")
+	public String profile(Principal principal, Model model){
+
+		//model.addAttribute("userBasket", userService.findUserWithOrders(Integer.parseInt(principal.getName())));
+		return "views-user-profile";
 	}
 
 }

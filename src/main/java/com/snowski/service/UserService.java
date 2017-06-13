@@ -16,4 +16,5 @@ public interface UserService {
 	void update(User user);
 
 	User findByUuid(String uuid);
+	User findUserWithOrders(int id);
 }

@@ -8,17 +8,46 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		<form action="/category" method="post">
-		<input name="name" type="text" placeholder="name"><br>
-		<input name="description" type="text" placeholder="description"><br>
-		<input name="availability" type="text" placeholder="availability"><br>
-		<input name="numberOfProducts" type="text" placeholder="numberOfProducts" required="required"><br>
-		<input name="numberInHierarchy" type="text" placeholder="numberInHierarchy" required="required"><br>
-		
-		<button>save category</button>
-		</form>
-	</div>
+	<%--<div>--%>
+		<%--<form action="/category" method="post">--%>
+		<%--<input name="name" type="text" placeholder="name"><br>--%>
+		<%--<input name="description" type="text" placeholder="description"><br>--%>
+		<%--<input name="availability" type="text" placeholder="availability"><br>--%>
+		<%--<input name="numberOfProducts" type="text" placeholder="numberOfProducts" required="required"><br>--%>
+		<%--<input name="numberInHierarchy" type="text" placeholder="numberInHierarchy" required="required"><br>--%>
+		<%----%>
+		<%--<button>save category</button>--%>
+			<%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
+		<%--</form>--%>
+	<%--</div>--%>
+
+	<form style="width: 50%; padding-left: 20px;" action="/category" method="post">
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" class="form-control" placeholder="Name" name="name" required="required">
+		</div>
+
+		<div class="form-group">
+			<label>Description</label>
+			<input type="text" class="form-control" placeholder="description" name="description" required="required">
+		</div>
+		<div class="form-group">
+			<label>Availability</label>
+			<input type="text" class="form-control" placeholder="Availability" name="availability" required="required">
+		</div>
+		<div class="form-group">
+			<label>Number Of Products</label>
+			<input type="text" class="form-control" placeholder="NumberOfProducts" name="numberOfProducts" required="required">
+		</div>
+		<div class="form-group">
+			<label>Number In Hierarchy</label>
+			<input type="text" class="form-control" placeholder="NumberInHierarchy" name="numberInHierarchy" required="required">
+		</div>
+		<button type="submit" class="btn btn-default">Add</button>
+		<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>
+	</form>
+
+
 	<div>
 	<ol>
 		<c:forEach var="category" items="${categories}">

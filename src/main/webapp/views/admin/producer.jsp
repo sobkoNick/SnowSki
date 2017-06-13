@@ -18,21 +18,51 @@
 		<%--<button>save producer</button>--%>
 		<%--</form>--%>
 
-	<form:form modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"
-			   method="post" enctype="multipart/form-data">
-		<form:input path="name" required="required"/>
-		<span style="color: red">${nameException}</span><br>
-		<form:input path="description" required="required"/>
-		<span style="color: red">${descriptionException}</span><br>
-		<form:input path="numberOfProducts" required="required"/>
-		<span style="color: red">${numberOfProductsException}</span><br>
+			<form:form cssStyle="width: 50%; padding-left: 20px;" modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"
+					   method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="nameOfProduct">Name</label>
+					<form:input path="name" type="text" class="form-control"
+						   id="nameOfProduct" placeholder="Name" required="required"/>
+					<span style="color: red">${nameException}</span>
+				</div>
+				<div class="form-group">
+					<label for="productDesc">Description</label>
+					<form:input path="description" type="text" class="form-control" id="productDesc"
+						   placeholder="Description" required="required"/>
+					<span style="color: red">${descriptionException}</span>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Number of Products</label>
+					<form:input path="numberOfProducts" type="text" class="form-control" id="exampleInputPassword1"
+						   placeholder="Count" required="required"/>
+					<span style="color: red">${numberOfProductsException}</span>
+				</div>
+				<div class="form-group">
+					<label>File input</label>
+					<input name="image" type="file" class="form-control">
+					<p class="help-block">X*X logos</p>
+				</div>
+				<button type="submit" class="btn btn-default">Add</button>
+				<%--<button>Save Producer</button>--%>
+			</form:form>
 
-		<div class="form-group">
-			<input name="image" type="file" class="form-control">
-		</div>
 
-		<button>Save Producer</button>
-	</form:form>
+	<%--<form:form modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"--%>
+			   <%--method="post" enctype="multipart/form-data">--%>
+		<%--<form:input path="name" required="required"/>--%>
+		<%--<span style="color: red">${nameException}</span><br>--%>
+		<%--<form:input path="description" required="required"/>--%>
+		<%--<span style="color: red">${descriptionException}</span><br>--%>
+		<%--<form:input path="numberOfProducts" required="required"/>--%>
+		<%--<span style="color: red">${numberOfProductsException}</span><br>--%>
+
+		<%--<div class="form-group">--%>
+			<%--<input name="image" type="file" class="form-control">--%>
+		<%--</div>--%>
+
+		<%--<button>Save Producer</button>--%>
+	<%--</form:form>--%>
 
 	</div>
 	<div>

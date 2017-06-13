@@ -48,12 +48,12 @@ public class ProducerController {
 		}
 
 
-		return "redirect:/views-admin-producer";
+		return "redirect:/producer";
 	}
 	
 	@GetMapping("/deleteProducer/{id}")
 	public String delete(@PathVariable int id) {
 		producerService.delete(id);
-		return "redirect:/views-admin-producer";
+		return "redirect:/producer";
 	}
 }

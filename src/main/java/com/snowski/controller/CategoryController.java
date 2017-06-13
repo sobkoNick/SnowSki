@@ -42,13 +42,13 @@ public class CategoryController {
 		
 		categoryService.save(new Category(name, description, availability, numberOfProducts, numberInHierarchy));
 		
-		return "redirect:/views-admin-category";
+		return "redirect:/category";
 	}
 	
 	@GetMapping("/deleteCategory/{id}")
 	public String delete(@PathVariable int id) {
 		categoryService.delete(id);
-		return "redirect:/views-admin-category";
+		return "redirect:/category";
 	}
 	
 	

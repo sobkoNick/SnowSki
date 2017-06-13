@@ -18,6 +18,8 @@
 
         </div>
     </sec:authorize>
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 small-header">
@@ -40,10 +42,11 @@
                             <a href="/signUp">РЕЄСТРАЦІЯ</a>
                         </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
-                            <a href="#">
+                            <a href="/profile">
                                 <sec:authentication property="name"/>
                             </a>
                             <form:form action="/logout" method="post">
+
                                 <button>Log Out</button>
                             </form:form>
                         </sec:authorize>

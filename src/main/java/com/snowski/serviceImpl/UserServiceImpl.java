@@ -62,4 +62,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	public User findByUuid(String uuid) {
 		return userDao.findByUuid(uuid);
 	}
+
+	@Override
+	public User findUserWithOrders(int id) {
+		return userDao.findUserWithOrders(id);
+	}
 }

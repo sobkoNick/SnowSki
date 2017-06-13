@@ -46,7 +46,7 @@ public class OrderController {
 	@GetMapping("/deleteOrder/{id}")
 	public String delete(@PathVariable int id) {
 		orderService.delete(id);
-		return "redirect:/views-user-order";
+		return "redirect:/order";
 	}
 	@GetMapping ("/updateOrder/{id}")
 	public String updateOrder(@PathVariable int id, Model model){
@@ -59,7 +59,7 @@ public class OrderController {
 							  @PathVariable int product_id) {
 		orderService.updateOrder(order_id, product_id);
 
-		return "redirect:/views-user-order";
+		return "redirect:/order";
 	}
 
 	@PostMapping("/order")
@@ -68,7 +68,7 @@ public class OrderController {
 			@RequestParam String orderStatus, @RequestParam String comment, @RequestParam List<Integer> productsIds) {
 
 		orderService.save(new Order(name, numberOfProducts, orderPrice, deliveryMethod, payMethod, orderStatus, comment), productsIds);
-				return "redirect:/views-user-order";
+				return "redirect:/order";
 
 	}
 }
