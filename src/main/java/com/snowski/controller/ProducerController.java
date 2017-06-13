@@ -19,7 +19,7 @@ public class ProducerController {
 	public String producer(Model model){
 		model.addAttribute("producers", producerService.findAll());
 		model.addAttribute("producer", new Producer());
-		return "producer";
+		return "views-admin-producer";
 	}
 	
 //	@PostMapping("/producer")
@@ -44,16 +44,16 @@ public class ProducerController {
 				model.addAttribute("numberOfProductsException", e.getMessage());
 			}
 
-			return "producer";
+			return "views-admin-producer";
 		}
 
 
-		return "redirect:/producer";
+		return "redirect:/views-admin-producer";
 	}
 	
 	@GetMapping("/deleteProducer/{id}")
 	public String delete(@PathVariable int id) {
 		producerService.delete(id);
-		return "redirect:/producer";
+		return "redirect:/views-admin-producer";
 	}
 }

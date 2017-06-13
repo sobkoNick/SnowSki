@@ -33,7 +33,7 @@ public class CategoryController {
 	public ModelAndView category(){
 		Map<String, List<Category>> map = new HashMap<String, List<Category>>();
 		map.put("categories", categoryService.findAll());
-		return new ModelAndView("category", map);
+		return new ModelAndView("views-admin-category", map);
 	}
 	
 	@PostMapping("/category")
@@ -42,13 +42,13 @@ public class CategoryController {
 		
 		categoryService.save(new Category(name, description, availability, numberOfProducts, numberInHierarchy));
 		
-		return "redirect:/category";
+		return "redirect:/views-admin-category";
 	}
 	
 	@GetMapping("/deleteCategory/{id}")
 	public String delete(@PathVariable int id) {
 		categoryService.delete(id);
-		return "redirect:/category";
+		return "redirect:/views-admin-category";
 	}
 	
 	

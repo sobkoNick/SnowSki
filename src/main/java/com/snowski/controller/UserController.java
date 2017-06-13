@@ -24,7 +24,7 @@ public class UserController {
 	public String registration(Model model){
 
 		model.addAttribute("user", new User());
-		return "signUp";
+		return "views-user-signUp";
 	}
 
 	@PostMapping("/signUp")
@@ -57,7 +57,7 @@ public class UserController {
 			if(e.getMessage().equals(UserValidatorMessages.TELEPHONE_FIELD_INCORRECT)){
 				model.addAttribute("telephoneException", e.getMessage());
 			}
-			return "signUp";
+			return "views-user-signUp";
 		}
 
 		String theme = "Thank you for registration!";
@@ -66,7 +66,7 @@ public class UserController {
 
 		mailSenderService.sendMail(theme, mailBody, user.getEmail());
 
-		return "redirect:/signUp";
+		return "redirect:/";
 	}
 
 

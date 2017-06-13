@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class IndexController {
 	@GetMapping("/")
 	public String index() {
-		return "index";
+		return "views-main-index";
 	}
 
 	@PostMapping("/")
 	public String indexAfterLogin() {
-		return "index";
+		return "views-main-index";
 	}
 }

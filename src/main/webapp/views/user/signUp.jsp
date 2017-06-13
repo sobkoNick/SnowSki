@@ -8,141 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Log In / Register</title>
     <link rel="stylesheet" href="/css/signUp.css" type="text/css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 small-header">
-            <div class="row">
-                <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 lang">
-                    <div class="row">
-                        <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/ukr.png?raw=true"></a>
-                        <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/eng.png?raw=true"></a>
-                        <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/Russian-flag.png?raw=true"></a>
-                    </div>
-                </div>
-                <div class="col-xs-0 hidden-xs col-sm-2 col-md-2 lang">
-                    <a href="#">ОПЛАТА І ДОСТАВКА</a>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 text-header">
-                    БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
-                </div>
-                <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
-                    <sec:authorize access="!isAuthenticated()">
-                        <a href="/signUp">РЕЄСТРАЦІЯ</a>
-                    </sec:authorize>
-                    <sec:authorize access="isAuthenticated()">
-                        <a href="#">
-                            <sec:authentication property="name"/>
-                        </a>
-                        <form:form action="/logout" method="post">
-                            <button>Log Out</button>
-                        </form:form>
-                    </sec:authorize>
-                </div>
-                <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
-                    <sec:authorize access="!isAuthenticated()">
-                        <a href="#">ВХІД</a>
-                    </sec:authorize>
-                </div>
-                <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">КОРЗИНА</div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 big-header">
-            <div class="row">
-                <div class="col-xs-3 col-sm-3 col-md-2 col-md-offset-1 ski-header-img"></div>
-                <div class="col-xs-1 col-sm-1 col-md-1">
-                    <div class="dropdown">
-                        <button class="dropbtn">ЛИЖІ</button>
-                        <div class="dropdown-content">
-                            <a href="#">FISHER</a>
-                            <a href="#">SOLOMON</a>
-                            <a href="#">ROSSIGNOL</a>
-                            <a href="#">HEAD</a>
-                            <a href="#">Унісекс</a>
-                            <a href="#">Чоловічі</a>
-                            <a href="#">Жіночі</a>
-                            <a href="#">Дитячі</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-1 col-sm-1 col-md-1">
-                    <div class="dropdown">
-                        <button class="dropbtn">СНОУБОРД</button>
-                        <div class="dropdown-content">
-                            <a href="#">CAPITA</a>
-                            <a href="#">DC</a>
-                            <a href="#">Never Summer</a>
-                            <a href="#">SMOKIN</a>
-                            <a href="#">Унісекс</a>
-                            <a href="#">Чоловічий</a>
-                            <a href="#">Жіночий</a>
-                            <a href="#">Дитячий</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-1 col-sm-1 col-md-1">
-                    <div class="dropdown">
-                        <button class="dropbtn">ОДЯГ</button>
-                        <div class="dropdown-content">
-                            <a href="#">Унісекс</a>
-                            <a href="#">Чоловічий</a>
-                            <a href="#">Жіночий</a>
-                            <a href="#">Для дітей</a>
-                            <a href="#">PARALLEL</a>
-                            <a href="#">THE NORTH FACE</a>
-                            <a href="#">COLUMBIA</a>
-                            <a href="#">SPYDER LEADER</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-1 col-sm-1 col-md-1">
-                    <div class="dropdown">
-                        <button class="dropbtn">АКСЕСУАРИ</button>
-                        <div class="dropdown-content">
-                            <a href="#">Маски</a>
-                            <a href="#">Шоломи</a>
-                            <a href="#">Балаклави</a>
-                            <a href="#">Рукавиці</a>
-                            <a href="#">Відео камери</a>
-                            <a href="#">ROSSIGNOL</a>
-                            <a href="#">HEAD</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden-xs col-sm-1 col-md-1">
-                    <div class="dropdown">
-                        <button class="dropbtn">БЛОГ</button>
-
-                    </div>
-                </div>
-
-                <div class="hidden-xs col-sm-3 col-md-3">
-                    <form action="" class="search-form">
-                        <div class="form-group has-feedback">
-                            <label for="search" class="sr-only">Search</label>
-                            <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 <%--<form:form modelAttribute="user" method="post">--%>
     <%--<form:input path="login" placeholder="login"/>--%>
     <%--<span style="color: red">${loginException}</span><br>--%>
@@ -211,7 +78,7 @@
                 <form:input class="form-styling" path="email" placeholder="@Email" required="required"/>
                 <span style="color: red">${emailException}</span><br>
                 <%--<label for="password">Password</label>--%>
-                <form:input class="form-styling" path="password" placeholder="Password" required="required"/>
+                <form:input class="form-styling" type="password" path="password" placeholder="Password" required="required"/>
                 <span style="color: red">${passwordException}</span><br>
                 <%--<label for="firstName">First name</label>--%>
                 <form:input class="form-styling" path="firstName" placeholder="FirstName" required="required"/>
@@ -270,7 +137,6 @@
 </div>
 
 <script src="/js/signUp.js">
-
 
 </script>
 </body>

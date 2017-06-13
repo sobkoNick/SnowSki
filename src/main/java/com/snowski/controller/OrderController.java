@@ -34,7 +34,7 @@ public class OrderController {
 		model.addAttribute("products", productService.findAll());
 
 		model.addAttribute("order", new Order());
-		return "order";
+		return "views-user-order";
 	}
 
 //	@PostMapping("/order")
@@ -46,12 +46,12 @@ public class OrderController {
 	@GetMapping("/deleteOrder/{id}")
 	public String delete(@PathVariable int id) {
 		orderService.delete(id);
-		return "redirect:/order";
+		return "redirect:/views-user-order";
 	}
 	@GetMapping ("/updateOrder/{id}")
 	public String updateOrder(@PathVariable int id, Model model){
 		model.addAttribute("updateOrder", orderService.orderWithProducts(id));
-		return  "updateOrder";
+		return  "views-user-updateOrder";
 	}
 
 	@GetMapping("/updateOrder/{order_id}/{product_id}")
@@ -59,7 +59,7 @@ public class OrderController {
 							  @PathVariable int product_id) {
 		orderService.updateOrder(order_id, product_id);
 
-		return "redirect:/order";
+		return "redirect:/views-user-order";
 	}
 
 	@PostMapping("/order")
@@ -68,7 +68,7 @@ public class OrderController {
 			@RequestParam String orderStatus, @RequestParam String comment, @RequestParam List<Integer> productsIds) {
 
 		orderService.save(new Order(name, numberOfProducts, orderPrice, deliveryMethod, payMethod, orderStatus, comment), productsIds);
-				return "redirect:/order";
+				return "redirect:/views-user-order";
 
 	}
 }

@@ -40,7 +40,7 @@ public class ProductController {
 		model.addAttribute("orders", orderService.findAll());
 
 		model.addAttribute("product", new Product());
-		return "product";
+		return "views-admin-product";
 	}
 
 //	@PostMapping("/product")
@@ -60,13 +60,13 @@ public class ProductController {
 
 		productService.save(product);
 
-		return "redirect:/product";
+		return "redirect:/views-admin-product";
 	}
 
 	@GetMapping("/deleteProduct/{id}")
 	public String delete(@PathVariable int id) {
 		productService.delete(id);
-		return "redirect:/product";
+		return "redirect:/views-admin-product";
 	}
 
 }
