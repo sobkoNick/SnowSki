@@ -9,16 +9,16 @@
 <title>Producer</title>
 </head>
 <body>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-1">
+			<label style="text-align: center;
+			font-size: 20px; color: chocolate;
+			padding-top: 20px;">ADD PRODUCER</label>
+		</div>
+	</div>
 	<div>
-		<%--<form action="/producer" method="post">--%>
-		<%--<input name="name" type="text" placeholder="name"><br>--%>
-		<%--<input name="description" type="text" placeholder="description"><br>--%>
-		<%--<input name="numberOfProducts" type="text" placeholder="numberOfProducts"><br>--%>
-		<%----%>
-		<%--<button>save producer</button>--%>
-		<%--</form>--%>
-
-			<form:form cssStyle="width: 50%; padding-left: 20px;" modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"
+			<form:form cssStyle="width: 50%; padding-left: 20px;" modelAttribute="producer"
+					   action="/producer?${_csrf.parameterName}=${_csrf.token}"
 					   method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="nameOfProduct">Name</label>
@@ -41,9 +41,9 @@
 				<div class="form-group">
 					<label>File input</label>
 					<input name="image" type="file" class="form-control">
-					<p class="help-block">X*X logos</p>
+					<p class="help-block">Choose logo</p>
 				</div>
-				<button type="submit" class="btn btn-default">Add</button>
+				<button type="submit" class="btn btn-success">Add</button>
 				<%--<button>Save Producer</button>--%>
 			</form:form>
 
@@ -63,16 +63,27 @@
 
 		<%--<button>Save Producer</button>--%>
 	<%--</form:form>--%>
-
 	</div>
-	<div>
-	<ol>
+
+	<div class="row">
 		<c:forEach var="producer" items="${producers}">
-		<li>${producer.name} ${producer.description} ${producer.numberOfProducts}
-			<img src="${producer.pathToImage}" alt="" width="200" height="200">
-		<a href="/deleteProducer/${producer.id}">delete</a> <br></li>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="${producer.pathToImage}" alt="" width="200" height="200">
+					<div class="caption">
+						<h3>${producer.name}</h3>
+						<p>${producer.description}</p>
+						<p>
+							<a href="/deleteProducer/${producer.id}" class="btn btn-danger" role="button">Delete</a>
+							<a href="/updateProducer/${producer.id}" class="btn btn-default" role="button">Update</a>
+						</p>
+					</div>
+				</div>
+			</div>
 		</c:forEach>
 	</div>
+
+
 	</ol>
 </body>
 </html>

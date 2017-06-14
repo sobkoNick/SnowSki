@@ -7,20 +7,26 @@
 </head>
 <body>
 <header role="banner">
-    <sec:authorize access="hasRole('ROLE_ADMIN')">
-        <h1 style="text-align: center;">Main</h1>
-        <div>
-            <a href="/category">category</a><br>
-            <a href="/producer">producer</a><br>
-            <a href="/product">product</a><br>
-            <a href="/signUp">signUp</a><br>
-            <a href="/order">order</a>
+    <div class="container-fluid">
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <div class="row admin-nav">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1 class="admin-text" style="text-align: center;">Admin options</h1>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-4">
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="/category">Category</a></li>
+                    <li role="presentation"><a href="/producer">Producer</a></li>
+                    <li role="presentation"><a href="/product">Product</a></li>
+                    <li role="presentation"><a href="/signUp">SignUp</a></li>
+                    <li role="presentation"><a href="/order">Order</a></li>
+                </ul>
+            </div>
 
         </div>
-    </sec:authorize>
+        </sec:authorize>
 
-
-    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 small-header">
                 <div class="row">

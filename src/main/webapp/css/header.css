@@ -1,3 +1,11 @@
+.admin-text {
+    color: #0F4FE6;
+    font-size: 25px;
+    font-family: "Times New Roman";
+}
+.admin-nav {
+    background-color:gainsboro;
+}
 .small-header{
     height: 40px;
     background-color: black;

@@ -36,10 +36,10 @@
 
 <div class="container">
     <div class="frame">
-        <div class="nav">
+        <div class="navSignUp">
             <ul class=links">
-            <li class="signin-active"><a class="btn">Sign in</a></li>
-            <li class="signup-inactive"><a class="btn">Sign up </a></li>
+            <li.signUp class="signin-active"><a class="btn">Sign in</a></li.signUp>
+            <li.signUp class="signup-inactive"><a class="btn">Sign up </a></li.signUp>
             </ul>
         </div>
         <div ng-app ng-init="checked = false">
