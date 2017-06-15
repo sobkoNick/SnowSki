@@ -9,14 +9,16 @@
 <title>Producer</title>
 </head>
 <body>
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-1">
-			<label style="text-align: center;
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12" align="center">
+				<label style="text-align: center;
 			font-size: 20px; color: chocolate;
 			padding-top: 20px;">ADD PRODUCER</label>
+			</div>
 		</div>
-	</div>
-	<div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12" align="center">
 			<form:form cssStyle="width: 50%; padding-left: 20px;" modelAttribute="producer"
 					   action="/producer?${_csrf.parameterName}=${_csrf.token}"
 					   method="post" enctype="multipart/form-data">
@@ -43,11 +45,11 @@
 					<input name="image" type="file" class="form-control">
 					<p class="help-block">Choose logo</p>
 				</div>
-				<button type="submit" class="btn btn-success">Add</button>
+				<button type="submit" class="btn btn-success"> Add Producer </button>
 				<%--<button>Save Producer</button>--%>
 			</form:form>
 
-
+		</div>
 	<%--<form:form modelAttribute="producer" action="/producer?${_csrf.parameterName}=${_csrf.token}"--%>
 			   <%--method="post" enctype="multipart/form-data">--%>
 		<%--<form:input path="name" required="required"/>--%>
@@ -66,7 +68,7 @@
 	</div>
 
 	<div class="row">
-		<c:forEach var="producer" items="${producers}">
+		<c:forEach var="producer" items="${producers.content}">
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
 					<img src="${producer.pathToImage}" alt="" width="200" height="200">
@@ -83,7 +85,35 @@
 		</c:forEach>
 	</div>
 
+	<%--<a href="/ingredient?page=${ingredients.number}&size=${ingredients.size}">previous</a>--%>
+	<%--<a href="/ingredient?page=${ingredients.number+ 2}&size=${ingredients.size}">next</a>--%>
 
-	</ol>
+	<div style="display: flex; justify-content: center;text-align: center">
+
+		<div class="col-md-12 col-xs-12">
+			<div class="row">
+				<div class="col-md-2 col-xs-6">
+					<div class="dropdown">
+						<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort <span
+								class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<custom:sort innerHtml="Name asc" paramValue="ingredientName"/>
+							<custom:sort innerHtml="Name desc" paramValue="ingredientName,desc"/>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-8 col-xs-12 text-center">
+					<custom:pageable page="${producers}" cell="<li></li>" container="<ul class='pagination'></ul>"/>
+				</div>
+				<div class="col-md-2 col-xs-6">
+					<custom:size posibleSizes="1,2,5,10" size="${producers.size}"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
 </body>
 </html>

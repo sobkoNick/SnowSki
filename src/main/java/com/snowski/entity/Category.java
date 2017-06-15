@@ -21,7 +21,11 @@ public class Category {
 	private String availability;
 	private int numberOfProducts;
 	private int numberInHierarchy;
-	
+
+	private String pathToImage;
+
+
+
 	@OneToMany(mappedBy="categoryOfProduct")
 	List<Product> products = new ArrayList<Product>();
 	
@@ -61,6 +65,14 @@ public class Category {
 
 	public int getNumberInHierarchy() {
 		return numberInHierarchy;
+	}
+
+	public String getPathToImage() {
+		return pathToImage;
+	}
+
+	public void setPathToImage(String pathToImage) {
+		this.pathToImage = pathToImage;
 	}
 
 	public void setId(int id) {

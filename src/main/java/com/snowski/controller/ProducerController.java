@@ -2,6 +2,8 @@ package com.snowski.controller;
 
 import com.snowski.validator.producerValidator.ProducerValidatorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,19 +18,12 @@ public class ProducerController {
 	private ProducerService producerService;
 	
 	@GetMapping("/producer")
-	public String producer(Model model){
-		model.addAttribute("producers", producerService.findAll());
+	public String producer(Model model, @PageableDefault Pageable pageable){
+		model.addAttribute("producers", producerService.findAllPages(pageable));
 		model.addAttribute("producer", new Producer());
 		return "views-admin-producer";
 	}
-	
-//	@PostMapping("/producer")
-//	public String producer(@RequestParam String name, @RequestParam String description,
-//			@RequestParam Integer numberOfProducts){
-//		producerService.save(new Producer(name, description, numberOfProducts));
-//
-//		return "redirect:/producer";
-//	}
+
 
 	@PostMapping("/producer") // using spring forms
 	public String producer(@ModelAttribute Producer producer, Model model, @RequestParam MultipartFile image){
@@ -46,8 +41,6 @@ public class ProducerController {
 
 			return "views-admin-producer";
 		}
-
-
 		return "redirect:/producer";
 	}
 	

@@ -8,6 +8,70 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12" align="center">
+			<label style="text-align: center;
+			font-size: 20px; color: aqua;
+			padding-top: 20px;">ADD Category</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-12" align="center">
+			<form style="width: 50%; padding-left: 20px;"
+				  action="/category?${_csrf.parameterName}=${_csrf.token}"
+				  method="post" enctype="multipart/form-data">
+				<div class="form-group">
+					<label>Name</label>
+					<input type="text" class="form-control" placeholder="Name" name="name" required="required">
+				</div>
+
+				<div class="form-group">
+					<label>Description</label>
+					<input type="text" class="form-control" placeholder="description" name="description" required="required">
+				</div>
+				<div class="form-group">
+					<label>Availability</label>
+					<input type="text" class="form-control" placeholder="Availability" name="availability" required="required">
+				</div>
+				<div class="form-group">
+					<label>Number Of Products</label>
+					<input type="text" class="form-control" placeholder="NumberOfProducts" name="numberOfProducts" required="required">
+				</div>
+				<div class="form-group">
+					<label>Number In Hierarchy</label>
+					<input type="text" class="form-control" placeholder="NumberInHierarchy" name="numberInHierarchy" required="required">
+				</div>
+				<div class="form-group">
+					<label>File input</label>
+					<input name="image" type="file" class="form-control">
+					<p class="help-block">Choose logo</p>
+				</div>
+				<button type="submit" class="btn btn-success"> Add Category </button>
+				<%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<c:forEach var="category" items="${categories}">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="${category.pathToImage}" alt="" width="200" height="200">
+					<div class="caption">
+						<h3>${category.name}</h3>
+						<p>${category.description}</p>
+						<p>
+							<a href="/deleteCategory/${category.id}" class="btn btn-danger" role="button">Delete</a>
+							<a href="/updateCategory/${category.id}" class="btn btn-default" role="button">Update</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
+
+</div>
 	<%--<div>--%>
 		<%--<form action="/category" method="post">--%>
 		<%--<input name="name" type="text" placeholder="name"><br>--%>
@@ -21,42 +85,5 @@
 		<%--</form>--%>
 	<%--</div>--%>
 
-	<form style="width: 50%; padding-left: 20px;" action="/category" method="post">
-		<div class="form-group">
-			<label>Name</label>
-			<input type="text" class="form-control" placeholder="Name" name="name" required="required">
-		</div>
-
-		<div class="form-group">
-			<label>Description</label>
-			<input type="text" class="form-control" placeholder="description" name="description" required="required">
-		</div>
-		<div class="form-group">
-			<label>Availability</label>
-			<input type="text" class="form-control" placeholder="Availability" name="availability" required="required">
-		</div>
-		<div class="form-group">
-			<label>Number Of Products</label>
-			<input type="text" class="form-control" placeholder="NumberOfProducts" name="numberOfProducts" required="required">
-		</div>
-		<div class="form-group">
-			<label>Number In Hierarchy</label>
-			<input type="text" class="form-control" placeholder="NumberInHierarchy" name="numberInHierarchy" required="required">
-		</div>
-		<button type="submit" class="btn btn-default">Add</button>
-		<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>
-	</form>
-
-
-	<div>
-	<ol>
-		<c:forEach var="category" items="${categories}">
-		<li>${category.name} ${category.description} ${category.availability} ${category.numberOfProducts} 
-		${category.numberInHierarchy}<a href="/deleteCategory/${category.id}">delete</a> <br></li>
-			
-		</c:forEach>
-	
-	</div>
-	</ol>
 </body>
 </html>

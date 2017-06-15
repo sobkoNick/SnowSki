@@ -8,6 +8,8 @@ import com.snowski.entity.Product;
 import com.snowski.validator.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.snowski.dao.ProducerDao;
@@ -72,5 +74,10 @@ public class ProducerServiceImpl implements ProducerService{
 	public void update(Producer producer) {
 		// TODO Auto-generated method stub
 		producerDao.save(producer);
+	}
+
+	@Override
+	public Page<Producer> findAllPages(Pageable pageable) {
+		return producerDao.findAll(pageable);
 	}
 }

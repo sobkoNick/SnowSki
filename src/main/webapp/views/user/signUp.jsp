@@ -44,10 +44,11 @@
         </div>
         <div ng-app ng-init="checked = false">
             <form:form class="form-signin" action="/login" method="post" name="form">
-                <label for="username">Username</label>
-                <input class="form-styling" type="text" name="username" placeholder=""/>
+                <span style="color: red">${exception}</span><br>
+                <label for="username">Username Or Email</label>
+                <input class="form-styling" type="text" name="username" placeholder="" required="required"/>
                 <label for="password" >Password</label>
-                <input class="form-styling" type="password" name="password" placeholder=""/>
+                <input class="form-styling" type="password" name="password" placeholder="" required="required"/>
                 <%--<input type="checkbox" id="checkbox"/>--%>
                 <%--<label for="checkbox" ><span class="ui"></span>Keep me signed in</label>--%>
                 <div class="btn-animate">

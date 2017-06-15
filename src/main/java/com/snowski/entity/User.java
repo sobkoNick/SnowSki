@@ -48,6 +48,11 @@ public class User implements UserDetails {
 		this.name = name;
 	}
 
+	public User(String name, String password) {
+		this.name = name;
+		this.password = password;
+	}
+
 	public User(String name, String email, String password, String firstName, String lastName, String userGroup,
 				String telephone, String status, int discount, String language) {
 		super();

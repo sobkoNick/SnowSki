@@ -71,4 +71,9 @@ public class OrderController {
 				return "redirect:/order";
 
 	}
+	@PostMapping("/updateOrder/{order_id}/{product_id}")
+	private String updateOrder(@ModelAttribute Order order){
+		orderService.save(order);
+		return "redirect:/order";
+	}
 }

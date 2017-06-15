@@ -14,7 +14,7 @@
                 <h1 class="admin-text" style="text-align: center;">Admin options</h1>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-md-offset-4">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-4">
                 <ul class="nav nav-pills">
                     <li role="presentation"><a href="/category">Category</a></li>
                     <li role="presentation"><a href="/producer">Producer</a></li>
@@ -52,7 +52,6 @@
                                 <sec:authentication property="name"/>
                             </a>
                             <form:form action="/logout" method="post">
-
                                 <button>Log Out</button>
                             </form:form>
                         </sec:authorize>

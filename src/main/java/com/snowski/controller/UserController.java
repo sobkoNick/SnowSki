@@ -3,14 +3,14 @@ package com.snowski.controller;
 import com.snowski.entity.User;
 import com.snowski.service.MailSenderService;
 import com.snowski.service.UserService;
+import com.snowski.validator.Validator;
+import com.snowski.validator.userLoginValidation.UserLoginValidationMessages;
 import com.snowski.validator.userValidator.UserValidatorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.UUID;
@@ -21,6 +21,10 @@ public class UserController {
 	private UserService userService;
 	@Autowired
 	private MailSenderService mailSenderService;
+	@Autowired
+	@Qualifier("userLoginValidator")
+	private Validator validator;
+
 	@GetMapping("/signUp")
 	public String registration(Model model){
 
@@ -86,6 +90,23 @@ public class UserController {
 
 		//model.addAttribute("userBasket", userService.findUserWithOrders(Integer.parseInt(principal.getName())));
 		return "views-user-profile";
+	}
+	@PostMapping("/failureLogin")
+	public String failureLogin(Model model, @RequestParam String username,
+							   @RequestParam String password){
+
+		try {
+			validator.validate(new User(username, password));
+		} catch (Exception e) {
+			if (e.getMessage().equals(UserLoginValidationMessages.EMPTY_PASSWORD_FIELD) ||
+					e.getMessage().equals(UserLoginValidationMessages.EMPTY_USERNAME_FIELD) ||
+					e.getMessage().equals(UserLoginValidationMessages.WRONG_USENAME_OR_PASSWORD)) {
+				model.addAttribute("exception", e.getMessage());
+			}
+		}
+		model.addAttribute("user", new User());
+
+		return "views-user-signUp";
 	}
 
 }

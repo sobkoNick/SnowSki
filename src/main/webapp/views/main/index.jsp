@@ -18,6 +18,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="container-fluid">
+
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 big-carousel">
 					<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -114,7 +116,6 @@
 				<div class="col-sm-3 right-menu">
 				</div>
 			</div>
-		</div>
-
+</div>
 </body>
 </html>

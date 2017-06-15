@@ -21,7 +21,6 @@
             ${product.name} <a href="/updateOrder/${updateOrder.id}/${product.id}">delete product</a><br>
         </c:forEach>
         <button>Update</button>
-
     </form:form>
 </body>
 </html>
