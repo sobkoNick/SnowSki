@@ -41,11 +41,14 @@ public class Product {
 	public Product() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
+
+	public Product(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+
 	public Product(String name, String description, String model, int price, boolean avaible, int count, String options,
-			int weight) {
+				   int weight) {
 		super();
 		this.name = name;
 		this.description = description;

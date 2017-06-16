@@ -2,6 +2,9 @@ package com.snowski.controller;
 
 import java.util.List;
 
+import com.snowski.dao.CategoryDao;
+import com.snowski.dao.ProducerDao;
+import com.snowski.dao.ProductDao;
 import com.snowski.editors.ProducerEditor;
 import com.snowski.entity.Producer;
 import com.snowski.service.CategoryService;
@@ -21,6 +24,12 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private ProductDao productDao;
+	@Autowired
+	private ProducerDao producerDao;
+	@Autowired
+	private CategoryDao categoryDao;
 
 	@Autowired
 	private ProducerService producerService;
@@ -41,7 +50,7 @@ public class ProductController {
 		model.addAttribute("producers", producerService.findAll());
 		model.addAttribute("orders", orderService.findAll());
 		model.addAttribute("categories", categoryService.findAll());
-		model.addAttribute("product", new Product());
+//		model.addAttribute("product", new Product());
 		return "views-admin-product";
 	}
 
@@ -58,9 +67,13 @@ public class ProductController {
 //	}
 
 	@PostMapping("/product")
-	public String product(@ModelAttribute Product product) {
-		System.out.println("product = " + product);
-		productService.save(product);
+	public String product(@RequestParam String name, @RequestParam Integer price,
+						  @RequestParam Integer producer, @RequestParam Integer categoryOfProduct) {
+		Product product = new Product(name,price);
+		productDao.saveAndFlush(product);
+		product.setProducer(producerDao.findOne(producer));
+		product.setCategoryOfProduct(categoryDao.findOne(categoryOfProduct));
+		productDao.save(product);
 		return "redirect:/product";
 	}
 

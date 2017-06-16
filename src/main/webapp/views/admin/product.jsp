@@ -11,14 +11,32 @@
 <body>
 	Binder
 	<div>
-		<form:form modelAttribute="product" method="post">
-			<form:input path="name"/>
-			<form:select path="producer" items="${producers}" itemLabel="name" itemValue="id"/>
-			<form:select path="categoryOfProduct" items="${categories}" itemLabel="name" itemValue="id"/>
-			<form:input path="price" placeholder="price"/>
+		<form modelAttribute="product" action="/product"
+				   method="post">
+			<input path="name" name="name"/>
+
+			<select name='producer'>
+				<option value="${selected}" selected>${selected}</option>
+				<c:forEach items="${producers}" var="producer">
+					<c:if test="${producer != selected}">
+						<option value="${producer.id}">${producer.name}</option>
+					</c:if>
+				</c:forEach>
+			</select>
+			<select name='categoryOfProduct'>
+				<option value="${selected}" selected>${selected}</option>
+				<c:forEach items="${categories}" var="category">
+					<c:if test="${category != selected}">
+						<option value="${category.id}">${category.name}</option>
+					</c:if>
+				</c:forEach>
+			</select>
+			<%--<select name="producer" path="producer" items="${producers}" itemLabel="name" itemValue="id"/>--%>
+			<%--<select name="categoryOfProduct" path="categoryOfProduct" items="${categories}" itemLabel="name" itemValue="id"/>--%>
+			<input name="price" path="price" placeholder="price"/>
 			<button>Save product</button>
 			<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>
-		</form:form>
+		</form>
 	</div>
 
 
