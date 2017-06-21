@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+	<%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
 </head>
 <body>
 <div class="container-fluid">
@@ -18,38 +19,41 @@
 	</div>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12" align="center">
-			<form style="width: 50%; padding-left: 20px;"
-				  action="/category?${_csrf.parameterName}=${_csrf.token}"
-				  method="post" enctype="multipart/form-data">
+
+			<%--<form style="width: 50%; padding-left: 20px;"--%>
+				  <%--action="/category?${_csrf.parameterName}=${_csrf.token}"--%>
+				  <%--method="post" enctype="multipart/form-data">--%>
 				<div class="form-group">
 					<label>Name</label>
-					<input type="text" class="form-control" placeholder="Name" name="name" required="required">
+					<input type="text" class="form-control" placeholder="Name" id="categoryName" name="name" required="required">
 				</div>
 
 				<div class="form-group">
 					<label>Description</label>
-					<input type="text" class="form-control" placeholder="description" name="description" required="required">
+					<input type="text" class="form-control" placeholder="description" id="categoryDescription" name="description" required="required">
 				</div>
 				<div class="form-group">
 					<label>Availability</label>
-					<input type="text" class="form-control" placeholder="Availability" name="availability" required="required">
+					<input type="text" class="form-control" placeholder="Availability" id="avaible"  name="availability" required="required">
 				</div>
 				<div class="form-group">
 					<label>Number Of Products</label>
-					<input type="text" class="form-control" placeholder="NumberOfProducts" name="numberOfProducts" required="required">
+					<input type="text" class="form-control" placeholder="NumberOfProducts" id="numberOfProducts" name="numberOfProducts" required="required">
 				</div>
 				<div class="form-group">
 					<label>Number In Hierarchy</label>
-					<input type="text" class="form-control" placeholder="NumberInHierarchy" name="numberInHierarchy" required="required">
+					<input type="text" class="form-control" placeholder="NumberInHierarchy" id="numberInHierarchy" name="numberInHierarchy" required="required">
 				</div>
 				<div class="form-group">
 					<label>File input</label>
-					<input name="image" type="file" class="form-control">
+					<input id="image" name="image" type="file" class="form-control">
 					<p class="help-block">Choose logo</p>
 				</div>
-				<button type="submit" class="btn btn-success"> Add Category </button>
+				<button type="submit" class="btn btn-success" id="saveCategotyBtn"> Add Category </button>
 				<%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
-			</form>
+
+			<%--</form>--%>
+
 		</div>
 	</div>
 
@@ -71,6 +75,8 @@
 		</c:forEach>
 	</div>
 
+
+
 </div>
 	<%--<div>--%>
 		<%--<form action="/category" method="post">--%>
@@ -87,3 +93,35 @@
 
 </body>
 </html>
+
+<input type="hidden" name="csrf_name"
+      value="${_csrf.parameterName}" />
+<input type="hidden" name="csrf_value"
+      value="${_csrf.token}" />
+
+<script src="/js/category.js">
+
+    ${'#saveCategotyBtn'}.click(function () {
+
+        console.log('log')
+
+        var category = {
+		    name: $('#categoryName').val(),
+            description : $('#categoryDescription').val(),
+            availability : $('#avaible').val(),
+            numberOfProducts : $('#numberOfProducts').val(),
+            numberInHierarchy : $('#numberInHierarchy').val(),
+            pathToImage: $('#image').val()
+		};
+           $.ajax({
+               url : '/category?'+ $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+               method : 'POST',
+               contentType: 'application/json; charset=UTF-8',
+               dataType: 'json',
+               data: JSON.stringify(country),
+               success: function (res) {
+               console.log(res);
+               }
+               });
+    })
+</script>

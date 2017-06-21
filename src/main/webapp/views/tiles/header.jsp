@@ -1,5 +1,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="springLocal" uri="http://www.springframework.org/tags" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,7 +13,7 @@
         <sec:authorize access="hasRole('ROLE_ADMIN')">
         <div class="row admin-nav">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h1 class="admin-text" style="text-align: center;">Admin options</h1>
+                <h1 class="admin-text" style="text-align: center;"><springLocal:message code="label.admin_options"/></h1>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-4">
@@ -32,13 +34,13 @@
                 <div class="row">
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 lang">
                         <div class="row">
-                            <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/ukr.png?raw=true"></a>
-                            <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/eng.png?raw=true"></a>
-                            <a href="#"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/Russian-flag.png?raw=true"></a>
+                            <a href="?lang=ua"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/ukr.png?raw=true"></a>
+                            <a href="?lang=en"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/eng.png?raw=true"></a>
+                            <a href="?lang=ru"><img src="https://github.com/sobkoNick/SnowSki/blob/master/src/main/webapp/img/Russian-flag.png?raw=true"></a>
                         </div>
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-2 lang">
-                        <a href="#">ОПЛАТА І ДОСТАВКА</a>
+                        <a href="#"><springLocal:message code="label.buy_adn_delivery"/></a>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-4 text-header">
                         БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
@@ -58,10 +60,12 @@
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
                         <sec:authorize access="!isAuthenticated()">
-                            <a href="#">ВХІД</a>
+                            <a href="/signUp">ВХІД</a>
                         </sec:authorize>
                     </div>
-                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">КОРЗИНА</div>
+                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+                        <springLocal:message code="label.basket"/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,7 +77,7 @@
                     </div>
                     <div class="col-xs-1 col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn">ЛИЖІ</button>
+                            <button class="dropbtn"><springLocal:message code="label.ski"/></button>
                             <div class="dropdown-content">
                                 <a href="#">FISHER</a>
                                 <a href="#">SOLOMON</a>
@@ -88,7 +92,7 @@
                     </div>
                     <div class="col-xs-1 col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn">СНОУБОРД</button>
+                            <button class="dropbtn"><springLocal:message code="label.snowboard"/></button>
                             <div class="dropdown-content">
                                 <a href="#">CAPITA</a>
                                 <a href="#">DC</a>
@@ -104,7 +108,7 @@
 
                     <div class="col-xs-1 col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn">ОДЯГ</button>
+                            <button class="dropbtn"><springLocal:message code="label.close"/></button>
                             <div class="dropdown-content">
                                 <a href="#">Унісекс</a>
                                 <a href="#">Чоловічий</a>
@@ -119,7 +123,7 @@
                     </div>
                     <div class="col-xs-1 col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn">АКСЕСУАРИ</button>
+                            <button class="dropbtn"><springLocal:message code="label.accessories"/></button>
                             <div class="dropdown-content">
                                 <a href="#">Маски</a>
                                 <a href="#">Шоломи</a>
@@ -133,7 +137,7 @@
                     </div>
                     <div class="hidden-xs col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn">НОВИНИ ТА АКЦІЇ</button>
+                            <button class="dropbtn"><springLocal:message code="label.newsAndSales"/></button>
                         </div>
                     </div>
 
