@@ -26,7 +26,11 @@ public class Product {
 	private int count;
 	private String options;
 	private int weight;
-	
+
+	private String pathToImage;
+
+
+
 	@ManyToMany
 	@JoinTable(name="orders_product",
 	joinColumns=@JoinColumn(name="product_id"),
@@ -107,6 +111,14 @@ public class Product {
 
 	public String getOptions() {
 		return options;
+	}
+
+	public String getPathToImage() {
+		return pathToImage;
+	}
+
+	public void setPathToImage(String pathToImage) {
+		this.pathToImage = pathToImage;
 	}
 
 	public void setDescription(String description) {

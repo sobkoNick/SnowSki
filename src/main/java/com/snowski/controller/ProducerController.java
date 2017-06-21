@@ -30,7 +30,6 @@ public class ProducerController {
 		try {
 			producerService.save(producer, image);
 		} catch (Exception e) {
-
 			if (e.getMessage().equals(ProducerValidatorMessages.NAME_FIELD_INCORRECT)) {
 				model.addAttribute("nameException", e.getMessage());
 			} else if (e.getMessage().equals(ProducerValidatorMessages.DESCRIPTION_INCORRECT)) {

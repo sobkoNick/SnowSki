@@ -43,11 +43,11 @@
                         <a href="#"><springLocal:message code="label.buy_adn_delivery"/></a>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-md-4 text-header">
-                        БЕЗКОШТОВНА ДОСТАВКА ЗАМОВЛЕНЬ ВІД ₴2000
+                        <springLocal:message code="label.free_delivery"/>
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
                         <sec:authorize access="!isAuthenticated()">
-                            <a href="/signUp">РЕЄСТРАЦІЯ</a>
+                            <a href="/signUp"><springLocal:message code="label.sign_up"/></a>
                         </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
                             <a href="/profile">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
                         <sec:authorize access="!isAuthenticated()">
-                            <a href="/signUp">ВХІД</a>
+                            <a href="/signUp"><springLocal:message code="label.sign_in"/></a>
                         </sec:authorize>
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">

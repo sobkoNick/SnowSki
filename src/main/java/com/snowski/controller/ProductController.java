@@ -18,6 +18,7 @@ import com.snowski.entity.Product;
 import com.snowski.service.OrderService;
 import com.snowski.service.ProducerService;
 import com.snowski.service.ProductService;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class ProductController {
@@ -68,12 +69,17 @@ public class ProductController {
 
 	@PostMapping("/product")
 	public String product(@RequestParam String name, @RequestParam Integer price,
-						  @RequestParam Integer producer, @RequestParam Integer categoryOfProduct) {
-		Product product = new Product(name,price);
-		productDao.saveAndFlush(product);
-		product.setProducer(producerDao.findOne(producer));
-		product.setCategoryOfProduct(categoryDao.findOne(categoryOfProduct));
-		productDao.save(product);
+						  @RequestParam Integer producer, @RequestParam Integer categoryOfProduct,
+						  @RequestParam String description, @RequestParam String model,
+						  @RequestParam boolean avaible, @RequestParam Integer count, @RequestParam String options,
+						  @RequestParam Integer weight, @RequestParam MultipartFile image) {
+		System.out.println("producer = " + producer);
+		Product product = new Product(name,description,model,price,avaible,count,options, weight);
+		productService.save(product, image, producer, categoryOfProduct);
+//		productDao.saveAndFlush(product);
+//		product.setProducer(producerDao.findOne(producer));
+//		product.setCategoryOfProduct(categoryDao.findOne(categoryOfProduct));
+//		productDao.save(product);
 		return "redirect:/product";
 	}
 
