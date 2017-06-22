@@ -5,6 +5,9 @@
   Time: 21:07
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -99,6 +102,54 @@
             </div>
         </div>
     </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <c:if test="${userBasket.products.size() != 0}">
+                <th>Product name</th>
+                <th></th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+                <th>
+                    <%--<form:form action="/buy/${user.id}"  method="post">--%>
+                    <form:form action="/buy/4"  method="post">
+                        <button class="btn btn-default">buy</button>
+                    </form:form>
+                </th>
+            </c:if>
+            <c:if test="${userBasket.products.size() == 0}">
+                <th>
+                    don't have any products in your basket
+                </th>
+            </c:if>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="product" items="${userBasket.products}">
+            <tr>
+                <td>
+                        ${product.name}
+                </td>
+                <td>
+                    <img src="${product.pathToImage}" alt="${product.name}" height="192px" width="150px">
+                </td>
+                <td>
+                        ${product.description}
+                </td>
+                <td>
+                        ${product.price}
+                </td>
+                <td>
+                    <a href="/deleteFromBasket/${userBasket.id}/${product.id}">delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+
 </div>
 
 

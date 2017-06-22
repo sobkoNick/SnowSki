@@ -38,7 +38,13 @@ public class User implements UserDetails {
 
 	// TODO ADD CASCADETYPE.REMOVE----!!!!!!!!!!!!!!!!!!
 	@OneToMany(mappedBy = "user") // reference to field. ADD CASCADETYPE.REMOVE----!!!!!!!!!!!!!!!!!!
-	private List<Order> orders = new ArrayList<Order>(); 
+	private List<Order> orders = new ArrayList<Order>();
+
+	@ManyToMany
+	@JoinTable(name="user_product",
+			joinColumns=@JoinColumn(name="user_id"),
+			inverseJoinColumns=@JoinColumn(name="product_id"))
+	private List<Product> products = new ArrayList<Product>();
 	
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -84,7 +90,13 @@ public class User implements UserDetails {
 		return role;
 	}
 
+	public List<Product> getProducts() {
+		return products;
+	}
 
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 
 	public String getTelephone() {
 		return telephone;

@@ -1,5 +1,6 @@
 package com.snowski.entity;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import javax.persistence.JoinColumn;
 @Entity
 @Table(name = "orders") // if you want other name than user
 public class Order {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -27,6 +29,7 @@ public class Order {
 	private String payMethod;
 	private String orderStatus;
 	private String comment;
+	private LocalDate date;
 
 	@ManyToOne
 	private User user;
@@ -39,9 +42,12 @@ public class Order {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Order(LocalDate date) {
+		this.date = date;
+	}
+
 	public Order(String name, int numberOfProducts, int orderPrice, String deliveryMethod, String payMethod,
-			String orderStatus, String comment) {
-		super();
+				 String orderStatus, String comment, LocalDate date, User user, List<Product> products) {
 		this.name = name;
 		this.numberOfProducts = numberOfProducts;
 		this.orderPrice = orderPrice;
@@ -49,6 +55,9 @@ public class Order {
 		this.payMethod = payMethod;
 		this.orderStatus = orderStatus;
 		this.comment = comment;
+		this.date = date;
+		this.user = user;
+		this.products = products;
 	}
 
 	public int getId() {
@@ -77,6 +86,14 @@ public class Order {
 
 	public String getComment() {
 		return comment;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 
 	public void setId(int id) {

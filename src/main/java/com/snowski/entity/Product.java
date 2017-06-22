@@ -36,6 +36,12 @@ public class Product {
 	joinColumns=@JoinColumn(name="product_id"),
 	inverseJoinColumns=@JoinColumn(name="orders_id"))
 	private List<Order> orders = new ArrayList<Order>();
+
+	@ManyToMany
+	@JoinTable(name="user_product",
+			joinColumns=@JoinColumn(name="product_id"),
+			inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> users = new ArrayList<User>();
 	
 	@ManyToOne
 	private Producer producer;

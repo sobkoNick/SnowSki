@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -135,7 +136,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12" style="background-color: #cccccc">
 				<div class="row">
 						<c:forEach var="product" items="${products}">
 							<div class="col-xs-4 col-sm-4 col-md-4">
@@ -145,7 +146,10 @@
 									<h2>${product.name}</h2>
 									<p>${product.description}</p>
 									<div class="price">${product.price}</div>
-									<a href="#" class="add-to-cart">Add to Cart</a>
+									<sec:authorize access="hasRole('ROLE_ADMIN')">
+										<a href="/deleteProduct/${product.id}" class="add-to-cart">Delete</a>
+									</sec:authorize>
+										<a href="/addToCard/${product.id}" class="add-to-cart">Add to Cart</a>
 								</figcaption>
 							</figure>
 							</div>
