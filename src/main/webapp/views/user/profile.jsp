@@ -30,30 +30,19 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sheena Shrestha</h3>
+                    <h3 class="panel-title">${userWithBasket.name}</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
-
-                        <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                          <dl>
-                            <dt>DEPARTMENT:</dt>
-                            <dd>Administrator</dd>
-                            <dt>HIRE DATE</dt>
-                            <dd>11/12/2013</dd>
-                            <dt>DATE OF BIRTH</dt>
-                               <dd>11/12/2013</dd>
-                            <dt>GENDER</dt>
-                            <dd>Male</dd>
-                          </dl>
-                        </div>-->
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive">
+                        </div>
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
                                 <tbody>
                                 <tr>
-                                    <td>Department:</td>
-                                    <td>Programming</td>
+                                    <td>Name:</td>
+                                    <%--<td>${userWithbasket.id}</td>--%>
                                 </tr>
                                 <tr>
                                     <td>Hire date:</td>
@@ -106,28 +95,45 @@
     <table class="table table-hover">
         <thead>
         <tr>
-            <c:if test="${userBasket.products.size() != 0}">
+            <c:if test="${userWithBasket.products.size() != 0}">
                 <th>Product name</th>
                 <th></th>
                 <th>Description</th>
                 <th>Price</th>
                 <th></th>
-                <th>
+
                     <%--<form:form action="/buy/${user.id}"  method="post">--%>
-                    <form:form action="/buy/4"  method="post">
-                        <button class="btn btn-default">buy</button>
+                    <form:form action="/buy"  method="post" class="form-group">
+
+                        <label for="deliveryMethod">Delivery Method</label>
+
+                        <input name="deliveryMethod" path="deliveryMethod" type="text" class="form-control" id="deliveryMethod"
+                               placeholder="Delivery Method" required="required"/>
+
+                        <label for="deliveryMethod">Pay Method</label>
+
+                        <input name="payMethod" path="payMethod" type="text" class="form-control" id="payMethod"
+                               placeholder="Pay Method" required="required"/>
+
+                        <label for="comment">Your Comment</label>
+
+                        <textarea name="comment" path="comment" class="form-control" rows="5" id="comment"
+                                  placeholder="Description" required="required"></textarea>
+                        <br>
+
+                        <button class="btn btn-success">buy</button>
                     </form:form>
-                </th>
+
             </c:if>
-            <c:if test="${userBasket.products.size() == 0}">
+            <c:if test="${userWithBasket.products.size() == 0}">
                 <th>
-                    don't have any products in your basket
+                   You don't have any products in your basket
                 </th>
             </c:if>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="product" items="${userBasket.products}">
+        <c:forEach var="product" items="${userWithBasket.products}">
             <tr>
                 <td>
                         ${product.name}
@@ -143,7 +149,7 @@
                         ${product.price}
                 </td>
                 <td>
-                    <a href="/deleteFromBasket/${userBasket.id}/${product.id}">delete</a>
+                    <a href="/deleteFromBasket/${userWithBasket.id}/${product.id}">delete</a>
                 </td>
             </tr>
         </c:forEach>

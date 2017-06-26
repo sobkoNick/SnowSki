@@ -4,7 +4,6 @@ import java.security.Principal;
 import java.util.List;
 
 import com.snowski.entity.Order;
-import org.springframework.web.bind.annotation.RequestParam;
 
 public interface OrderService {
 	void save(Order order, List<Integer> productsIds);
@@ -27,5 +26,5 @@ public interface OrderService {
 
     void deleteFromBasket(int userId, int productId);
 
-	void buy(int userId);
+	void buy(int userId, String deliveryMethod, String payMethod, String comment);
 }

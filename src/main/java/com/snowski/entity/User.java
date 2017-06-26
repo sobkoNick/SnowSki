@@ -252,4 +252,26 @@ public class User implements UserDetails {
 	}
 
 
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", userGroup='" + userGroup + '\'' +
+				", telephone='" + telephone + '\'' +
+				", status='" + status + '\'' +
+				", discount=" + discount +
+				", language='" + language + '\'' +
+				", enable=" + enable +
+				", uuid='" + uuid + '\'' +
+				", pathToImage='" + pathToImage + '\'' +
+				", role=" + role +
+				", orders=" + orders +
+				", products=" + products +
+				'}';
+	}
 }

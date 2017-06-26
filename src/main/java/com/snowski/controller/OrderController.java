@@ -82,14 +82,13 @@ public class OrderController {
 
 		orderService.addToCard(id, principal);
 
-		return "redirect:/";
+		return "redirect:/product";
 	}
 
-	@PostMapping("/buy/{userId}")
-	public String buy(@PathVariable int userId) {
-
-		orderService.buy(userId);
-
+	@PostMapping("/buy")
+	public String buy(Principal principal, @RequestParam String deliveryMethod,
+					  @RequestParam String payMethod, @RequestParam String comment) {
+		orderService.buy(Integer.parseInt(principal.getName()), deliveryMethod, payMethod, comment);
 		return "redirect:/profile";
 	}
 

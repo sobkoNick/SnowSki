@@ -148,4 +148,20 @@ public class Order {
 		this.products = products;
 	}
 
+	@Override
+	public String toString() {
+		return "Order{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", numberOfProducts=" + numberOfProducts +
+				", orderPrice=" + orderPrice +
+				", deliveryMethod='" + deliveryMethod + '\'' +
+				", payMethod='" + payMethod + '\'' +
+				", orderStatus='" + orderStatus + '\'' +
+				", comment='" + comment + '\'' +
+				", date=" + date +
+				", user=" + user +
+				", products=" + products +
+				'}';
+	}
 }

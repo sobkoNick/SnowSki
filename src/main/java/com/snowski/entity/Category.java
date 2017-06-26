@@ -98,6 +98,18 @@ public class Category {
 	public void setNumberInHierarchy(int numberInHierarchy) {
 		this.numberInHierarchy = numberInHierarchy;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Category{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", availability='" + availability + '\'' +
+				", numberOfProducts=" + numberOfProducts +
+				", numberInHierarchy=" + numberInHierarchy +
+				", pathToImage='" + pathToImage + '\'' +
+				", products=" + products +
+				'}';
+	}
 }

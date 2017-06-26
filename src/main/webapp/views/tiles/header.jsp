@@ -51,7 +51,7 @@
                         </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
                             <a href="/profile">
-                                <sec:authentication property="name"/>
+                                Profile
                             </a>
                             <form:form action="/logout" method="post">
                                 <button>Log Out</button>

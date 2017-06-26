@@ -95,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	@Transactional
-	public void buy(int userId) {
+	public void buy(int userId, String deliveryMethod, String payMethod, String comment) {
 		Order order = new Order(LocalDate.now());
 		orderDao.saveAndFlush(order);
 
@@ -103,13 +103,26 @@ public class OrderServiceImpl implements OrderService {
 
 		order.setUser(user);
 
+		int counter = 0;
+		int price = 0;
 		for (Product product: user.getProducts()) {
+			price += product.getPrice();
+			counter++;
+
 			order.getProducts().add(product);
+
+			order.setNumberOfProducts(counter);
+			order.setOrderPrice(price);
+			order.setOrderStatus("active");
+			order.setName(user.getName() + LocalDate.now().toString());
+			order.setComment(comment);
+			order.setDeliveryMethod(deliveryMethod);
+			order.setPayMethod(payMethod);
+
 			orderDao.save(order);
 		}
 		user.getProducts().clear();
 		userDao.save(user);
-
 	}
 
 	@Override

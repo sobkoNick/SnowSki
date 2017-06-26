@@ -87,15 +87,13 @@ public class UserController {
 
 	@GetMapping("/profile")
 	public String profile(Principal principal, Model model){
-
-		model.addAttribute("userBasket", userService.findUserWithProduct(Integer.parseInt(principal.getName())));
-//		model.addAttribute("userBasket", userService.findUserWithProduct(4));
+		User user = userService.findUserWithProduct(Integer.parseInt(principal.getName()));
+		model.addAttribute("userWithBasket", user);
 		return "views-user-profile";
 	}
 	@PostMapping("/failureLogin")
 	public String failureLogin(Model model, @RequestParam String username,
 							   @RequestParam String password){
-
 		try {
 			validator.validate(new User(username, password));
 		} catch (Exception e) {

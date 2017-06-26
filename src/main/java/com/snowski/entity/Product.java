@@ -175,4 +175,24 @@ public class Product {
 	public void setProductImages(List<ProductImages> productImages) {
 		this.productImages = productImages;
 	}
+
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", model='" + model + '\'' +
+				", price=" + price +
+				", avaible=" + avaible +
+				", count=" + count +
+				", options='" + options + '\'' +
+				", weight=" + weight +
+				", productImages=" + productImages +
+				", orders=" + orders +
+				", users=" + users +
+				", producer=" + producer +
+				", categoryOfProduct=" + categoryOfProduct +
+				'}';
+	}
 }
