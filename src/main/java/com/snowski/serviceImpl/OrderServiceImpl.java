@@ -85,21 +85,6 @@ public class OrderServiceImpl implements OrderService {
 		}
 	}
 
-//	@Override
-//	public void buy(int id, Principal principal) {
-//		Order order = new Order();
-//		order.setDate(LocalDate.now());
-//		orderDao.saveAndFlush(order);
-//
-//		User user = userDao.findOne(Integer.parseInt(principal.getName()));
-//		order.setUser(user);
-//
-//		Product product = productDao.findOne(id);
-//		order.getProducts().add(product);
-//
-//		orderDao.save(order);
-//	}
-
 	@Override
 	public void addToCard(int id, Principal principal) {
 		User user = userDao.findUserWithProducts(4);

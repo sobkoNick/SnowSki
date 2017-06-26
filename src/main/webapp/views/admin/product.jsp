@@ -11,35 +11,6 @@
 <title>Products</title>
 </head>
 <body>
-	<%--Binder--%>
-	<%--<div>--%>
-		<%--<form modelAttribute="product" action="/product"--%>
-				   <%--method="post">--%>
-			<%--<input path="name" name="name"/>--%>
-
-			<%--<select name='producer'>--%>
-				<%--<option value="${selected}" selected>${selected}</option>--%>
-				<%--<c:forEach items="${producers}" var="producer">--%>
-					<%--<c:if test="${producer != selected}">--%>
-						<%--<option value="${producer.id}">${producer.name}</option>--%>
-					<%--</c:if>--%>
-				<%--</c:forEach>--%>
-			<%--</select>--%>
-			<%--<select name='categoryOfProduct'>--%>
-				<%--<option value="${selected}" selected>${selected}</option>--%>
-				<%--<c:forEach items="${categories}" var="category">--%>
-					<%--<c:if test="${category != selected}">--%>
-						<%--<option value="${category.id}">${category.name}</option>--%>
-					<%--</c:if>--%>
-				<%--</c:forEach>--%>
-			<%--</select>--%>
-			<%--&lt;%&ndash;<select name="producer" path="producer" items="${producers}" itemLabel="name" itemValue="id"/>&ndash;%&gt;--%>
-			<%--&lt;%&ndash;<select name="categoryOfProduct" path="categoryOfProduct" items="${categories}" itemLabel="name" itemValue="id"/>&ndash;%&gt;--%>
-			<%--<input name="price" path="price" placeholder="price"/>--%>
-			<%--<button>Save product</button>--%>
-			<%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
-		<%--</form>--%>
-	<%--</div>--%>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -80,7 +51,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="productDesc">Description</label>
+						<label for="description">Description</label>
 						<textarea name="description" path="description" class="form-control" rows="5" id="comment"
 								  placeholder="Description" required="required"></textarea>
 						<%--<input name="description" path="description" type="text" class="form-control" id="productDesc"--%>
@@ -123,10 +94,13 @@
 							   placeholder="Weight" required="required"/>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group" id="images">
 						<label>File input</label>
-						<input name="image" type="file" class="form-control">
+						<input name="images" type="file" class="form-control" required="required">
 						<p class="help-block">Choose logo</p>
+					</div>
+					<div class="form-group">
+						<input class="btn btn-primary" type="button" value="add Image" id="addImage">
 					</div>
 					<button type="submit" class="btn btn-success"> Add Product </button>
 					<%--<button>Save Producer</button>--%>
@@ -136,18 +110,22 @@
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12" style="background-color: #cccccc">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="row">
 						<c:forEach var="product" items="${products}">
 							<div class="col-xs-4 col-sm-4 col-md-4">
 							<figure class="snip1246">
-								<img src="${product.pathToImage}" alt="sample88"/>
+									<%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
+								<%--<img src="${product.id}" alt="sample88"/>--%>
+										<c:forEach var="img" items="${product.productImages}">
+												<img src="${img.pathToImage}" alt="sample88" height="192px" width="150px">
+										</c:forEach>
 								<figcaption>
 									<h2>${product.name}</h2>
 									<p>${product.description}</p>
 									<div class="price">${product.price}</div>
 									<sec:authorize access="hasRole('ROLE_ADMIN')">
-										<a href="/deleteProduct/${product.id}" class="add-to-cart">Delete</a>
+										<a href="/deleteProduct/${product.id}" class="view-product">View product</a>
 									</sec:authorize>
 										<a href="/addToCard/${product.id}" class="add-to-cart">Add to Cart</a>
 								</figcaption>
@@ -159,21 +137,6 @@
 		</div>
 	</div>
 
-
-	<%--<div>--%>
-	<%--<ol>--%>
-		<%--<c:forEach var="product" items="${products}">--%>
-		<%--<li>${product.name} ${product.producer.name }--%>
-		<%--| In orders: --%>
-		<%--<c:forEach var="order" items="${product.orders }">--%>
-			<%--${order.name}--%>
-		<%--</c:forEach>--%>
-		<%--<a href="/deleteProduct/${product.id}">delete</a> --%>
-		<%--<a href="/updateProduct/${product.id}">update</a> --%>
-		<%--<br></li>--%>
-		<%--</c:forEach>--%>
-	<%--</ol>--%>
-	<%--</div>--%>
 </body>
 </html>
 <script>
@@ -182,4 +145,15 @@
             $(this).removeClass("hover");
         }
     );
+
+	document.getElementById('addImage').onclick = function () {
+	    var newFileInput = document.createElement('input');
+	    newFileInput.type = 'file';
+	    newFileInput.name = 'images';
+		newFileInput.className = 'form-control';
+		newFileInput.required = 'required';
+		document.getElementById('images').appendChild(newFileInput);
+
+	}
+
 </script>

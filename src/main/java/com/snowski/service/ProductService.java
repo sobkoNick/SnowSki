@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface ProductService {
 	void save(Product product, int producerId, List<Integer> ordersIds);
-	void save(Product product, MultipartFile image, Integer producer, Integer categoryOfProduct);
+	void save(Product product, List<MultipartFile> images, Integer producer, Integer categoryOfProduct);
 	List<Product> findAll();
 
 	Product findOne(int id);
@@ -17,4 +17,8 @@ public interface ProductService {
 	void update(Product product);
 	
 	List<Product> productWithOrders();
+
+	List<Product> productsWithOnlyFirstImage();
+
+//	List<Product> productsWithImages();
 }

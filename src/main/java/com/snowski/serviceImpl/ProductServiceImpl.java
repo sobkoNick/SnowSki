@@ -4,13 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.snowski.dao.CategoryDao;
+import com.snowski.dao.*;
+import com.snowski.entity.ProductImages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.snowski.dao.OrderDao;
-import com.snowski.dao.ProducerDao;
-import com.snowski.dao.ProductDao;
 import com.snowski.entity.Order;
 import com.snowski.entity.Producer;
 import com.snowski.entity.Product;
@@ -28,6 +26,8 @@ public class ProductServiceImpl implements ProductService{
 	private CategoryDao categoryDao;
 	@Autowired
 	private OrderDao orderDao;
+	@Autowired
+	private ProductImagesDao productImagesDao;
 
 
 	public void save(Product product, int producerId, List<Integer> ordersIds) {
@@ -47,29 +47,45 @@ public class ProductServiceImpl implements ProductService{
 		productDao.save(product);
 	}
 
-	public void save(Product product, MultipartFile image, Integer producer, Integer categoryOfProduct){
-
+	public void save(Product product, List<MultipartFile> images, Integer producer, Integer categoryOfProduct){
 
 		productDao.saveAndFlush(product);
 
 		product.setProducer(producerDao.findOne(producer));
 		product.setCategoryOfProduct(categoryDao.findOne(categoryOfProduct));
 
-		String path = System.getProperty("catalina.home") + "/resources/"
-				+ product.getName() + "/" + image.getOriginalFilename();
 
-		product.setPathToImage("resources/" + product.getName() + "/" + image.getOriginalFilename());
+		for (MultipartFile multipartFile : images) {
 
-		File filePath = new File(path);
+//			String path = "C:\\Users\\Mykola\\Downloads\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\resources\\"
+//					+ product.getName() + "\\" + multipartFile.getOriginalFilename();
 
-		try {
-			filePath.mkdirs();
-			image.transferTo(filePath);
-		} catch (Exception e) {
-			System.out.println("Error with file");
+			String path = System.getProperty("catalina.home") + "/resources/"
+					+ product.getName() + "/" + multipartFile.getOriginalFilename();
+
+			ProductImages productImages =
+					new ProductImages("resources/" + product.getName() + "/"
+							+ multipartFile.getOriginalFilename());
+
+			productImagesDao.saveAndFlush(productImages);
+			productImages.setProduct(product);
+
+			File filePath = new File(path);
+
+			if(!filePath.exists()){
+				filePath.mkdirs();
+			}
+
+			try {
+				filePath.mkdirs();
+				multipartFile.transferTo(filePath);
+			} catch (Exception e) {
+				System.out.println("Error with file");
+			}
+			productImagesDao.save(productImages);
 		}
-		productDao.save(product);
 
+		productDao.save(product);
 	}
 
 	public List<Product> findAll() {
@@ -94,5 +110,15 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> productWithOrders() {
 		return productDao.productWithOrders();
 	}
+
+	@Override
+	public List<Product> productsWithOnlyFirstImage() {
+		return productDao.productsWithOnlyFirstImage();
+	}
+
+	//	@Override
+//	public List<Product> productsWithImages() {
+//		return  productDao.productsWithImages();
+//	}
 
 }

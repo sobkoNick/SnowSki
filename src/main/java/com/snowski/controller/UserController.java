@@ -88,8 +88,8 @@ public class UserController {
 	@GetMapping("/profile")
 	public String profile(Principal principal, Model model){
 
-//		model.addAttribute("userBasket", userService.findUserWithProduct(Integer.parseInt(principal.getName())));
-		model.addAttribute("userBasket", userService.findUserWithProduct(4));
+		model.addAttribute("userBasket", userService.findUserWithProduct(Integer.parseInt(principal.getName())));
+//		model.addAttribute("userBasket", userService.findUserWithProduct(4));
 		return "views-user-profile";
 	}
 	@PostMapping("/failureLogin")

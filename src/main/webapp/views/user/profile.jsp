@@ -133,7 +133,8 @@
                         ${product.name}
                 </td>
                 <td>
-                    <img src="${product.pathToImage}" alt="${product.name}" height="192px" width="150px">
+                    <%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
+                    <img src="${product.id}" alt="${product.name}" height="192px" width="150px">
                 </td>
                 <td>
                         ${product.description}

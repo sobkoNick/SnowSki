@@ -3,14 +3,7 @@ package com.snowski.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -19,7 +12,6 @@ public class Product {
 	private int id;
 	private String name;
 	private String description;
-	// image ??
 	private String model;
 	private int price;
 	private boolean avaible;
@@ -27,9 +19,10 @@ public class Product {
 	private String options;
 	private int weight;
 
-	private String pathToImage;
+//	private String pathToImage;
 
-
+	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
+	private List<ProductImages> productImages = new ArrayList<>();
 
 	@ManyToMany
 	@JoinTable(name="orders_product",
@@ -119,14 +112,6 @@ public class Product {
 		return options;
 	}
 
-	public String getPathToImage() {
-		return pathToImage;
-	}
-
-	public void setPathToImage(String pathToImage) {
-		this.pathToImage = pathToImage;
-	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -182,5 +167,12 @@ public class Product {
 	public void setCategoryOfProduct(Category categoryOfProduct) {
 		this.categoryOfProduct = categoryOfProduct;
 	}
-	
+
+	public List<ProductImages> getProductImages() {
+		return productImages;
+	}
+
+	public void setProductImages(List<ProductImages> productImages) {
+		this.productImages = productImages;
+	}
 }
