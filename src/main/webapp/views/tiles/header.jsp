@@ -137,7 +137,11 @@
                     </div>
                     <div class="hidden-xs col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn"><springLocal:message code="label.newsAndSales"/></button>
+                            <button class="dropbtn">
+                                <a href="/allproducts">
+                                    <springLocal:message code="label.allProducts"/>
+                                </a>
+                            </button>
                         </div>
                     </div>
 

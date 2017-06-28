@@ -63,14 +63,6 @@ public class OrderController {
 		return "redirect:/order";
 	}
 
-//	@PostMapping("/order")
-//	private String order(@RequestParam String name, @RequestParam Integer numberOfProducts, @RequestParam Integer orderPrice,
-//			@RequestParam String deliveryMethod, @RequestParam String payMethod,
-//			@RequestParam String orderStatus, @RequestParam String comment, @RequestParam List<Integer> productsIds) {
-//
-//		orderService.save(new Order(name, numberOfProducts, orderPrice, deliveryMethod, payMethod, orderStatus, comment), productsIds);
-//				return "redirect:/order";
-//	}
 	@PostMapping("/updateOrder/{order_id}/{product_id}")
 	private String updateOrder(@ModelAttribute Order order){
 		orderService.save(order);

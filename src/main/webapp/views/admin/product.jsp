@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<link rel="stylesheet" href="/css/product.css" type="text/css">
 <title>Products</title>
 </head>
@@ -15,7 +15,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12" align="center">
-				<form cssStyle="width: 50%; padding-left: 20px;" modelAttribute="product"
+				<form style="width: 50%; padding-left: 20px;" modelAttribute="product"
 						   action="/product?${_csrf.parameterName}=${_csrf.token}"
 						   method="post" enctype="multipart/form-data">
 

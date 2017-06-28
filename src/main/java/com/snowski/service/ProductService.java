@@ -20,5 +20,7 @@ public interface ProductService {
 
 	List<Product> productsWithOnlyFirstImage();
 
+	Product productWithImages(int id);
+
 //	List<Product> productsWithImages();
 }

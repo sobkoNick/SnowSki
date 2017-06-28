@@ -10,7 +10,9 @@ import com.snowski.dao.ProducerDao;
 import com.snowski.dao.ProductDao;
 import com.snowski.editors.ProducerEditor;
 import com.snowski.entity.Producer;
+import com.snowski.entity.ProductImages;
 import com.snowski.service.*;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -76,17 +78,38 @@ public class ProductController {
         return "views-admin-product";
     }
 
-//	@PostMapping("/product")
-//	public String product(@RequestParam String name, @RequestParam String description, @RequestParam String model,
-//			@RequestParam Integer price, @RequestParam Boolean avaible, @RequestParam Integer count,
-//			@RequestParam String options, @RequestParam Integer weight, @RequestParam int producerId,
-//			@RequestParam List<Integer> ordersIds) {
-//
-//		productService.save(new Product(name, description, model, price, avaible, count, options, weight), producerId,
-//				ordersIds);
-//
-//		return "redirect:/product";
-//	}
+    @GetMapping("/allproducts")
+    public String allProduct(Model model) {
+        Map<String, Object> modelAttributes = new HashMap<>();
+
+//        List<Product> products = productService.productsWithImages();
+
+//        modelAttributes.put("products", productService.productWithOrders());
+        modelAttributes.put("products", productService.productsWithOnlyFirstImage());
+
+//		model.addAttribute("images",productService.productsWithImages().get(0).getProductImages());
+        // в продукта є ліст картинок з них треба взяти нульову
+//		List<Product> products = productService.productsWithImages();
+//		products.get(0).getProductImages().get(0).
+
+        modelAttributes.put("producers", producerService.findAll());
+        modelAttributes.put("orders", orderService.findAll());
+        modelAttributes.put("categories", categoryService.findAll());
+
+        model.addAllAttributes(modelAttributes);
+        return "views-user-allproducts";
+    }
+
+    @GetMapping("/viewProduct/{id}")
+    public String viewProduct(@PathVariable int id, Model model) {
+        Product product =  productService.productWithImages(id);
+
+//        System.out.println("product = " + product);
+
+        model.addAttribute("product", productService.productWithImages(id));
+
+        return "views-user-viewproduct";
+    }
 
     @PostMapping("/product")
     public String product(@RequestParam String name, @RequestParam Integer price,
