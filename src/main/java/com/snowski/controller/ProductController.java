@@ -1,28 +1,25 @@
 package com.snowski.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import com.snowski.dao.CategoryDao;
 import com.snowski.dao.ProducerDao;
 import com.snowski.dao.ProductDao;
 import com.snowski.editors.ProducerEditor;
 import com.snowski.entity.Producer;
-import com.snowski.entity.ProductImages;
-import com.snowski.service.*;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.snowski.entity.Product;
+import com.snowski.service.CategoryService;
+import com.snowski.service.OrderService;
+import com.snowski.service.ProducerService;
+import com.snowski.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-
-import com.snowski.entity.Product;
 import org.springframework.web.multipart.MultipartFile;
 
-import static java.util.stream.Collectors.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductController {
@@ -102,7 +99,7 @@ public class ProductController {
 
     @GetMapping("/viewProduct/{id}")
     public String viewProduct(@PathVariable int id, Model model) {
-        Product product =  productService.productWithImages(id);
+//        Product product =  productService.productWithImages(id);
 
 //        System.out.println("product = " + product);
 

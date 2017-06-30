@@ -1,20 +1,17 @@
 package com.snowski.controller;
 
-import java.security.Principal;
-import java.util.List;
-
-import com.snowski.editors.ProducerEditor;
 import com.snowski.editors.ProductEditor;
+import com.snowski.entity.Order;
 import com.snowski.entity.Product;
+import com.snowski.service.OrderService;
+import com.snowski.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import com.snowski.entity.Order;
-import com.snowski.service.OrderService;
-import com.snowski.service.ProductService;
+import java.security.Principal;
 
 @Controller
 public class OrderController {

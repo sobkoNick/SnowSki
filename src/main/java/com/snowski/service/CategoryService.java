@@ -6,14 +6,17 @@ import com.snowski.entity.Category;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface CategoryService {
-	void save(Category category, MultipartFile image);
 
-	List<Category> findAll();
+    public void save(Category category);
 
-	Category findOne(int id);
+    void save(Category category, MultipartFile image);
 
-	void delete(int id);
+    List<Category> findAll();
 
-	void update(Category category);
-	
+    Category findOne(int id);
+
+    void delete(int id);
+
+    void update(Category category);
+
 }

@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--%>
+    <title>Category</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -55,7 +54,7 @@
                     <input id="image" name="image" type="file" class="form-control">
                     <p class="help-block">Choose logo</p>
                 </div>
-                <button type="submit" class="btn btn-success" id="saveCategotyBtn"> Add Category</button>
+                <button type="submit" class="btn btn-success" id="saveCategoryBtn"> Add Category</button>
                 <%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
             </div>
             <%--</form>--%>
@@ -96,37 +95,65 @@
 <%--</form>--%>
 <%--</div>--%>
 
-</body>
-</html>
-
 <input type="hidden" name="csrf_name"
        value="${_csrf.parameterName}"/>
 <input type="hidden" name="csrf_value"
        value="${_csrf.token}"/>
 
-<script src="/js/category.js">
+</body>
+</html>
 
-    ${'#saveCategotyBtn'}.click(function () {
 
-        console.log('log')
 
+<script>
+
+    $('#saveCategoryBtn').click(function () {
         var category = {
             name: $('#categoryName').val(),
             description: $('#categoryDescription').val(),
             availability: $('#avaible').val(),
             numberOfProducts: $('#numberOfProducts').val(),
-            numberInHierarchy: $('#numberInHierarchy').val(),
+            numberInHierarchy: $('#numberInHierarchy').val()
+        };
+        var image = {
             pathToImage: $('#image').val()
         };
+
         $.ajax({
-            url: '/category?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-            method: 'POST',
-            contentType: 'application/json; charset=UTF-8',
-            dataType: 'json',
-            data: JSON.stringify(country),
-            success: function (res) {
+            url: '/saveCategory?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+                method: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                dataType: 'json',
+                data: JSON.stringify(category, image),
+                success: function (res) {
                 console.log(res);
-            }
+                }
+
         });
-    })
+    });
+
+    <%--${'#saveCategoryBtn'}.click(function () {--%>
+
+        <%--console.log('log')--%>
+
+//        var category = {
+//            name: $('#categoryName').val(),
+//            description: $('#categoryDescription').val(),
+//            availability: $('#avaible').val(),
+//            numberOfProducts: $('#numberOfProducts').val(),
+//            numberInHierarchy: $('#numberInHierarchy').val(),
+//            pathToImage: $('#image').val()
+//        };
+//
+//        $.ajax({
+//            url: '/category?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
+//            method: 'POST',
+//            contentType: 'application/json; charset=UTF-8',
+//            dataType: 'json',
+//            data: JSON.stringify(country),
+//            success: function (res) {
+//                console.log(res);
+//            }
+//        })
+//    });
 </script>

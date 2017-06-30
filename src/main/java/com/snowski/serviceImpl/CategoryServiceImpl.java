@@ -16,6 +16,10 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	@Autowired
 	private CategoryDao categoryDao;
+
+	public void save (Category category) {
+		categoryDao.save(category);
+	}
 	
 	public void save(Category category, MultipartFile image) {
 		// TODO Auto-generated method stub
@@ -36,8 +40,6 @@ public class CategoryServiceImpl implements CategoryService{
 		}
 
 		categoryDao.save(category);
-
-
 	}
 
 	public List<Category> findAll() {

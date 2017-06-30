@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
-    ${product.model}
 
    <div class="container">
         <div class="card">
@@ -36,15 +35,15 @@
                             <%--</c:forEach>--%>
 
 
-                                <c:forEach var="img" items="${product.productImages}">
-                                    <img src="${img.pathToImage}" height="192px" width="150px">
-                                </c:forEach>
+                                <%--<c:forEach var="img" items="${product.productImages}">--%>
+                                    <%--<img src="${img.pathToImage}" height="192px" width="150px">--%>
+                                <%--</c:forEach>--%>
 
-                            <%--<div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252"/></div>--%>
-                            <%--<div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>--%>
-                            <%--<div class="tab-pane" id="pic-3"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></div>--%>
-                            <%--<div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>--%>
-                            <%--<div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>--%>
+                            <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252"/></div>
+                            <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></div>
+                            <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+                            <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
@@ -52,6 +51,11 @@
                             <li><a data-target="#pic-3" data-toggle="tab"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></a></li>
                             <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
                             <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+
+                                <%--<c:forEach var="img" items="${product.productImages}">--%>
+                                    <%--<li><img src="${img.pathToImage}" height="192px" width="150px"></li>--%>
+                                <%--</c:forEach>--%>
+
                         </ul>
 
                     </div>
@@ -68,8 +72,10 @@
                             <span class="review-no">41 reviews</span>
                         </div>
                         <p class="product-description">${product.description}</p>
+                        <%--<p class="product-description">${product.producer}</p>--%>
+                        <%--<p class="product-description">${product.categoryOfProduct}</p>--%>
                         <h4 class="price">current price: <span>$ ${product.price}</span></h4>
-                        <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                        <%--<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>--%>
                         <h5 class="sizes">sizes:
                             <span class="size" data-toggle="tooltip" title="small">s</span>
                             <span class="size" data-toggle="tooltip" title="medium">m</span>
