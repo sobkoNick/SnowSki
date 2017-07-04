@@ -124,6 +124,7 @@ public class OrderServiceImpl implements OrderService {
 
             orderDao.save(order);
         }
+
         user.getProducts().clear();
         userDao.save(user);
     }

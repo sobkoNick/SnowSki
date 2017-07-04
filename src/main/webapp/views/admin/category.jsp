@@ -62,25 +62,26 @@
         </div>
     </div>
 
-    <div class="row">
-        <c:forEach var="category" items="${categories}">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="${category.pathToImage}" alt="" width="200" height="200">
-                    <div class="caption">
-                        <h3>${category.name}</h3>
-                        <p>${category.description}</p>
-                        <p>
-                            <a href="/deleteCategory/${category.id}" class="btn btn-danger" role="button">Delete</a>
-                            <a href="/updateCategory/${category.id}" class="btn btn-default" role="button">Update</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </c:forEach>
+    <%--<div class="row">--%>
+        <%--<c:forEach var="category" items="${categories}">--%>
+            <%--<div class="col-sm-6 col-md-4">--%>
+                <%--<div class="thumbnail">--%>
+                    <%--<img src="${category.pathToImage}" alt="" width="200" height="200">--%>
+                    <%--<div class="caption">--%>
+                        <%--<h3>${category.name}</h3>--%>
+                        <%--<p>${category.description}</p>--%>
+                        <%--<p>--%>
+                            <%--<a href="/deleteCategory/${category.id}" class="btn btn-danger" role="button">Delete</a>--%>
+                            <%--<a href="/updateCategory/${category.id}" class="btn btn-default" role="button">Update</a>--%>
+                        <%--</p>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</c:forEach>--%>
+    <%--</div>--%>
+
+    <div class="row" id="result">
     </div>
-
-
 </div>
 <%--<div>--%>
 <%--<form action="/category" method="post">--%>
@@ -103,57 +104,5 @@
 </body>
 </html>
 
-
-
-<script>
-
-    $('#saveCategoryBtn').click(function () {
-        var category = {
-            name: $('#categoryName').val(),
-            description: $('#categoryDescription').val(),
-            availability: $('#avaible').val(),
-            numberOfProducts: $('#numberOfProducts').val(),
-            numberInHierarchy: $('#numberInHierarchy').val()
-        };
-        var image = {
-            pathToImage: $('#image').val()
-        };
-
-        $.ajax({
-            url: '/saveCategory?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-                method: 'POST',
-                contentType: 'application/json; charset=UTF-8',
-                dataType: 'json',
-                data: JSON.stringify(category, image),
-                success: function (res) {
-                console.log(res);
-                }
-
-        });
-    });
-
-    <%--${'#saveCategoryBtn'}.click(function () {--%>
-
-        <%--console.log('log')--%>
-
-//        var category = {
-//            name: $('#categoryName').val(),
-//            description: $('#categoryDescription').val(),
-//            availability: $('#avaible').val(),
-//            numberOfProducts: $('#numberOfProducts').val(),
-//            numberInHierarchy: $('#numberInHierarchy').val(),
-//            pathToImage: $('#image').val()
-//        };
-//
-//        $.ajax({
-//            url: '/category?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
-//            method: 'POST',
-//            contentType: 'application/json; charset=UTF-8',
-//            dataType: 'json',
-//            data: JSON.stringify(country),
-//            success: function (res) {
-//                console.log(res);
-//            }
-//        })
-//    });
+<script src="/js/category.js">
 </script>
