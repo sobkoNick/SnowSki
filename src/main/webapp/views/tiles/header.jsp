@@ -5,7 +5,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
 </head>
 <body>
 <header role="banner">
@@ -45,25 +44,29 @@
                     <div class="col-xs-12 col-sm-4 col-md-4 text-header">
                         <springLocal:message code="label.free_delivery"/>
                     </div>
-                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
+                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+                        <sec:authorize access="isAuthenticated()">
+                            <sec:authorize access="!hasRole('ROLE_ADMIN')">
+                                <a href="/profile">
+                                    PROFILE
+                                </a>
+                            </sec:authorize>
+                        </sec:authorize>
                         <sec:authorize access="!isAuthenticated()">
                             <a href="/signUp"><springLocal:message code="label.sign_up"/></a>
                         </sec:authorize>
+                    </div>
+                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+                        <sec:authorize access="!isAuthenticated()">
+                        <a href="/signUp"><springLocal:message code="label.sign_in"/></a>
+                    </sec:authorize>
                         <sec:authorize access="isAuthenticated()">
-                            <a href="/profile">
-                                Profile
-                            </a>
                             <form:form action="/logout" method="post">
                                 <button>Log Out</button>
                             </form:form>
                         </sec:authorize>
                     </div>
-                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
-                        <sec:authorize access="!isAuthenticated()">
-                            <a href="/signUp"><springLocal:message code="label.sign_in"/></a>
-                        </sec:authorize>
-                    </div>
-                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 text-header">
                         <springLocal:message code="label.basket"/>
                     </div>
                 </div>

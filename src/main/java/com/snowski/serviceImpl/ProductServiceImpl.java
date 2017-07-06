@@ -7,6 +7,8 @@ import java.util.List;
 import com.snowski.dao.*;
 import com.snowski.entity.ProductImages;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.snowski.entity.Order;
@@ -118,6 +120,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product productWithImages(int id) {
         return productDao.productWithImages(id);
+    }
+
+    @Override
+    public Page<Product> findAllPages(Pageable pageable) {
+        return productDao.findAll(pageable);
     }
 
     //	@Override

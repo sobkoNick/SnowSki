@@ -23,6 +23,8 @@ public class CategoryController {
         Map<String, List<Category>> map = new HashMap<String, List<Category>>();
         map.put("categories", categoryService.findAll());
         return new ModelAndView("views-admin-category", map);
+
+
     }
 
     //	@PostMapping("/category")

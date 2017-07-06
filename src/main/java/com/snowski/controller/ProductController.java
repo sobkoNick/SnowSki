@@ -11,6 +11,8 @@ import com.snowski.service.OrderService;
 import com.snowski.service.ProducerService;
 import com.snowski.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
@@ -57,8 +59,10 @@ public class ProductController {
 //        List<Product> products = productService.productsWithImages();
 
 //        modelAttributes.put("products", productService.productWithOrders());
-        modelAttributes.put("products", productService.productsWithOnlyFirstImage());
+//        System.out.println("productService = " + productService.productsWithOnlyFirstImage());
 
+//        modelAttributes.put("products", productService.findAllPages(pageable));
+        modelAttributes.put("products", productService.productsWithOnlyFirstImage());
 //		model.addAttribute("images",productService.productsWithImages().get(0).getProductImages());
         // в продукта є ліст картинок з них треба взяти нульову
 //		List<Product> products = productService.productsWithImages();

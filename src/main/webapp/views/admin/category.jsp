@@ -80,7 +80,10 @@
         <%--</c:forEach>--%>
     <%--</div>--%>
 
-    <div class="row" id="result">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+            <div id="result"></div>
+        </div>
     </div>
 </div>
 <%--<div>--%>

@@ -36,9 +36,13 @@ public interface ProductDao extends JpaRepository<Product, Integer>{
 
 	@Query("select distinct p from Product p left join fetch p.productImages")
 	List<Product> productsWithOnlyFirstImage();
+//	@Query("select p from Product p where p.id in (select im.pathToImage from ProductImages im where p.id=:id)")
+
 
 	@Query("select distinct p from Product p left join fetch p.productImages where p.id=:id")
 	Product productWithImages(@Param("id") int id);
+
+//	select u from User u where u.age in (select max(u.age) from user u)
 
 /*
 	select product.id, product.name, product.price, productimages.pathToImage, min(productimages.id)
