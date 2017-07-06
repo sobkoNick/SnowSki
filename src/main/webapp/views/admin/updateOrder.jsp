@@ -13,8 +13,13 @@
     <title>Update</title>
 </head>
 <body>
-    <form:form modelAttribute="updateOrder" method="post">
-        <form:input path="name" value="${updateOrder.name}"></form:input>
+    <form:form modelAttribute="updateOrder" method="post" action="/updateOrderFully">
+        <form:input path="id" value="${updateOrder.id}"></form:input><br>
+        <form:input path="name" value="${updateOrder.name}"></form:input><br>
+        <form:input path="orderStatus" value="${updateOrder.orderStatus}"></form:input><br>
+        <form:input path="payMethod" value="${updateOrder.payMethod}"></form:input><br>
+        <form:input path="comment" value="${updateOrder.comment}"></form:input><br>
+        <form:input path="deliveryMethod" value="${updateOrder.deliveryMethod}"></form:input>
         <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>
         <br>
         <c:forEach items="${updateOrder.products}" var="product">

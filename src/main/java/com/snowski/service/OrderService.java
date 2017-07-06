@@ -22,6 +22,8 @@ public interface OrderService {
 
 	void updateOrder(int order_id, int product_id);
 
+	void updateOrderFully(Order order);
+
 	void addToCard(int id, Principal principal);
 
     void deleteFromBasket(int userId, int productId);

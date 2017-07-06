@@ -8,7 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Main</title>
 	<link rel="stylesheet" href="/css/index.css" type="text/css">
-	<%--<script src="/js/index.jsp"></script>--%>
+	<link rel="stylesheet" href="/css/top.css" type="text/css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -116,6 +117,24 @@
 				<div class="col-sm-3 right-menu">
 				</div>
 			</div>
+	<a href="javascript:" id="top"><i class="icon-chevron-up"></i></a>
 </div>
 </body>
 </html>
+
+<script>
+    // ===== Scroll to Top ====
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {    // If page is scrolled more than 50px
+            $('#top').fadeIn("fast");       // Fade in the arrow
+        } else {
+            $('#top').fadeOut("fast");      // Else fade out the arrow
+        }
+    });
+    $('#top').click(function() {            // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                   // Scroll to top of body
+        }, 500);
+    });
+
+</script>

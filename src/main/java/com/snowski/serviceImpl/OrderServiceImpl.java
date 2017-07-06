@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.snowski.dao.UserDao;
 import com.snowski.entity.User;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,6 +65,19 @@ public class OrderServiceImpl implements OrderService {
         orderDao.save(order);
     }
 
+    @Override
+    @Transactional
+    public void updateOrderFully(Order order) {
+        Order orderToUpdate = orderDao.findOne(order.getId());
+        orderDao.saveAndFlush(orderToUpdate);
+        orderToUpdate.setName(order.getName());
+        orderToUpdate.setOrderStatus(order.getOrderStatus());
+        orderToUpdate.setPayMethod(order.getPayMethod());
+        orderToUpdate.setDeliveryMethod(order.getDeliveryMethod());
+        orderToUpdate.setComment(order.getComment());
+        orderDao.save(orderToUpdate);
+    }
+
     public List<Order> orderWithProducts() {
         return orderDao.orderWithProducts();
     }
@@ -77,8 +91,7 @@ public class OrderServiceImpl implements OrderService {
     public void updateOrder(int order_id, int product_id) {
         Order order = orderDao.orderWithProducts(order_id);
 
-        for (Product product : order.getProducts()
-                ) {
+        for (Product product : order.getProducts()) {
             if (product.getId() == product_id) {
                 product.setOrders(null);
             }

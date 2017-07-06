@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="/css/header.css" type="text/css">
     <link rel="stylesheet" href="/css/footer.css" type="text/css">
-    <%--<script src="/js/index.jsp"></script>--%>
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 

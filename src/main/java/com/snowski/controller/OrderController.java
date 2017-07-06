@@ -39,7 +39,7 @@ public class OrderController {
         model.addAttribute("products", productService.findAll());
 
         model.addAttribute("order", new Order());
-        return "views-user-order";
+        return "views-admin-order";
     }
 
 //	@PostMapping("/order")
@@ -57,7 +57,7 @@ public class OrderController {
     @GetMapping("/updateOrder/{id}")
     public String updateOrder(@PathVariable int id, Model model) {
         model.addAttribute("updateOrder", orderService.orderWithProducts(id));
-        return "views-user-updateOrder";
+        return "views-admin-updateOrder";
     }
 
     @GetMapping("/updateOrder/{order_id}/{product_id}")
@@ -71,6 +71,13 @@ public class OrderController {
     @PostMapping("/updateOrder/{order_id}/{product_id}")
     private String updateOrder(@ModelAttribute Order order) {
         orderService.save(order);
+        return "redirect:/order";
+    }
+    @PostMapping("/updateOrderFully")
+    private String updateOrderFully(@ModelAttribute Order order) {
+        System.out.println("order = " + order);
+        orderService.updateOrderFully(order);
+//        orderService.update(order);
         return "redirect:/order";
     }
 
