@@ -9,54 +9,68 @@ import org.springframework.stereotype.Service;
 import com.snowski.dao.CategoryDao;
 import com.snowski.entity.Category;
 import com.snowski.service.CategoryService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
-	
-	@Autowired
-	private CategoryDao categoryDao;
+public class CategoryServiceImpl implements CategoryService {
 
-	public void save (Category category) {
-		categoryDao.save(category);
-	}
-	
-	public void save(Category category, MultipartFile image) {
-		// TODO Auto-generated method stub
-		categoryDao.saveAndFlush(category);
+    @Autowired
+    private CategoryDao categoryDao;
 
-		String path = System.getProperty("catalina.home") + "/resources/"
-				+ category.getName() + "/" + image.getOriginalFilename();
+    public void save(Category category) {
+        categoryDao.save(category);
+    }
 
-		category.setPathToImage("resources/" + category.getName() + "/" + image.getOriginalFilename());
+    public void save(Category category, MultipartFile image) {
+        // TODO Auto-generated method stub
+        categoryDao.saveAndFlush(category);
 
-		File filePath = new File(path);
+        String path = System.getProperty("catalina.home") + "/resources/"
+                + category.getName() + "/" + image.getOriginalFilename();
 
-		try {
-			filePath.mkdirs();
-			image.transferTo(filePath);
-		} catch (Exception e) {
-			System.out.println("Error with file");
-		}
+        category.setPathToImage("resources/" + category.getName() + "/" + image.getOriginalFilename());
 
-		categoryDao.save(category);
-	}
+        File filePath = new File(path);
 
-	public List<Category> findAll() {
-		return categoryDao.findAll();
-	}
+        try {
+            filePath.mkdirs();
+            image.transferTo(filePath);
+        } catch (Exception e) {
+            System.out.println("Error with file");
+        }
 
-	public Category findOne(int id) {
-		return categoryDao.findOne(id);
-	}
+        categoryDao.save(category);
+    }
 
-	public void delete(int id) {
-		categoryDao.delete(id);
-	}
+    public List<Category> findAll() {
+        return categoryDao.findAll();
+    }
 
-	public void update(Category category) {
-		// TODO Auto-generated method stub
-		categoryDao.save(category);
-	}
+    public Category findOne(int id) {
+        return categoryDao.findOne(id);
+    }
 
+    public void delete(int id) {
+        categoryDao.delete(id);
+    }
+
+    public void update(Category category) {
+        // TODO Auto-generated method stub
+        categoryDao.save(category);
+    }
+
+    @Transactional
+    @Override
+    public void fullUpdate(Category category) {
+        Category categoryToUpdate = categoryDao.findOne(category.getId());
+        categoryDao.saveAndFlush(categoryToUpdate);
+        categoryToUpdate.setAvailability(category.getAvailability());
+        categoryToUpdate.setDescription(category.getDescription());
+        categoryToUpdate.setName(category.getName());
+        categoryToUpdate.setNumberInHierarchy(category.getNumberInHierarchy());
+        categoryToUpdate.setNumberOfProducts(category.getNumberOfProducts());
+        categoryToUpdate.setPathToImage(category.getPathToImage());
+        categoryDao.save(categoryToUpdate);
+    }
 }

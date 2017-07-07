@@ -17,6 +17,7 @@ public interface ProducerService {
 	void delete(int id);
 
 	void update(Producer producer);
+	void fullUpdate(Producer producer);
 
 	Page<Producer> findAllPages(Pageable pageable);
 

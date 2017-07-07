@@ -1,5 +1,6 @@
 package com.snowski.controller;
 
+import com.snowski.entity.Category;
 import com.snowski.validator.producerValidator.ProducerValidatorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +25,6 @@ public class ProducerController {
 		return "views-admin-producer";
 	}
 
-
 	@PostMapping("/producer") // using spring forms
 	public String producer(@ModelAttribute Producer producer, Model model, @RequestParam MultipartFile image){
 		try {
@@ -46,6 +46,18 @@ public class ProducerController {
 	@GetMapping("/deleteProducer/{id}")
 	public String delete(@PathVariable int id) {
 		producerService.delete(id);
+		return "redirect:/producer";
+	}
+
+	@GetMapping("/updateProducer/{id}")
+	public String updateProducer(@PathVariable int id, Model model) {
+		model.addAttribute("updateProducer", producerService.findOne(id));
+		return "views-admin-updateProducer";
+	}
+
+	@PostMapping("/updateProducer")
+	public String fullUpdate(@ModelAttribute Producer producer) {
+		producerService.fullUpdate(producer);
 		return "redirect:/producer";
 	}
 }

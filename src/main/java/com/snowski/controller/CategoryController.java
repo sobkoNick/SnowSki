@@ -4,6 +4,7 @@ import com.snowski.entity.Category;
 import com.snowski.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,6 +27,11 @@ public class CategoryController {
 
 
     }
+    @GetMapping("/updateCategory/{id}")
+    public String updateOrder(@PathVariable int id, Model model) {
+        model.addAttribute("updateCategory", categoryService.findOne(id));
+        return "views-admin-updateCategory";
+    }
 
     //	@PostMapping("/category")
 //	public String category(@RequestParam String name, @RequestParam String description,
@@ -44,6 +50,12 @@ public class CategoryController {
         return categoryService.findAll();
     }
 
+    @PostMapping("/updateCategory")
+    public String updateCategory(@ModelAttribute Category category) {
+        categoryService.fullUpdate(category);
+        return "redirect:/category";
+    }
+
     @GetMapping("/deleteCategory/{id}")
     public String delete(@PathVariable int id) {
         categoryService.delete(id);
@@ -60,10 +72,7 @@ public class CategoryController {
     @ResponseBody
     @DeleteMapping("/deleteCategory")
     public List<Category> deleteCategory(@RequestBody String idCategory) {
-
         categoryService.delete(Integer.parseInt(idCategory));
-
         return categoryService.findAll();
     }
-
 }

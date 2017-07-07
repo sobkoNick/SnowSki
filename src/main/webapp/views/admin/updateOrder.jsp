@@ -14,12 +14,18 @@
 </head>
 <body>
     <form:form modelAttribute="updateOrder" method="post" action="/updateOrderFully">
+        <label>id</label>
         <form:input path="id" value="${updateOrder.id}"></form:input><br>
+        <label>name</label>
         <form:input path="name" value="${updateOrder.name}"></form:input><br>
+        <label>orderStatus</label>
         <form:input path="orderStatus" value="${updateOrder.orderStatus}"></form:input><br>
+        <label>payMethod</label>
         <form:input path="payMethod" value="${updateOrder.payMethod}"></form:input><br>
-        <form:input path="comment" value="${updateOrder.comment}"></form:input><br>
-        <form:input path="deliveryMethod" value="${updateOrder.deliveryMethod}"></form:input>
+        <label>deliveryMethod</label>
+        <form:input path="deliveryMethod" value="${updateOrder.deliveryMethod}"></form:input><br>
+        <label>comment</label>
+        <form:input path="comment" value="${updateOrder.comment}"></form:input>
         <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>
         <br>
         <c:forEach items="${updateOrder.products}" var="product">

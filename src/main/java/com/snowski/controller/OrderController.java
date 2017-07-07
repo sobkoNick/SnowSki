@@ -75,7 +75,6 @@ public class OrderController {
     }
     @PostMapping("/updateOrderFully")
     private String updateOrderFully(@ModelAttribute Order order) {
-        System.out.println("order = " + order);
         orderService.updateOrderFully(order);
 //        orderService.update(order);
         return "redirect:/order";

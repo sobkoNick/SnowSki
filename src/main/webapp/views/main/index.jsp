@@ -36,25 +36,25 @@
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
 								<a href="#">
-									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18738626_1587330867945059_2948198496497785979_o.jpg?oh=3e616d7d14466e0a55b0484e3221b99b&oe=59B61767" alt="Flower">
+									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/USST-NFC-marquee-3.jpeg" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18699742_1587331424611670_9069118261643631987_o.jpg?oh=74f52a129fe907807ac336919f571998&oe=59E6E2E5" alt="Flower">
+									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/rossi.png" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t31.0-8/18738467_1587331364611676_4401101162099344350_o.jpg?oh=de08e3488656a1da148d12dfcac5eebb&oe=59A2FD5D" alt="Flower">
+									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/googlesNORM.png" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
 								<a href="#">
-									<img src="https://scontent-fra3-1.xx.fbcdn.net/v/t31.0-8/18814483_1587331474611665_3514274231234335529_o.jpg?oh=27f0c0de121c86b744deb3385ad326fa&oe=59AC25ED" alt="Flower">
+									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/school.png" alt="Flower">
 								</a>
 							</div>
 						</div>

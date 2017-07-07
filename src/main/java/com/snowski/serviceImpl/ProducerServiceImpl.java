@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.snowski.dao.ProducerDao;
 import com.snowski.entity.Producer;
 import com.snowski.service.ProducerService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -74,6 +75,17 @@ public class ProducerServiceImpl implements ProducerService{
 	public void update(Producer producer) {
 		// TODO Auto-generated method stub
 		producerDao.save(producer);
+	}
+	@Transactional
+	@Override
+	public void fullUpdate(Producer producer) {
+		Producer producerToUpdate = producerDao.findOne(producer.getId());
+		producerDao.saveAndFlush(producerToUpdate);
+		producerToUpdate.setDescription(producer.getDescription());
+		producerToUpdate.setName(producer.getName());
+		producerToUpdate.setNumberOfProducts(producer.getNumberOfProducts());
+		producerToUpdate.setPathToImage(producer.getPathToImage());
+		producerDao.save(producerToUpdate);
 	}
 
 	@Override
