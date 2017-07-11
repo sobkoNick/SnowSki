@@ -86,18 +86,6 @@
         </div>
     </div>
 </div>
-<%--<div>--%>
-<%--<form action="/category" method="post">--%>
-<%--<input name="name" type="text" placeholder="name"><br>--%>
-<%--<input name="description" type="text" placeholder="description"><br>--%>
-<%--<input name="availability" type="text" placeholder="availability"><br>--%>
-<%--<input name="numberOfProducts" type="text" placeholder="numberOfProducts" required="required"><br>--%>
-<%--<input name="numberInHierarchy" type="text" placeholder="numberInHierarchy" required="required"><br>--%>
-<%----%>
-<%--<button>save category</button>--%>
-<%--<input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}"/>--%>
-<%--</form>--%>
-<%--</div>--%>
 
 <input type="hidden" name="csrf_name"
        value="${_csrf.parameterName}"/>

@@ -117,10 +117,10 @@
 							<div class="col-xs-4 col-sm-4 col-md-4">
 							<figure class="snip1246">
 									<%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
-								<%--<img src="${product.id}" alt="sample88"/>--%>
-										<c:forEach var="img" items="${product.productImages}">
-												<img src="${img.pathToImage}" alt="sample88" height="192px" width="150px">
-										</c:forEach>
+								<img src="${product.pathToImage}" alt="sample88"/>
+										<%--<c:forEach var="img" items="${product.productImages}">--%>
+												<%--<img src="${img.pathToImage}" alt="sample88" height="192px" width="150px">--%>
+										<%--</c:forEach>--%>
 								<figcaption>
 									<h2>${product.name}</h2>
 									<p>${product.description}</p>

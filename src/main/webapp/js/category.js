@@ -40,7 +40,6 @@ $('#saveCategoryBtn').click(function () {
 load();
 
 function load() {
-
     $.ajax({
         url: '/loadCategories?' + $('input[name=csrf_name]').val() + "=" + $('input[name=csrf_value]').val(),
         method: 'GET',
@@ -64,7 +63,6 @@ function deleteCategory(idCategory) {
 function showData(res) {
     var fromDB = '';
     for (var i in res) {
-//                    fromDB += '<tr><td>'+res[i].name+'</td><tr>';
         fromDB += '<div class="col-sm-6 col-md-4">' +
             '<div class="thumbnail">' +
             '<img src="' + res[i].pathToImage + '" alt="" width="200" height="200">' +

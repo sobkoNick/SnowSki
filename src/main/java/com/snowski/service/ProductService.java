@@ -19,12 +19,8 @@ public interface ProductService {
 	void update(Product product);
 	
 	List<Product> productWithOrders();
-
-	List<Product> productsWithOnlyFirstImage();
-
 	Product productWithImages(int id);
+	List<Product> productsWithImages();
 
 	Page<Product> findAllPages(Pageable pageable);
-
-//	List<Product> productsWithImages();
 }

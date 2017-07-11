@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface ProductImagesService {
+    ProductImages find(int id);
 
 //    ProductImages getProductImagesByProductId(Integer id);
 }

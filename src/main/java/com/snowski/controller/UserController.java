@@ -89,14 +89,13 @@ public class UserController {
     public String profile(Principal principal, Model model) {
         User user = userService.findUserWithProduct(Integer.parseInt(principal.getName()));
         model.addAttribute("userWithBasket", user);
+        model.addAttribute("user", userService.findOne(Integer.parseInt(principal.getName())));
         return "views-user-profile";
     }
 
     @GetMapping("/history")
-    public String history(Principal principal, Model model){
-
+    public String history(Principal principal, Model model) {
         model.addAttribute("user", userService.findUserWithOrders(Integer.parseInt(principal.getName())));
-
         return "views-user-history";
     }
 

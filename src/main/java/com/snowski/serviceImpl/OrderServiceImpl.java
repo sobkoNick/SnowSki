@@ -101,7 +101,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void addToCard(int id, Principal principal) {
-        User user = userDao.findUserWithProducts(4);
+        User user = userDao.findUserWithProducts(Integer.parseInt(principal.getName()));
         Product product = productDao.findOne(id);
         user.getProducts().add(product);
         userDao.save(user);

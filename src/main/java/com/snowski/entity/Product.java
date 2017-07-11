@@ -19,7 +19,7 @@ public class Product {
 	private String options;
 	private int weight;
 
-//	private String pathToImage;
+	private String pathToImage;
 
 	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
 	private List<ProductImages> productImages = new ArrayList<>();
@@ -62,8 +62,6 @@ public class Product {
 		this.options = options;
 		this.weight = weight;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -176,23 +174,32 @@ public class Product {
 		this.productImages = productImages;
 	}
 
-	@Override
-	public String toString() {
-		return "Product{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", description='" + description + '\'' +
-				", model='" + model + '\'' +
-				", price=" + price +
-				", avaible=" + avaible +
-				", count=" + count +
-				", options='" + options + '\'' +
-				", weight=" + weight +
-				", productImages=" + productImages +
-				", orders=" + orders +
-				", users=" + users +
-				", producer=" + producer +
-				", categoryOfProduct=" + categoryOfProduct +
-				'}';
+	public String getPathToImage() {
+		return pathToImage;
 	}
+
+	public void setPathToImage(String pathToImage) {
+		this.pathToImage = pathToImage;
+	}
+
+//	@Override
+//	public String toString() {
+//		return "Product{" +
+//				"id=" + id +
+//				", name='" + name + '\'' +
+//				", description='" + description + '\'' +
+//				", model='" + model + '\'' +
+//				", price=" + price +
+//				", avaible=" + avaible +
+//				", pathToImage=" + pathToImage +
+//				", count=" + count +
+//				", options='" + options + '\'' +
+//				", weight=" + weight +
+//				", productImages=" + productImages +
+//				", orders=" + orders +
+//				", users=" + users +
+//				", producer=" + producer +
+//				", categoryOfProduct=" + categoryOfProduct +
+//				'}';
+//	}
 }

@@ -56,7 +56,6 @@ public class ProductServiceImpl implements ProductService {
         product.setProducer(producerDao.findOne(producer));
         product.setCategoryOfProduct(categoryDao.findOne(categoryOfProduct));
 
-
         for (MultipartFile multipartFile : images) {
 
 //			String path = "C:\\Users\\Mykola\\Downloads\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\resources\\"
@@ -84,6 +83,11 @@ public class ProductServiceImpl implements ProductService {
             } catch (Exception e) {
                 System.out.println("Error with file");
             }
+
+            // sets first image from images as cover image
+            product.setPathToImage("resources/" + product.getName() + "/"
+                    + images.get(0).getOriginalFilename());
+
             productImagesDao.save(productImages);
         }
 
@@ -113,11 +117,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> productsWithOnlyFirstImage() {
-        return productDao.productsWithOnlyFirstImage();
-    }
-
-    @Override
     public Product productWithImages(int id) {
         return productDao.productWithImages(id);
     }
@@ -127,9 +126,14 @@ public class ProductServiceImpl implements ProductService {
         return productDao.findAll(pageable);
     }
 
-    //	@Override
-//	public List<Product> productsWithImages() {
-//		return  productDao.productsWithImages();
-//	}
+    @Override
+	public List<Product> productsWithImages() {
+		return  productDao.productsWithImages();
+	}
 
+
+//    @Override
+//    public List<Product> productsWithOnlyFirst() {
+//        return productDao.productsWithOnlyFirst();
+//    }
 }

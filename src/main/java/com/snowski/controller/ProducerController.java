@@ -26,7 +26,8 @@ public class ProducerController {
 	}
 
 	@PostMapping("/producer") // using spring forms
-	public String producer(@ModelAttribute Producer producer, Model model, @RequestParam MultipartFile image){
+	public String producer(@ModelAttribute Producer producer, Model model, @RequestParam MultipartFile image,
+						   @PageableDefault Pageable pageable){
 		try {
 			producerService.save(producer, image);
 		} catch (Exception e) {
@@ -37,7 +38,7 @@ public class ProducerController {
 			} else if (e.getMessage().equals(ProducerValidatorMessages.NUMBER_OF_PRODUCTS_INCORRECT)) {
 				model.addAttribute("numberOfProductsException", e.getMessage());
 			}
-
+			model.addAttribute("producers", producerService.findAllPages(pageable));
 			return "views-admin-producer";
 		}
 		return "redirect:/producer";
