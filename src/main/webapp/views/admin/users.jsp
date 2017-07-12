@@ -8,21 +8,22 @@
     <link rel="stylesheet" href="/css/order.css" type="text/css">
     <script src="/js/order.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Orders</title>
+    <title>Users</title>
 </head>
 <body>
 <section>
     <!--for demo wrap-->
-    <h1>ORDERS TABLE</h1>
+    <h1>User TABLE</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Products</th>
-                <th>Order Status</th>
+                <th>Telephone</th>
+                <th>Status</th>
+                <th>Enaibled?</th>
+                <th>Discount</th>
                 <th>DELETE</th>
                 <th>UPDATE</th>
             </tr>
@@ -32,19 +33,16 @@
     <div class="tbl-content">
         <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-            <c:forEach var="order" items="${orders}">
+            <c:forEach var="user" items="${users}">
                 <tr>
-                    <td>${order.id}</td>
-                    <td>${order.name}</td>
-                    <td>${order.orderPrice}</td>
-                    <td>
-                        <c:forEach var="product" items="${order.products}">
-                            ${product.name};
-                        </c:forEach>
-                    </td>
-                    <td>${order.orderStatus}</td>
-                    <td><a href="/deleteOrder/${order.id}">delete</a></td>
-                    <td><a href="/updateOrder/${order.id}">update</a></td>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.telephone}</td>
+                    <td>${user.status}</td>
+                    <td>${user.isEnabled()}</td>
+                    <td>${user.discount}</td>
+                    <td><a href="/deleteUser/${user.id}">delete</a></td>
+                    <td><a href="/updateUserFields/${user.id}">update</a></td>
                 </tr>
             </c:forEach>
             </tbody>

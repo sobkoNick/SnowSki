@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.*;
-//import javax.persistence.Table;
 
 @Entity
 //@Table(name = "customer") // if you want other name than user
@@ -152,37 +151,25 @@ public class User implements UserDetails {
 		this.language = language;
 	}
 
-
-
 	public String getFirstName() {
 		return firstName;
 	}
-
-
 
 	public String getLastName() {
 		return lastName;
 	}
 
-
-
 	public String getUserGroup() {
 		return userGroup;
 	}
-
-
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-
 
 	public void setUserGroup(String userGroup) {
 		this.userGroup = userGroup;
@@ -266,10 +253,8 @@ public class User implements UserDetails {
 				", status='" + status + '\'' +
 				", discount=" + discount +
 				", language='" + language + '\'' +
-				", enable=" + enable +
 				", uuid='" + uuid + '\'' +
 				", pathToImage='" + pathToImage + '\'' +
-				", role=" + role +
 				", orders=" + orders +
 				", products=" + products +
 				'}';

@@ -101,11 +101,9 @@ public class ProductController {
         return "redirect:/product";
     }
 
-    @GetMapping("/search/{text}")
-    public String search(@PathVariable String text, Model model) {
-//        System.out.println("text = " + text);
-//        String prodName = text.substring(text.indexOf("=") + 1, text.indexOf("#"));
-//        System.out.println("prodName = " + prodName);
+    @PostMapping("/search")
+    public String search(@ModelAttribute String text, Model model) {
+        System.out.println("text = " + text);
         int id = productService.findProductByName(text).getId();
         model.addAttribute("product", productService.productWithImages(id));
         return "views-user-viewproduct";

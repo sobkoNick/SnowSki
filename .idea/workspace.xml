@@ -46,45 +46,43 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateProfile.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/updateProfile.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signUp.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/signUp.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="83" column="60" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="60" />
-              <folding>
-                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="132" column="71" lean-forward="true" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
+            <state relative-caret-position="203">
+              <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLoginValidator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/validator/userLoginValidation/UserLoginValidator.java">
+      <file leaf-file-name="viewproduct.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/viewproduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="28" column="90" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="90" />
+            <state relative-caret-position="119">
+              <caret line="40" column="109" lean-forward="true" selection-start-line="40" selection-start-column="109" selection-end-line="40" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="208" column="28" lean-forward="false" selection-start-line="208" selection-start-column="19" selection-end-line="208" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/users.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -93,19 +91,31 @@
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="73" column="35" lean-forward="false" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            <state relative-caret-position="34">
+              <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/service/UserService.java">
+      <file leaf-file-name="profile.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="59" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/views/tiles/header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="54" />
+              <folding>
+                <marker date="1499882595688" expanded="true" signature="8028:8695" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,7 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>big-header</find>
       <find>dropdown</find>
       <find>form-control-feedback</find>
       <find>btn-signin</find>
@@ -156,6 +165,7 @@
       <find>add</find>
       <find>addT</find>
       <find>addTo</find>
+      <find>/logout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,11 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/views/user/order.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/servlet-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/admin/producer.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/allproducts.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/totop.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/tiles/template.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/header.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/top.css" />
@@ -184,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/main/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/label_ru.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/entity/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/OrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/admin/updateOrder.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/admin/updateProducer.jsp" />
@@ -209,16 +213,22 @@
         <option value="$PROJECT_DIR$/src/main/webapp/views/admin/product.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/views/admin/updateProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/UpdateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/dao/ProductDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/tiles/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/ProductController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/user/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/OrderController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/tiles/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/user/updateProfile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/views/user/updateProfile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/security.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/snowski/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/admin/updateUser.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/admin/users.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/views/user/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/snowski/controller/UserController.java" />
       </list>
     </option>
@@ -278,6 +288,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -861,7 +872,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -1424,7 +1434,12 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-      <method />
+      <method>
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SnowSki:war exploded" />
+        </option>
+      </method>
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
@@ -1509,11 +1524,13 @@
       <workItem from="1499767559787" duration="9889000" />
       <workItem from="1499794215184" duration="10829000" />
       <workItem from="1499849499434" duration="14527000" />
+      <workItem from="1499870259155" duration="4503000" />
+      <workItem from="1499877143892" duration="10101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314634000" />
+    <option name="totallyTimeSpent" value="329238000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1548,12 +1565,13 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3535188" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33387887" sideWeight="0.49394855" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25567323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2632375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1561,7 +1579,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1581,36 +1598,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://H:/CollectionsJava8/src/com/epam/lab/lab5/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/Producer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/dao/ProductImagesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/service/ProducerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/ProductImagesServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/service/ProductImagesService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1664,14 +1651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="84" column="46" lean-forward="true" selection-start-line="84" selection-start-column="46" selection-end-line="84" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/dao/OrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1687,14 +1666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/viewproduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/dao/ProducerDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1706,14 +1677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2193">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1744,7 +1707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1756,19 +1718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/ProducerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="80" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/CategoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="72" column="67" lean-forward="false" selection-start-line="72" selection-start-column="67" selection-end-line="72" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1777,22 +1730,15 @@
         <state relative-caret-position="102">
           <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="26" />
           <folding>
-            <element signature="e#749#756#0" expanded="true" />
-            <element signature="e#946#952#0" expanded="true" />
-            <element signature="e#3331#3332#0" expanded="true" />
-            <element signature="e#3368#3369#0" expanded="true" />
+            <element signature="e#749#756#0" expanded="false" />
+            <element signature="e#946#952#0" expanded="false" />
+            <element signature="e#3331#3332#0" expanded="false" />
+            <element signature="e#3368#3369#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/UpdateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/UpdateController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/updateProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -1805,7 +1751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2476">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1813,14 +1758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1921">
           <caret line="123" column="44" lean-forward="true" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/category.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1833,58 +1770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/producer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/CategoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/updateCategory.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="108" column="64" lean-forward="false" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/dao/ProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/tiles/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="158" column="26" lean-forward="true" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1897,14 +1786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2644">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1913,17 +1794,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/validator/userLoginValidation/UserLoginValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="90" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/signUp.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="83" column="60" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/producer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/ProducerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-327">
+        <state relative-caret-position="17">
           <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="104" column="51" lean-forward="false" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/OrderController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/category.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="62" column="10" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="62" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="270">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
@@ -1931,52 +1875,124 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="255">
           <caret line="137" column="70" lean-forward="true" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/ProducerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="81" column="57" lean-forward="false" selection-start-line="81" selection-start-column="57" selection-end-line="81" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/updateCategory.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/updateProfile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354">
+          <caret line="30" column="70" lean-forward="false" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/serviceImpl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="73" column="35" lean-forward="false" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+        <state relative-caret-position="34">
+          <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/validator/userLoginValidation/UserLoginValidator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/updateUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="28" column="90" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="90" />
+        <state relative-caret-position="105">
+          <caret line="43" column="59" lean-forward="true" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/signUp.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/main/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="83" column="60" lean-forward="false" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="60" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="208" column="28" lean-forward="false" selection-start-line="208" selection-start-column="19" selection-end-line="208" selection-end-column="28" />
           <folding>
-            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/updateProfile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        <state relative-caret-position="153">
+          <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/tiles/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="54" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1499882595688" expanded="true" signature="8028:8695" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/admin/users.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/snowski/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="132" column="71" lean-forward="true" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
+        <state relative-caret-position="203">
+          <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/views/user/viewproduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="40" column="109" lean-forward="true" selection-start-line="40" selection-start-column="109" selection-end-line="40" selection-end-column="109" />
           <folding />
         </state>
       </provider>

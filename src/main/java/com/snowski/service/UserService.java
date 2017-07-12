@@ -23,5 +23,6 @@ public interface UserService {
 
 	void updateUser(User user, String newPassword, Principal principal) throws UserException;
 
+	void updateuserByAdmin(int id, String status, int discount, boolean enable);
 //	void addToCard(int id, Principal principal);
 }

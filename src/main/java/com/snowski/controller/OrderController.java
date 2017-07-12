@@ -37,7 +37,6 @@ public class OrderController {
     private String order(Model model) {
         model.addAttribute("orders", orderService.orderWithProducts());
         model.addAttribute("products", productService.findAll());
-
         model.addAttribute("order", new Order());
         return "views-admin-order";
     }

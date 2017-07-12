@@ -13,27 +13,56 @@
     <title>Update Profile</title>
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+            <label style="text-align: center;
+			font-size: 20px; color: aqua;
+			padding-top: 20px;">Update your details</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+            <div style="width: 50%; padding-left: 20px;">
+                <form method="post" action="/updateUser">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name"
+                               required="required" value="${updateUser.name}">
+                    </div>
+                    <div class="form-group">
+                        <label>email</label>
+                        <input type="text" class="form-control" name="email" required="required"
+                               value="${updateUser.email}">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" class="form-control" placeholder="newPassword" name="newPassword">
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" value="${updateUser.firstName}"
+                               name="firstName" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" value="${updateUser.lastName}"
+                               name="lastName" required="required">
+                    </div>
 
-<form:form modelAttribute="updateUser" method="post" action="/updateUser">
-    <label>name</label>
-    <form:input path="name" value="${updateUser.name}"></form:input><br>
-    <label>email</label>
-    <form:input path="email" value="${updateUser.email}"></form:input><br>
-    <label>password</label>
-    <span style="color: red">${passwordException}</span><br>
-    <form:input type="password" path="password" value="" placeholder="Old Password"></form:input><br>
-    <label>New password</label>
-    <input type="password" path="newPassword" name="newPassword" placeholder="New Password"></input><br>
-
-    <label>first name</label>
-    <form:input path="firstName" value="${updateUser.firstName}"></form:input><br>
-    <label>last name</label>
-    <form:input path="lastName" value="${updateUser.lastName}"></form:input><br>
-    <label>telephone</label>
-    <form:input path="telephone" value="${updateUser.telephone}"></form:input><br>
-
-    <button>Update</button>
-</form:form>
-
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" class="form-control" value="${updateUser.telephone}"
+                               name="telephone" required="required">
+                    </div>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <button type="submit" class="btn btn-success" id="saveCategoryBtn">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+

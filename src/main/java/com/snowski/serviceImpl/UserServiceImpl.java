@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import com.snowski.dao.UserDao;
 import com.snowski.entity.User;
 import com.snowski.service.UserService;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("userDetailsService")
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -55,6 +56,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userDao.save(user);
     }
 
+    @Transactional
     @Override
     public void updateUser(User user, String newPassword, Principal principal) throws UserException {
         User userToUpdate = userDao.findUserWithOrders(Integer.parseInt(principal.getName()));
@@ -63,14 +65,21 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userToUpdate.setName(user.getName());
         userToUpdate.setFirstName(user.getFirstName());
         userToUpdate.setLastName(user.getLastName());
-
+        userToUpdate.setTelephone(user.getTelephone());
         if (!newPassword.isEmpty()) {
-            if (encoder.matches(userToUpdate.getPassword(), user.getPassword())) {
                 userToUpdate.setPassword(encoder.encode(newPassword));
-            } else {
-                throw new UserException(UserLoginValidationMessages.WRONG_USENAME_OR_PASSWORD);
-            }
         }
+        userDao.save(userToUpdate);
+    }
+
+    @Transactional
+    @Override
+    public void updateuserByAdmin(int id, String status, int discount, boolean enable) {
+        User userToUpdate = userDao.findOne(id);
+        userDao.saveAndFlush(userToUpdate);
+        userToUpdate.setStatus(status);
+        userToUpdate.setDiscount(discount);
+        userToUpdate.setEnable(enable);
         userDao.save(userToUpdate);
     }
 

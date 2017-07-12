@@ -5,9 +5,7 @@ import com.snowski.service.MailSenderService;
 import com.snowski.service.UserService;
 import com.snowski.validator.Validator;
 import com.snowski.validator.userLoginValidation.UserLoginValidationMessages;
-import com.snowski.validator.userValidator.UserException;
 import com.snowski.validator.userValidator.UserValidatorMessages;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -124,17 +122,49 @@ public class UserController {
     }
 
     @PostMapping("/updateUser")
-    public String updateProfile(@ModelAttribute User user, @RequestParam String newPassword, Principal principal, Model model) throws UserException {
-       try {
-           userService.updateUser(user, newPassword, principal);
-       } catch (Exception e) {
-           if (e.getMessage().equals(UserLoginValidationMessages.WRONG_USENAME_OR_PASSWORD)) {
-               System.out.println("e = " + e);
-               model.addAttribute("passwordException", e.getMessage());
-               return "redirect:/updateProfile";
-           }
-       }
+    public String updateUserProfile(@RequestParam String name, @RequestParam String email,
+                                    @RequestParam String newPassword, @RequestParam String firstName, @RequestParam String lastName,
+                                    @RequestParam String telephone, Principal principal, Model model) {
+        User user = new User(name,email,"",firstName,lastName,"",telephone,"",0,"");
+        try {
+            userService.updateUser(user, newPassword, principal);
+        } catch (Exception e) {
+            if (e.getMessage().equals(UserLoginValidationMessages.WRONG_USENAME_OR_PASSWORD)) {
+                System.out.println("e = " + e);
+                model.addAttribute("passwordException", e.getMessage());
+                return "redirect:/updateProfile";
+            }
+        }
         return "redirect:/profile";
     }
 
+    @GetMapping("/users")
+    public String getUsers(Model model) {
+        model.addAttribute("users", userService.findAll());
+        return "views-admin-users";
+    }
+
+    @GetMapping("/updateUserFields/{id}")
+    public String getUpdateJSP(Model model, @PathVariable int id) {
+        model.addAttribute("userBla", userService.findUserWithOrders(id));
+        return "views-admin-updateUser";
+    }
+    @PostMapping("/updateUserByAdmin")
+    public String updateUserByAdmin(@RequestParam int id , @RequestParam String status,
+                                    @RequestParam int discount, @RequestParam boolean enable) {
+        userService.updateuserByAdmin(id, status, discount,enable);
+        return "redirect:/users";
+    }
+
+    @GetMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable int id) {
+        userService.delete(id);
+        return "redirect:/users";
+    }
+
+    @GetMapping("/deleteUserFromProfile")
+    public String deleteUserFromProfile(Principal principal) {
+        userService.delete(Integer.parseInt(principal.getName()));
+        return "redirect:/";
+    }
 }

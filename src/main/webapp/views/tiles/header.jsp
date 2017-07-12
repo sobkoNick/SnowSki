@@ -22,6 +22,7 @@
                     <li role="presentation"><a href="/product">Product</a></li>
                     <li role="presentation"><a href="/signUp">SignUp</a></li>
                     <li role="presentation"><a href="/order">Order</a></li>
+                    <li role="presentation"><a href="/users">Users</a></li>
                 </ul>
             </div>
 
@@ -149,13 +150,14 @@
                     </div>
 
                     <div class="hidden-xs col-sm-3 col-md-3">
-                        <form action="" class="search-form">
-                            <div class="form-group has-feedback">
-                                <label for="search" class="sr-only">Search</label>
-                                <input type="text" class="form-control" name="search" id="search" placeholder="search">
-                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </div>
-                        </form>
+                        <%--<form:form action="/search" class="search-form" method="post">--%>
+                            <%--<div class="form-group has-feedback">--%>
+                                <%--<label for="search" class="sr-only">Search</label>--%>
+                                <%--<form:input type="text" class="form-control" path="text" name="text" id="search" placeholder="search"></form:input>--%>
+                                <%--<span class="glyphicon glyphicon-search form-control-feedback"></span>--%>
+                            <%--</div>--%>
+                            <%--<button>Search</button>--%>
+                        <%--</form:form>--%>
                     </div>
                 </div>
             </div>
