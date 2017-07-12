@@ -53,7 +53,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="btn btn-primary">Update Profile</a>
+                            <a href="/updateProfile" class="btn btn-primary">Update Profile</a>
                             <a href="#" class="btn btn-warning">Delete profile</a>
                         </div>
                     </div>

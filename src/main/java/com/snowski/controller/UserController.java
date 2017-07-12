@@ -5,7 +5,9 @@ import com.snowski.service.MailSenderService;
 import com.snowski.service.UserService;
 import com.snowski.validator.Validator;
 import com.snowski.validator.userLoginValidation.UserLoginValidationMessages;
+import com.snowski.validator.userValidator.UserException;
 import com.snowski.validator.userValidator.UserValidatorMessages;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -27,7 +29,6 @@ public class UserController {
 
     @GetMapping("/signUp")
     public String registration(Model model) {
-
         model.addAttribute("user", new User());
         return "views-user-signUp";
     }
@@ -114,6 +115,26 @@ public class UserController {
         model.addAttribute("user", new User());
 
         return "views-user-signUp";
+    }
+
+    @GetMapping("/updateProfile")
+    public String updateUserProfile(Model model, Principal principal){
+        model.addAttribute("updateUser", userService.findOne(Integer.parseInt(principal.getName())));
+        return "views-user-updateProfile";
+    }
+
+    @PostMapping("/updateUser")
+    public String updateProfile(@ModelAttribute User user, @RequestParam String newPassword, Principal principal, Model model) throws UserException {
+       try {
+           userService.updateUser(user, newPassword, principal);
+       } catch (Exception e) {
+           if (e.getMessage().equals(UserLoginValidationMessages.WRONG_USENAME_OR_PASSWORD)) {
+               System.out.println("e = " + e);
+               model.addAttribute("passwordException", e.getMessage());
+               return "redirect:/updateProfile";
+           }
+       }
+        return "redirect:/profile";
     }
 
 }

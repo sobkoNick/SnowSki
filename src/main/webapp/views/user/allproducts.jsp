@@ -73,7 +73,6 @@
 </div>
     <a href="javascript:" id="top"><i class="icon-chevron-up"></i></a>
 
-
 </body>
 </html>
 <script src="/js/allproducts.js"></script>

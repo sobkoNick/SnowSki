@@ -26,6 +26,13 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @Autowired
+    private ProducerService producerService;
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private CategoryService categoryService;
+
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -36,9 +43,9 @@ public class ProductController {
     public String product(Model model) {
         Map<String, Object> modelAttributes = new HashMap<>();
         modelAttributes.put("products", productService.productsWithImages());
-//        modelAttributes.put("producers", producerService.findAll());
-//        modelAttributes.put("orders", orderService.findAll());
-//        modelAttributes.put("categories", categoryService.findAll());
+        modelAttributes.put("producers", producerService.findAll());
+        modelAttributes.put("orders", orderService.findAll());
+        modelAttributes.put("categories", categoryService.findAll());
         model.addAllAttributes(modelAttributes);
         return "views-admin-product";
     }
@@ -78,4 +85,29 @@ public class ProductController {
         return "redirect:/product";
     }
 
+    @GetMapping("/updateProduct/{id}")
+    public String updateProduct(@PathVariable int id, Model model) {
+        Map<String, Object> modelAttributes = new HashMap<>();
+        modelAttributes.put("updateProduct", productService.findOne(id));
+//        modelAttributes.put("producers", producerService.findAll());
+//        modelAttributes.put("categories", categoryService.findAll());
+        model.addAllAttributes(modelAttributes);
+        return "views-admin-updateProduct";
+    }
+
+    @PostMapping("/updateProducerFully")
+    public String updateProducer(@ModelAttribute Product product) {
+        productService.fullUpdate(product);
+        return "redirect:/product";
+    }
+
+    @GetMapping("/search/{text}")
+    public String search(@PathVariable String text, Model model) {
+//        System.out.println("text = " + text);
+//        String prodName = text.substring(text.indexOf("=") + 1, text.indexOf("#"));
+//        System.out.println("prodName = " + prodName);
+        int id = productService.findProductByName(text).getId();
+        model.addAttribute("product", productService.productWithImages(id));
+        return "views-user-viewproduct";
+    }
 }

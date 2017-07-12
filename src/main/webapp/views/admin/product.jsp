@@ -127,6 +127,10 @@
 									<div class="price">${product.price}</div>
 									<sec:authorize access="hasRole('ROLE_ADMIN')">
 										<a href="/deleteProduct/${product.id}" class="view-product">Delete</a>
+										<br><br>
+										<div>
+											<a href="/updateProduct/${product.id}" class="view-product">Update</a>
+										</div>
 									</sec:authorize>
 										<%--<a href="/addToCard/${product.id}" class="add-to-cart">Add to Cart</a>--%>
 								</figcaption>

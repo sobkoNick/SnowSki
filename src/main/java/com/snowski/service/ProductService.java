@@ -23,4 +23,7 @@ public interface ProductService {
 	List<Product> productsWithImages();
 
 	Page<Product> findAllPages(Pageable pageable);
+	void fullUpdate(Product product);
+
+	public Product findProductByName(String name);
 }

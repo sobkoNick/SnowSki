@@ -15,6 +15,7 @@ import com.snowski.entity.Order;
 import com.snowski.entity.Producer;
 import com.snowski.entity.Product;
 import com.snowski.service.ProductService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 @Service
@@ -127,10 +128,33 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-	public List<Product> productsWithImages() {
-		return  productDao.productsWithImages();
-	}
+    public List<Product> productsWithImages() {
+        return productDao.productsWithImages();
+    }
 
+    @Transactional
+    @Override
+    public void fullUpdate(Product product) {
+        Product productToUpdate = productDao.findOne(product.getId());
+        productDao.saveAndFlush(productToUpdate);
+        productToUpdate.setId(product.getId());
+        productToUpdate.setPathToImage(product.getPathToImage());
+        productToUpdate.setCount(product.getCount());
+        productToUpdate.setCategoryOfProduct(product.getCategoryOfProduct());
+        productToUpdate.setProducer(product.getProducer());
+        productToUpdate.setAvaible(product.isAvaible());
+        productToUpdate.setDescription(product.getDescription());
+        productToUpdate.setName(product.getName());
+        productToUpdate.setModel(product.getModel());
+        productToUpdate.setOptions(product.getOptions());
+        productToUpdate.setPrice(product.getPrice());
+        productDao.save(productToUpdate);
+    }
+
+    @Override
+    public Product findProductByName(String name) {
+        return productDao.findProductByName(name);
+    }
 
 //    @Override
 //    public List<Product> productsWithOnlyFirst() {

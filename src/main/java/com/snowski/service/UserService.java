@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.List;
 
 import com.snowski.entity.User;
+import com.snowski.validator.userValidator.UserException;
 
 public interface UserService {
 	void save(User user) throws Exception;
@@ -19,6 +20,8 @@ public interface UserService {
 	User findByUuid(String uuid);
 	User findUserWithOrders(int id);
 	User findUserWithProduct(int id);
+
+	void updateUser(User user, String newPassword, Principal principal) throws UserException;
 
 //	void addToCard(int id, Principal principal);
 }

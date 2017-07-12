@@ -24,9 +24,8 @@ public class CategoryController {
         Map<String, List<Category>> map = new HashMap<String, List<Category>>();
         map.put("categories", categoryService.findAll());
         return new ModelAndView("views-admin-category", map);
-
-
     }
+
     @GetMapping("/updateCategory/{id}")
     public String updateOrder(@PathVariable int id, Model model) {
         model.addAttribute("updateCategory", categoryService.findOne(id));
@@ -45,7 +44,6 @@ public class CategoryController {
     @ResponseBody
     @PostMapping("/saveCategory")
     public List<Category> saveCategory(@RequestBody Category category) throws IOException {
-//		categoryService.save(category, multipartFile);
         categoryService.save(category);
         return categoryService.findAll();
     }
