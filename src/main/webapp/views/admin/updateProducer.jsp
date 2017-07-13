@@ -30,21 +30,21 @@
                         <form:input type="hidden" path="id" value="${updateProducer.id}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>name</label>
+                        <label>Name</label>
                         <form:input path="name" class="form-control" value="${updateProducer.name}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>description</label>
+                        <label>Description</label>
                         <form:input path="description" class="form-control"
                                     value="${updateProducer.description}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>numberOfProducts</label>
-                        <form:input path="numberOfProducts" class="form-control"
+                        <label>Number Of Products</label>
+                        <form:input path="numberOfProducts" type="number" min="10" max="1000" class="form-control"
                                     value="${updateProducer.numberOfProducts}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>path To image</label>
+                        <label>Path To image (Please change to valid url)</label>
                         <form:input path="pathToImage" class="form-control"
                                     value="${updateProducer.pathToImage}"></form:input><br>
                     </div>

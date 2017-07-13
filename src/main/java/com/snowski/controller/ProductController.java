@@ -108,4 +108,11 @@ public class ProductController {
         model.addAttribute("product", productService.productWithImages(id));
         return "views-user-viewproduct";
     }
+
+    @GetMapping("/productByProd/{id}")
+    public String getByProducer(@PathVariable int id, Model model) {
+        System.out.println("productService = " + productService.findAllByProducer(id));
+        model.addAttribute("products", productService.findAllByProducer(id));
+        return "views-user-foundedProducts";
+    }
 }

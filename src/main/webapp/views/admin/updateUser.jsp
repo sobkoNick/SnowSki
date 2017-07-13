@@ -24,24 +24,29 @@
             <div style="width: 50%;">
                 <form method="post" action="/updateUserByAdmin">
                     <div class="form-group">
-                        <%--<label>Id</label>--%>
                         <input type="hidden" class="form-control" name="id" required="required"
                                value="${userBla.id}">
                     </div>
                     <div class="form-group">
                         <label>status</label>
-                        <input type="text" class="form-control" name="status" required="required"
-                               value="${userBla.status}">
+                        <select class="form-control" id="sel1" name="status" required="required" value="${userBla.status}">
+                            <option>active</option>
+                            <option>disabled</option>
+                            <option>VIP</option>
+                            <option>somebody</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Discount</label>
-                        <input type="text" class="form-control" name="discount"
+                        <input type="number" min="0" max="25" class="form-control" name="discount"
                                value="${userBla.discount}">
                     </div>
                     <div class="form-group">
                         <label>Enable</label>
-                        <input type="text" class="form-control" name="enable"
-                               value="${userBla.isEnabled()}">
+                        <select class="form-control" name="enable" required="required"  value="${userBla.isEnabled()}">
+                            <option>true</option>
+                            <option>false</option>
+                        </select>
                     </div>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <button type="submit" class="btn btn-success" id="saveCategoryBtn">Update</button>

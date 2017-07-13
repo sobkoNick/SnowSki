@@ -83,14 +83,11 @@
                         <div class="dropdown">
                             <button class="dropbtn"><springLocal:message code="label.ski"/></button>
                             <div class="dropdown-content">
-                                <a href="#">FISHER</a>
-                                <a href="#">SOLOMON</a>
-                                <a href="#">ROSSIGNOL</a>
-                                <a href="#">HEAD</a>
-                                <a href="#">Унісекс</a>
-                                <a href="#">Чоловічі</a>
-                                <a href="#">Жіночі</a>
-                                <a href="#">Дитячі</a>
+                                <a href="/productByProd/1">FISHER</a>
+                                <a href="/productByProd/3">SOLOMON</a>
+                                <a href="/productByProd/4">ROSSIGNOL</a>
+                                <a href="/productByProd/2">HEAD</a>
+                                <a href="/productByProd/5">Volkl</a>
                             </div>
                         </div>
                     </div>
@@ -98,14 +95,9 @@
                         <div class="dropdown">
                             <button class="dropbtn"><springLocal:message code="label.snowboard"/></button>
                             <div class="dropdown-content">
-                                <a href="#">CAPITA</a>
-                                <a href="#">DC</a>
-                                <a href="#">Never Summer</a>
-                                <a href="#">SMOKIN</a>
-                                <a href="#">Унісекс</a>
-                                <a href="#">Чоловічий</a>
-                                <a href="#">Жіночий</a>
-                                <a href="#">Дитячий</a>
+                                <a href="/productByProd/8">CAPITA</a>
+                                <a href="/productByProd/9">Never Summer</a>
+                                <a href="/productByProd/10">SMOKIN</a>
                             </div>
                         </div>
                     </div>
@@ -114,14 +106,10 @@
                         <div class="dropdown">
                             <button class="dropbtn"><springLocal:message code="label.close"/></button>
                             <div class="dropdown-content">
-                                <a href="#">Унісекс</a>
-                                <a href="#">Чоловічий</a>
-                                <a href="#">Жіночий</a>
-                                <a href="#">Для дітей</a>
-                                <a href="#">PARALLEL</a>
-                                <a href="#">THE NORTH FACE</a>
-                                <a href="#">COLUMBIA</a>
-                                <a href="#">SPYDER LEADER</a>
+                                <a href="/productByProd/11">PARALLEL</a>
+                                <a href="/productByProd/12">THE NORTH FACE</a>
+                                <a href="/productByProd/7">COLUMBIA</a>
+                                <a href="/productByProd/13">SPYDER LEADER</a>
                             </div>
                         </div>
                     </div>
@@ -134,8 +122,6 @@
                                 <a href="#">Балаклави</a>
                                 <a href="#">Рукавиці</a>
                                 <a href="#">Відео камери</a>
-                                <a href="#">ROSSIGNOL</a>
-                                <a href="#">HEAD</a>
                             </div>
                         </div>
                     </div>

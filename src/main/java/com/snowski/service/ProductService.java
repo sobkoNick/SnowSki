@@ -1,29 +1,36 @@
 package com.snowski.service;
 
-import java.util.List;
-
 import com.snowski.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 public interface ProductService {
-	void save(Product product, int producerId, List<Integer> ordersIds);
-	void save(Product product, List<MultipartFile> images, Integer producer, Integer categoryOfProduct);
-	List<Product> findAll();
+    void save(Product product, int producerId, List<Integer> ordersIds);
 
-	Product findOne(int id);
+    void save(Product product, List<MultipartFile> images, Integer producer, Integer categoryOfProduct);
 
-	void delete(int id);
+    List<Product> findAll();
 
-	void update(Product product);
-	
-	List<Product> productWithOrders();
-	Product productWithImages(int id);
-	List<Product> productsWithImages();
+    Product findOne(int id);
 
-	Page<Product> findAllPages(Pageable pageable);
-	void fullUpdate(Product product);
+    void delete(int id);
 
-	public Product findProductByName(String name);
+    void update(Product product);
+
+    List<Product> productWithOrders();
+
+    Product productWithImages(int id);
+
+    List<Product> productsWithImages();
+
+    Page<Product> findAllPages(Pageable pageable);
+
+    void fullUpdate(Product product);
+
+    public Product findProductByName(String name);
+
+    List<Product> findAllByProducer(int id);
 }

@@ -30,25 +30,41 @@
                         <form:input type="hidden" class="form-control" path="id" value="${updateOrder.id}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>name</label>
+                        <label>Name</label>
                         <form:input path="name" class="form-control" value="${updateOrder.name}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>orderStatus</label>
-                        <form:input path="orderStatus" class="form-control"
-                                    value="${updateOrder.orderStatus}"></form:input><br>
+                        <label>Order Status</label>
+                        <form:select class="form-control" path="orderStatus" required="required">
+                            <option selected>${updateOrder.orderStatus}</option>
+                            <option>Active</option>
+                            <option>Done</option>
+                            <option>In process</option>
+                            <option>Canceled</option>
+                        </form:select>
                     </div>
                     <div class="form-group">
-                        <label>payMethod</label>
-                        <form:input path="payMethod" class="form-control" value="${updateOrder.payMethod}"></form:input><br>
+                        <label>Pay Method</label>
+                        <form:select class="form-control" path="payMethod" required="required">
+                            <option selected>${updateOrder.payMethod}</option>
+                            <option>Visa/Mastercard</option>
+                            <option>Cash in post office</option>
+                            <option>By card in post office</option>
+                            <option>Bitcoin</option>
+                        </form:select>
                     </div>
                     <div class="form-group">
-                        <label>deliveryMethod</label>
-                        <form:input path="deliveryMethod" class="form-control"
-                                    value="${updateOrder.deliveryMethod}"></form:input><br>
+                        <label>Delivery Method</label>
+                        <form:select class="form-control" path="deliveryMethod" required="required">
+                            <option selected>${updateOrder.deliveryMethod}</option>
+                            <option>New Post</option>
+                            <option>New Post Currier</option>
+                            <option>Ukrainian post</option>
+                            <option>In Time post</option>
+                        </form:select>
                     </div>
                     <div class="form-group">
-                        <label>comment</label>
+                        <label>Comment</label>
                         <form:input path="comment" class="form-control" value="${updateOrder.comment}"></form:input>
                             <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>
                         <br>

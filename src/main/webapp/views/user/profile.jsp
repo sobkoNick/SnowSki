@@ -7,7 +7,6 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +17,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">${userWithBasket.name}</h3>
@@ -37,8 +36,8 @@
                                     <td>${user.email}</td>
                                 </tr>
                                 <tr>
-                                <td>Phone Number</td>
-                                <td>${user.telephone}</td>
+                                    <td>Phone Number</td>
+                                    <td>${user.telephone}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -47,14 +46,6 @@
                         </div>
                     </div>
                 </div>
-                <%--<div class="panel-footer">--%>
-                    <%--<a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>--%>
-                    <%--<span class="pull-right">--%>
-                            <%--<a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>--%>
-                            <%--<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>--%>
-                        <%--</span>--%>
-                <%--</div>--%>
-
             </div>
         </div>
     </div>
@@ -68,33 +59,35 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th></th>
+                <form:form action="/buy" method="post" class="form-group">
+                    <label>Delivery Method</label>
+                    <select class="form-control" name="deliveryMethod" path="deliveryMethod" required="required">
+                        <option>New Post</option>
+                        <option>New Post Currier</option>
+                        <option>Ukrainian post</option>
+                        <option>In Time post</option>
+                        <option>Other</option>
+                    </select>
 
-                    <%--<form:form action="/buy/${user.id}"  method="post">--%>
-                    <form:form action="/buy"  method="post" class="form-group">
+                    <label>Pay Method</label>
+                    <select class="form-control" name="payMethod" path="payMethod" required="required">
+                        <option>Visa/Mastercard</option>
+                        <option>Cash in post office</option>
+                        <option>By card in post office</option>
+                        <option>Bitcoin</option>
+                        <option>Other</option>
+                    </select>
+                    <label for="comment">Your Comment</label>
+                    <textarea name="comment" path="comment" class="form-control" rows="5" id="comment"
+                              placeholder="Description" required="required"></textarea>
+                    <br>
 
-                        <label for="deliveryMethod">Delivery Method</label>
-
-                        <input name="deliveryMethod" path="deliveryMethod" type="text" class="form-control" id="deliveryMethod"
-                               placeholder="Delivery Method" required="required"/>
-
-                        <label for="deliveryMethod">Pay Method</label>
-
-                        <input name="payMethod" path="payMethod" type="text" class="form-control" id="payMethod"
-                               placeholder="Pay Method" required="required"/>
-
-                        <label for="comment">Your Comment</label>
-
-                        <textarea name="comment" path="comment" class="form-control" rows="5" id="comment"
-                                  placeholder="Description" required="required"></textarea>
-                        <br>
-
-                        <button class="btn btn-success">buy</button>
-                    </form:form>
-
+                    <button class="btn btn-success">buy</button>
+                </form:form>
             </c:if>
             <c:if test="${userWithBasket.products.size() == 0}">
                 <th>
-                   You don't have any products in your basket
+                    You don't have any products in your basket
                 </th>
             </c:if>
         </tr>
@@ -106,7 +99,7 @@
                         ${product.name}
                 </td>
                 <td>
-                    <%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
+                        <%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
                     <img src="${product.pathToImage}" alt="${product.name}" height="192px" width="150px">
                 </td>
                 <td>
@@ -122,10 +115,6 @@
         </c:forEach>
         </tbody>
     </table>
-
-
 </div>
-
-
 </body>
 </html>

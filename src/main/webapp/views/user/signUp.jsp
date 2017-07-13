@@ -76,7 +76,7 @@
                 <form:input class="form-styling" path="name" placeholder="Your login" required="required"/>
                 <span style="color: red">${loginException}</span><br>
                 <%--<label for="email">Email</label>--%>
-                <form:input class="form-styling" path="email" placeholder="@Email" required="required"/>
+                <form:input class="form-styling" path="email" placeholder="@Email" required="required" type="email"/>
                 <span style="color: red">${emailException}</span><br>
                 <%--<label for="password">Password</label>--%>
                 <form:input class="form-styling" type="password" path="password" placeholder="Password"

@@ -182,24 +182,18 @@ public class Product {
 		this.pathToImage = pathToImage;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "Product{" +
-//				"id=" + id +
-//				", name='" + name + '\'' +
-//				", description='" + description + '\'' +
-//				", model='" + model + '\'' +
-//				", price=" + price +
-//				", avaible=" + avaible +
-//				", pathToImage=" + pathToImage +
-//				", count=" + count +
-//				", options='" + options + '\'' +
-//				", weight=" + weight +
-//				", productImages=" + productImages +
-//				", orders=" + orders +
-//				", users=" + users +
-//				", producer=" + producer +
-//				", categoryOfProduct=" + categoryOfProduct +
-//				'}';
-//	}
+	@Override
+	public String toString() {
+		return "Product{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", model='" + model + '\'' +
+				", price=" + price +
+				", pathToImage=" + pathToImage +
+				", count=" + count +
+				", options='" + options + '\'' +
+				", weight=" + weight +
+				'}';
+	}
 }

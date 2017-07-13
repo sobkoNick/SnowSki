@@ -148,6 +148,7 @@ public class ProductServiceImpl implements ProductService {
         productToUpdate.setModel(product.getModel());
         productToUpdate.setOptions(product.getOptions());
         productToUpdate.setPrice(product.getPrice());
+        productToUpdate.setWeight(product.getWeight());
         productDao.save(productToUpdate);
     }
 
@@ -156,8 +157,8 @@ public class ProductServiceImpl implements ProductService {
         return productDao.findProductByName(name);
     }
 
-//    @Override
-//    public List<Product> productsWithOnlyFirst() {
-//        return productDao.productsWithOnlyFirst();
-//    }
+    @Override
+    public List<Product> findAllByProducer(int id) {
+        return productDao.findAllByProducer(id);
+    }
 }

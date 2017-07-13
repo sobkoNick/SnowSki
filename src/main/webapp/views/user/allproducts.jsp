@@ -1,8 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="springLocal" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@taglib prefix="custom" uri="/WEB-INF/custom.tld" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="springLocal" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="custom" uri="/WEB-INF/custom.tld"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <html>
 <head>
     <title> <springLocal:message code="label.allProducts"/></title>
@@ -19,11 +19,7 @@
                 <c:forEach var="product" items="${products.content}">
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <figure class="snip1246">
-                                <%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
                             <img src="${product.pathToImage}" alt="sample88"/>
-                                <%--<c:forEach var="img" items="${product.productImages}">--%>
-                                <%--<img src="${img.pathToImage}" alt="sample88" height="192px" width="150px">--%>
-                                <%--</c:forEach>--%>
                             <figcaption>
                                 <h2>${product.name}</h2>
                                 <p>${product.description}</p>

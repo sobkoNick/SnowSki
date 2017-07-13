@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>price</label>
-                        <form:input path="price" class="form-control" value="${updateProduct.price}"></form:input><br>
+                        <form:input path="price" type="number" min="100" step="50" max="1000000" class="form-control" value="${updateProduct.price}"></form:input><br>
                     </div>
                     <div class="form-group">
                         <label>avaible</label>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label>Count</label>
-                        <form:input path="count" class="form-control" value="${updateProduct.count}"></form:input><br>
+                        <form:input path="count" type="number" min="1" max="1000" class="form-control" value="${updateProduct.count}"></form:input><br>
                     </div>
                     <div class="form-group">
                         <label>options</label>
@@ -61,10 +61,10 @@
                     </div>
                     <div class="form-group">
                         <label>weight</label>
-                        <form:input path="weight" class="form-control" value="${updateProduct.weight}"></form:input><br>
+                        <form:input path="weight" type="number" min="1" max="10" class="form-control" value="${updateProduct.weight}"></form:input><br>
                     </div>
                     <div class="form-group">
-                        <label>path To image</label>
+                        <label>path To image (Please change to valid url)</label>
                         <form:input path="pathToImage" class="form-control"
                                     value="${updateProduct.pathToImage}"></form:input><br>
                     </div>

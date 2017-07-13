@@ -38,7 +38,7 @@
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">Number of Products</label>
-					<form:input path="numberOfProducts" type="text" class="form-control" id="exampleInputPassword1"
+					<form:input path="numberOfProducts" type="number" min="10" max="1000" class="form-control" id="exampleInputPassword1"
 						   placeholder="Count" required="required"/>
 					<span style="color: red">${numberOfProductsException}</span>
 				</div>

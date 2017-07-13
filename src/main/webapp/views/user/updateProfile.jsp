@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label>email</label>
-                        <input type="text" class="form-control" name="email" required="required"
+                        <input type="email" class="form-control" name="email" required="required"
                                value="${updateUser.email}">
                     </div>
                     <div class="form-group">

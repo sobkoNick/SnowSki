@@ -43,14 +43,14 @@
                     </div>
                     <div class="form-group">
                         <label>numberOfProducts</label>
-                        <form:input path="numberOfProducts" class="form-control" value="${updateCategory.numberOfProducts}"></form:input><br>
+                        <form:input type="number" min="1" max="100" path="numberOfProducts" class="form-control" value="${updateCategory.numberOfProducts}"></form:input><br>
                     </div>
                     <div class="form-group">
                         <label>numberInHierarchy</label>
-                        <form:input path="numberInHierarchy" class="form-control" value="${updateCategory.numberInHierarchy}"></form:input>
+                        <form:input type="number" min="1" max="100" path="numberInHierarchy" class="form-control" value="${updateCategory.numberInHierarchy}"></form:input>
                     </div>
                     <div class="form-group">
-                        <label>path To image</label>
+                        <label>path To image (Please change to valid url)</label>
                         <form:input path="pathToImage" class="form-control" value="${updateCategory.pathToImage}"></form:input><br>
                     </div>
                     <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>

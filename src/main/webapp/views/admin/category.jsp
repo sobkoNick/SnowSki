@@ -41,12 +41,12 @@
                 </div>
                 <div class="form-group">
                     <label>Number Of Products</label>
-                    <input type="text" class="form-control" placeholder="NumberOfProducts" id="numberOfProducts"
+                    <input class="form-control" type="number" min="1" max="100" placeholder="NumberOfProducts" id="numberOfProducts"
                            name="numberOfProducts" required="required">
                 </div>
                 <div class="form-group">
                     <label>Number In Hierarchy</label>
-                    <input type="text" class="form-control" placeholder="NumberInHierarchy" id="numberInHierarchy"
+                    <input type="number" min="1" max="100" class="form-control" placeholder="NumberInHierarchy" id="numberInHierarchy"
                            name="numberInHierarchy" required="required">
                 </div>
                 <div class="form-group">
