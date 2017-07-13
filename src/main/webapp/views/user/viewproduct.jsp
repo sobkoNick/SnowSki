@@ -8,6 +8,7 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title>${product.name}</title>
@@ -34,22 +35,22 @@
                             <%--</c:forEach>--%>
 
 
-                                <c:forEach var="img" items="${product.productImages}">
-                                    <img src="${img.pathToImage}" height="192px" width="150px">
-                                </c:forEach>
+                                <%--<c:forEach var="img" items="${product.productImages}">--%>
+                                    <%--<img src="${img.pathToImage}" height="192px" width="150px">--%>
+                                <%--</c:forEach>--%>
 
                             <div class="tab-pane active" id="pic-1"><img src="${product.pathToImage}"/></div>
-                            <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                            <div class="tab-pane" id="pic-3"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></div>
-                            <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252"/></div>
-                            <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252"/></div>
+                            <%--<div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>--%>
+                            <%--<div class="tab-pane" id="pic-3"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></div>--%>
+                            <%--<div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252"/></div>--%>
+                            <%--<div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252"/></div>--%>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
                             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="${product.pathToImage}"/></a></li>
-                            <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>
-                            <li><a data-target="#pic-3" data-toggle="tab"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></a></li>
-                            <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>
-                            <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>
+                            <%--<li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>--%>
+                            <%--<li><a data-target="#pic-3" data-toggle="tab"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></a></li>--%>
+                            <%--<li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>--%>
+                            <%--<li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>--%>
 
                                 <%--<c:forEach var="img" items="${product.productImages}">--%>
                                     <%--<li><img src="${img.pathToImage}" height="192px" width="150px"></li>--%>
@@ -87,7 +88,10 @@
                             <span class="color blue"></span>
                         </h5>
                         <div class="action">
-                            <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+
+                            <sec:authorize access="isAuthenticated()">
+                                <a href="/addToCard/${product.id}" class="add-to-cart btn btn-default">Add to Cart</a>
+                            </sec:authorize>
                             <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                         </div>
                     </div>

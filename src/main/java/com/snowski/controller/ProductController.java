@@ -33,7 +33,6 @@ public class ProductController {
     @Autowired
     private CategoryService categoryService;
 
-
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Producer.class, new ProducerEditor());
@@ -111,7 +110,7 @@ public class ProductController {
 
     @GetMapping("/productByProd/{id}")
     public String getByProducer(@PathVariable int id, Model model) {
-        System.out.println("productService = " + productService.findAllByProducer(id));
+//        System.out.println("productService = " + productService.findAllByProducer(id));
         model.addAttribute("products", productService.findAllByProducer(id));
         return "views-user-foundedProducts";
     }
