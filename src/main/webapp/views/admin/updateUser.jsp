@@ -16,16 +16,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12" align="center">
             <label style="text-align: center;
 			font-size: 20px; color: aqua;
-			padding-top: 20px;">Update your details</label>
+			padding-top: 20px;">Update user details</label>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12" align="center">
-            <div style="width: 50%; padding-left: 20px;">
+            <div style="width: 50%;">
                 <form method="post" action="/updateUserByAdmin">
                     <div class="form-group">
-                        <label>Id</label>
-                        <input type="text" class="form-control" name="id" required="required"
+                        <%--<label>Id</label>--%>
+                        <input type="hidden" class="form-control" name="id" required="required"
                                value="${userBla.id}">
                     </div>
                     <div class="form-group">

@@ -104,9 +104,9 @@
 						<input class="btn btn-primary" type="button" value="add Image" id="addImage">
 					</div>
 					<button type="submit" class="btn btn-success"> Add Product </button>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 					<%--<button>Save Producer</button>--%>
 				</form>
-
 			</div>
 		</div>
 

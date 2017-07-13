@@ -14,24 +14,52 @@
     <title>Update category</title>
 </head>
 <body>
-<form:form modelAttribute="updateCategory" method="post" action="/updateCategory">
-    <label>id</label>
-    <form:input path="id" value="${updateCategory.id}"></form:input><br>
-    <label>name</label>
-    <form:input path="name" value="${updateCategory.name}"></form:input><br>
-    <label>description</label>
-    <form:input path="description" value="${updateCategory.description}"></form:input><br>
-    <label>availability</label>
-    <form:input path="availability" value="${updateCategory.availability}"></form:input><br>
-    <label>numberOfProducts</label>
-    <form:input path="numberOfProducts" value="${updateCategory.numberOfProducts}"></form:input><br>
-    <label>numberInHierarchy</label>
-    <form:input path="numberInHierarchy" value="${updateCategory.numberInHierarchy}"></form:input>
-    <label>path To image</label>
-    <form:input path="pathToImage" value="${updateCategory.pathToImage}"></form:input><br>
-    <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>
-    <br>
-    <button>Update</button>
-</form:form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+            <label style="text-align: center;
+			font-size: 20px; color: aqua;
+			padding-top: 20px;">Update Category</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12" align="center">
+            <div style="width: 50%;">
+                <form:form modelAttribute="updateCategory" method="post" action="/updateCategory">
+                    <div class="form-group">
+                        <form:input type="hidden" path="id" value="${updateCategory.id}"></form:input><br>
+                    </div>
+                    <div class="form-group">
+                        <label>name</label>
+                        <form:input path="name" class="form-control" value="${updateCategory.name}"></form:input><br>
+                    </div>
+                    <div class="form-group">
+                        <label>description</label>
+                        <form:input path="description" class="form-control" value="${updateCategory.description}"></form:input><br>
+                    </div>
+                    <div class="form-group">
+                        <label>availability</label>
+                        <form:input path="availability" class="form-control" value="${updateCategory.availability}"></form:input><br>
+                    </div>
+                    <div class="form-group">
+                        <label>numberOfProducts</label>
+                        <form:input path="numberOfProducts" class="form-control" value="${updateCategory.numberOfProducts}"></form:input><br>
+                    </div>
+                    <div class="form-group">
+                        <label>numberInHierarchy</label>
+                        <form:input path="numberInHierarchy" class="form-control" value="${updateCategory.numberInHierarchy}"></form:input>
+                    </div>
+                    <div class="form-group">
+                        <label>path To image</label>
+                        <form:input path="pathToImage" class="form-control" value="${updateCategory.pathToImage}"></form:input><br>
+                    </div>
+                    <%--<form:select path="products" items="${updateOrder.products}" itemLabel="name" itemValue="id"/>--%>
+                    <br>
+                    <button class="btn btn-success">Update</button>
+                </form:form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
