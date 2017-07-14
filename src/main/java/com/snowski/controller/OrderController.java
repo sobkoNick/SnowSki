@@ -41,12 +41,6 @@ public class OrderController {
         return "views-admin-order";
     }
 
-//	@PostMapping("/order")
-//	private String order(@ModelAttribute Order order){
-//		orderService.save(order);
-//		return "redirect:/order";
-//	}
-
     @GetMapping("/deleteOrder/{id}")
     public String delete(@PathVariable int id) {
         orderService.delete(id);

@@ -1,12 +1,12 @@
 package com.snowski.controller;
 
-import com.snowski.dao.CategoryDao;
-import com.snowski.dao.ProducerDao;
-import com.snowski.dao.ProductDao;
 import com.snowski.editors.ProducerEditor;
 import com.snowski.entity.Producer;
 import com.snowski.entity.Product;
-import com.snowski.service.*;
+import com.snowski.service.CategoryService;
+import com.snowski.service.OrderService;
+import com.snowski.service.ProducerService;
+import com.snowski.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -16,8 +16,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -111,8 +109,13 @@ public class ProductController {
 
     @GetMapping("/productByProd/{id}")
     public String getByProducer(@PathVariable int id, Model model) {
-//        System.out.println("productService = " + productService.findAllByProducer(id));
         model.addAttribute("products", productService.findAllByProducer(id));
+        return "views-user-foundedProducts";
+    }
+
+    @GetMapping("/productByCategory/{id}")
+    public String getByCategory(@PathVariable int id, Model model) {
+        model.addAttribute("products", productService.findAllByCategory(id));
         return "views-user-foundedProducts";
     }
 }

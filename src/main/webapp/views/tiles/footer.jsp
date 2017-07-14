@@ -18,15 +18,15 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 small-header">
         <div class="row">
-            <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 col-md-offset-1 lang">
+            <div class="col-xs-5 col-xs-offset-2 col-sm-2 col-md-1 col-md-offset-1 lang">
                 <div class="row">
                     093-000-00-00
                 </div>
             </div>
-            <div class="col-xs-0 hidden-xs col-sm-2 col-md-2 lang">
-                АВРОРІ
+            <div class="col-xs-5 col-sm-2 col-md-2 lang">
+                MYKOLA SOBKO
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 text-header">
+            <div class="col-xs-0 hidden-xs col-sm-4 col-md-4 text-header">
                 <springLocal:message code="label.free_delivery"/>
             </div>
             <div class="col-xs-0 hidden-xs col-sm-2 col-md-3 lang">

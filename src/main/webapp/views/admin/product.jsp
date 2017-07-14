@@ -9,6 +9,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="stylesheet" href="/css/product.css" type="text/css">
+    <link rel="stylesheet" href="/css/top.css" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <title>Products</title>
 </head>
 <body>
@@ -115,7 +117,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="row">
                 <c:forEach var="product" items="${products}">
-                    <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="col-sm-6 col-md-4" style="height: 500px">
                         <figure class="snip1246">
                                 <%--!!!!!!!!!!!!!!!!!!!!!!!!--%>
                             <img src="${product.pathToImage}" alt="sample88"/>
@@ -142,9 +144,25 @@
         </div>
     </div>
 </div>
+<a href="javascript:" id="top"><i class="icon-chevron-up"></i></a>
 </body>
 </html>
 <script>
+
+    // ===== Scroll to Top ====
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 50) {    // If page is scrolled more than 50px
+            $('#top').fadeIn("fast");       // Fade in the arrow
+        } else {
+            $('#top').fadeOut("fast");      // Else fade out the arrow
+        }
+    });
+    $('#top').click(function () {            // When arrow is clicked
+        $('body,html').animate({
+            scrollTop: 0                   // Scroll to top of body
+        }, 500);
+    });
+
     $(".hover").mouseleave(
         function () {
             $(this).removeClass("hover");

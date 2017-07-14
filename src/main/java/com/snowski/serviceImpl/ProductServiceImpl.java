@@ -171,4 +171,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> findAllByProducer(int id) {
         return productDao.findAllByProducer(id);
     }
+
+    @Override
+    public List<Product> findAllByCategory(int id) {
+        return productDao.findAllByCategoryOfProduct(id);
+    }
 }

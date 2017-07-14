@@ -32,15 +32,6 @@ public class CategoryController {
         return "views-admin-updateCategory";
     }
 
-    //	@PostMapping("/category")
-//	public String category(@RequestParam String name, @RequestParam String description,
-//						   @RequestParam String availability, @RequestParam Integer numberOfProducts,
-//						   @RequestParam Integer numberInHierarchy, @RequestParam MultipartFile image){
-//
-//		categoryService.save(new Category(name, description, availability, numberOfProducts, numberInHierarchy), image);
-//
-//		return "redirect:/category";
-//	}
     @ResponseBody
     @PostMapping("/saveCategory")
     public List<Category> saveCategory(@RequestBody Category category) throws IOException {

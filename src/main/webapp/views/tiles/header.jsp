@@ -40,12 +40,12 @@
                         </div>
                     </div>
                     <div class="col-xs-0 hidden-xs col-sm-2 col-md-2 lang">
-                        <a href="#"><springLocal:message code="label.buy_adn_delivery"/></a>
+                        <a href="/info"><springLocal:message code="label.buy_adn_delivery"/></a>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4 text-header">
+                    <div class="col-xs-8 col-sm-4 col-md-4 text-header">
                         <springLocal:message code="label.free_delivery"/>
                     </div>
-                    <div class="col-xs-0 hidden-xs col-sm-2 col-md-1 text-header">
+                    <div class="col-xs-4 col-sm-2 col-md-1 text-header">
                         <sec:authorize access="isAuthenticated()">
                             <sec:authorize access="!hasRole('ROLE_ADMIN')">
                                 <a href="/profile">
@@ -76,12 +76,21 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 big-header" >
                 <div class="row">
-                    <div class="col-xs-3 col-sm-3 col-md-2 col-md-offset-1 ski-header-img ">
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-md-offset-1 ski-header-img ">
                         <a href="/" title="Snow Ski Store"></a>
                     </div>
-                    <div class="col-xs-1 col-sm-1 col-md-1">
+                    <div class="col-xs-4 col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn"><springLocal:message code="label.ski"/></button>
+                            <button class="dropbtn">
+                                <a href="/">
+                                    <springLocal:message code="label.main"/>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 hidden-xs col-sm-1 col-md-1">
+                        <div class="dropdown">
+                            <button class="dropbtn"><springLocal:message code="label.ski"/><a href="/productByCategory/9"></a></button>
                             <div class="dropdown-content">
                                 <a href="/productByProd/1">FISHER</a>
                                 <a href="/productByProd/3">SOLOMON</a>
@@ -91,9 +100,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-1 col-sm-1 col-md-1">
+                    <div class="col-xs-1 hidden-xs col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn"><springLocal:message code="label.snowboard"/></button>
+                            <button class="dropbtn"><springLocal:message code="label.snowboard"/><a href="/productByCategory/10"></a></button>
                             <div class="dropdown-content">
                                 <a href="/productByProd/8">CAPITA</a>
                                 <a href="/productByProd/9">Never Summer</a>
@@ -102,9 +111,9 @@
                         </div>
                     </div>
 
-                    <div class="col-xs-1 col-sm-1 col-md-1">
+                    <div class="col-xs-1 hidden-xs col-sm-1 col-md-1">
                         <div class="dropdown">
-                            <button class="dropbtn"><springLocal:message code="label.close"/></button>
+                            <button class="dropbtn"><springLocal:message code="label.close"/><a href="/productByCategory/45"></a></button>
                             <div class="dropdown-content">
                                 <a href="/productByProd/11">PARALLEL</a>
                                 <a href="/productByProd/12">THE NORTH FACE</a>
@@ -113,19 +122,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-1 col-sm-1 col-md-1">
+                    <div class="col-xs-1 hidden-xs col-sm-1 col-md-1">
                         <div class="dropdown">
                             <button class="dropbtn"><springLocal:message code="label.accessories"/></button>
                             <div class="dropdown-content">
-                                <a href="#">Маски</a>
-                                <a href="#">Шоломи</a>
-                                <a href="#">Балаклави</a>
-                                <a href="#">Рукавиці</a>
-                                <a href="#">Відео камери</a>
+                                <a href="/productByCategory/12">Маски</a>
+                                <a href="/productByCategory/44">Шоломи</a>
+                                <a href="/productByCategory/51">Балаклави</a>
+                                <a href="/productByCategory/50">Рукавиці</a>
+                                <a href="/productByCategory/52">Відео камери</a>
                             </div>
                         </div>
                     </div>
-                    <div class="hidden-xs col-sm-1 col-md-1">
+                    <div class="col-xs-4 col-sm-1 col-md-1">
                         <div class="dropdown">
                             <button class="dropbtn">
                                 <a href="/allproducts">
@@ -135,7 +144,7 @@
                         </div>
                     </div>
 
-                    <div class="hidden-xs col-sm-3 col-md-3">
+                    <div class="hidden-xs col-sm-2 col-md-2">
                         <%--<form:form action="/search" class="search-form" method="post">--%>
                             <%--<div class="form-group has-feedback">--%>
                                 <%--<label for="search" class="sr-only">Search</label>--%>

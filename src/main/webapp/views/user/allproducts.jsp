@@ -17,15 +17,15 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="row">
                 <c:forEach var="product" items="${products.content}">
-                    <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="col-sm-6 col-md-4">
                         <figure class="snip1246">
-                            <img src="${product.pathToImage}" alt="sample88"/>
+                            <img src="${product.pathToImage}" alt="sample88" style="height: 350px; width: 350px"/>
                             <figcaption>
                                 <h2>${product.name}</h2>
                                 <p>${product.description}</p>
                                 <div class="price">${product.price}</div>
                                 <a href="/viewProduct/${product.id}" class="view-product">View product</a>
-                                <sec:authorize access="isAuthenticated()">
+                                <sec:authorize access="!hasRole('ROLE_ADMIN') and isAuthenticated()">
                                     <a href="/addToCard/${product.id}" class="add-to-cart">Add to Cart</a>
                                 </sec:authorize>
                             </figcaption>

@@ -3,6 +3,7 @@ package com.snowski.service;
 import com.snowski.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.method.P;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -33,4 +34,6 @@ public interface ProductService {
     public Product findProductByName(String name);
 
     List<Product> findAllByProducer(int id);
+
+    List<Product> findAllByCategory(int id);
 }

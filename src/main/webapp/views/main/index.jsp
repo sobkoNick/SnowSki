@@ -35,25 +35,25 @@
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
 							<div class="item active">
-								<a href="#">
+								<a href="/productByProd/13">
 									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/USST-NFC-marquee-3.jpeg" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
-								<a href="#">
+								<a href="/productByProd/4">
 									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/rossi.png" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
-								<a href="#">
+								<a href="/productByCategory/12">
 									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/googlesNORM.png" alt="Flower">
 								</a>
 							</div>
 
 							<div class="item">
-								<a href="#">
+								<a href="/productByCategory/47">
 									<img src="https://raw.githubusercontent.com/sobkoNick/SnowSki/master/src/main/webapp/img/school.png" alt="Flower">
 								</a>
 							</div>
@@ -76,17 +76,17 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-md-6 element-container-left">
 							<div class="text-and-button">
-								<h1> FOR WOMEN</h1>
-								<a href="#" class="btn-primary">
-									SHOP WOMEN'S
+								<h1> SHOP SKI </h1>
+								<a href="/productByCategory/9" class="btn-primary">
+									SHOP SKI
 								</a>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-6 element-container-right">
 							<div class="text-and-button-right">
-								<h1>FOR MEN</h1>
-								<a href="#" class="btn-primary">
-									SHOP MEN'S
+								<h1> SNOWBOARD </h1>
+								<a href="/productByCategory/10" class="btn-primary">
+									SNOWBOARD
 								</a>
 							</div>
 						</div>
@@ -97,7 +97,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 big-banner">
 					<div class="text-and-button-large-banner">
 						<h1> ONLY COLUMBIA</h1>
-						<a href="#" class="btn-primary">
+						<a href="/productByProd/7" class="btn-primary">
 							FIND BEST WEAR
 						</a>
 					</div>
@@ -109,8 +109,8 @@
 				<div class="col-sm-4 center-menu">
 					<div class="text-and-button-center-banner">
 						<!--                        <h1>SALE</h1>-->
-						<a href="#" class="btn-primary">
-							SHOW DISCOUNTS
+						<a href="/productByCategory/47" class="btn-primary">
+							SHOW SKI PASSES
 						</a>
 					</div>
 				</div>
