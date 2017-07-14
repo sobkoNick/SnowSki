@@ -20,9 +20,12 @@ public interface ProductDao extends JpaRepository<Product, Integer>{
 	@Query("select p from Product p left join fetch p.productImages where p.id=:id")
 	Product productWithImages(@Param("id") int id);
 
+	@Query("select p from Product p left join fetch p.productImages where p.id=:id")
+	Product productWithProducerAndImages(@Param("id") int id);
+
 	Product findProductByName(@Param("name") String name);
 
-	@Query("select distinct p from Product p where p.producer=(select pr from Producer pr where pr.id=:id)")
+	@Query("select distinct p from Product p left join fetch p.productImages where p.producer=(select pr from Producer pr where pr.id=:id)")
 	List<Product> findAllByProducer(@Param("id") int id);
 
 	@Query("select distinct p from Product p where p.categoryOfProduct=(select c from Category c where c.id=:id)")

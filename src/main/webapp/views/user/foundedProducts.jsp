@@ -28,7 +28,7 @@
             <c:forEach var="product" items="${products}">
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="${product.pathToImage}" alt="" width="200" height="200">
+                        <img src="/${product.pathToImage}" alt="" width="200" height="200">
                         <div class="caption">
                             <h3>${product.name}</h3>
                             <h4>${product.price}</h4>

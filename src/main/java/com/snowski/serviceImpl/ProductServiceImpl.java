@@ -85,13 +85,23 @@ public class ProductServiceImpl implements ProductService {
                 System.out.println("Error with file");
             }
 
-            // sets first image from images as cover image
-            product.setPathToImage("resources/" + product.getName() + "/"
-                    + images.get(0).getOriginalFilename());
-
             productImagesDao.save(productImages);
         }
+        // sets first image from images as cover image
+        String path = System.getProperty("catalina.home") + "/resources/"
+                + product.getName() + "/" + images.get(0).getOriginalFilename();
 
+        product.setPathToImage("resources/" + product.getName() + "/"
+                + images.get(0).getOriginalFilename());
+
+        File filePath = new File(path);
+
+        try {
+            filePath.mkdirs();
+            images.get(0).transferTo(filePath);
+        } catch (Exception e) {
+            System.out.println("Error with file");
+        }
         productDao.save(product);
     }
 

@@ -39,14 +39,14 @@
                                     <%--<img src="${img.pathToImage}" height="192px" width="150px">--%>
                                 <%--</c:forEach>--%>
 
-                            <div class="tab-pane active" id="pic-1"><img src="${product.pathToImage}"/></div>
+                            <div class="tab-pane active" id="pic-1"><img src="/${product.pathToImage}"/></div>
                             <%--<div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>--%>
                             <%--<div class="tab-pane" id="pic-3"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></div>--%>
                             <%--<div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252"/></div>--%>
                             <%--<div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252"/></div>--%>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
-                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="${product.pathToImage}"/></a></li>
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="/${product.pathToImage}"/></a></li>
                             <%--<li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>--%>
                             <%--<li><a data-target="#pic-3" data-toggle="tab"><img src="https://ebanoe.it/wp-content/uploads/2017/06/belarus_hungry_it_games.jpg" /></a></li>--%>
                             <%--<li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126"/></a></li>--%>
